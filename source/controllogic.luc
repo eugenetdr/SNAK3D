@@ -1,0 +1,17 @@
+module controllogic (
+    input opcode[16],
+    output asel,
+    output bsel,
+    output alufn[6],
+    output wesnk,
+    output wefd,
+    output wescr,
+    output wetmr,
+    output wernd,
+    output warnd
+  ) {
+
+  always {
+    
+  }
+}

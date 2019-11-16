@@ -1,0 +1,20 @@
+module render (
+    input clk,  // clock
+    input rst,  // reset
+    output cols[5],
+    output rows[25],
+  ) {
+  
+  .clk(clk)
+  {
+    .rst(rst)
+    {
+      dff led_state[125];
+    } 
+  }
+  
+  
+  always {
+    led_state.d = 0;
+  }
+}

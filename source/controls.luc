@@ -2,9 +2,9 @@ module controls (
     input clk,  // clock
     input rst,  // reset
     input buttons[6],
-    output dx,
-    output dy,
-    output dz
+    output dx[4],
+    output dy[4],
+    output dz[4]
     //output led[24]
   ) {
 
