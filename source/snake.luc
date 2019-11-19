@@ -1,10 +1,79 @@
 module snake (
     input clk,  // clock
     input rst,  // reset
-    output out
+    input dx,
+    input dy,
+    input dz,
+    input wesnkhd,
+    input wesnkpos,
+    output snk_hd_pos[12],
+    output snk_bd_pos[12],
+    output snk_tl_pos[12],    
   ) {
+  
+  .clk(clk) {
+    .rst(rst) {
+      //these flip flops are meant to support ease of translation of head position + wrap checking
+      dff hd_x[4];
+      dff hd_y[4];
+      dff hd_z[4];
+      
+      //these flip flops are meant to sustain the signals and support ease of comparison
+      dff hd_pos[12];
+      dff bd_pos[12];
+      dff tl_pos[12];      
+    }
+  }
 
   always {
-    out = 0;
+    hd_x = 0;
+    hd_y = 0;
+    hd_z = 0;
+
+    //if game fsm is in move_snake state, receive controls
+    if(wesnk) {
+      hd_x.d = hd_x.q + dx;
+      hd_y.d = hd_y.q + dy;
+      hd_z.d = hd_z.q + dz;
+
+      //check wrap x
+      if(hd_x.q + dx == -1) {
+        hd_x.d = 4;
+      }
+      if(hd_x.q + dx == 5) {
+        hd_x.d = 0;
+      }
+
+      //check wrap y
+      if(hd_y.q + dy == -1) {
+        hd_y.d = 4;
+      }
+      if(hd_y.q + dy == 5) {
+        hd_y.d = 0;
+      }
+
+      //check wrap z
+      if(hd_z.q + dz == -1) {
+        hd_z.d = 4;
+      }
+      if(hd_z.q + dy == 5) {
+        hd_z.d = 0;
+      }
+    }
+    
+    //we need a second we signal because this needs to occur in the next clock cycle AFTER the register have been written to
+    if(wesnkpos) {            
+      hd_pos = c{hd_x.q, hd_y.q, hd_z.q};
+      //update body to old head value
+      bd_pos.d = hd_pos.q;
+      //update tail to old body value
+      tl_pos.d = bd_pos.q;
+    }
+
+
+    //output position
+    snk_hd_pos = hd_pos;
+    snk_bd_pos = bd_pos;
+    snk_tl_pos = tl_pos;    
   }
 }

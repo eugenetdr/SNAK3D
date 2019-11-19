@@ -1,0 +1,76 @@
+module gameengine (
+    input clk,              // 50MHz clock
+    input rst,            // reset button (active low)
+    input time_out, //taken in from the timer module, meaning that time has run out
+    input aluout,
+    output opcode,
+  ) {
+  
+  const OPC_CMP_TIME_FRAME = 6b111111;
+  const OPC_CMP_FOOD = 6b111111;
+  const OPC_INCREMENT_SCORE = 6b111111;
+  const OPC_SPAWN_FOOD = 6b111111;
+  const OPC_MOVE_SNK_HD = 6b111111;
+  const OPC_UPDATE_SNK_POS = 6b111111;
+  const OPC_RENDER = 6b111111; //reset clock counter AND writes render state to output led state
+
+  .clk(clk)
+  {
+    .rst(rst)
+    {
+      fsm gamefsm = {WAIT_FRAME, CHECK_TIME, GAME_OVER, CHECK_EAT, INCREMENT_SCORE, SPAWN_FOOD, MOVE_SNK_HD, UPDATE_SNAKE_POS, CHECK_WRAP, RENDER};
+    }
+  }
+
+  //TODO: need to check if ALUOUT gives the answer in the same clock cycle. If not, the opcodes
+  //must be sent out in the previous state/clock cycle
+  always {
+      switch(gamefsm.q)
+      {
+        case gamefsm.WAIT_FRAME:
+          opcode = OPC_CMP_TIME_FRAME; //request to compare FRAME_PERIOD < clk_count
+          if(aluout == 1) {//if FRAME_PERIOD <  clk_count => next state          
+            gamefsm.d = gamefsm.CHECK_TIME;            
+          }          
+        
+        case gamefsm.CHECK_TIME:          
+          if(time_out == 1) {//if time > 60 seconds (from timer module)
+            gamefsm.d = gamefsm.GAME_OVER;            
+          }
+          else {
+            gamefsm.d = gamefsm.CHECK_EAT
+          }
+        
+        case gamefsm.CHECK_EAT:
+          opcode = OPC_CMP_FOOD //request to compare snk_pos and food_pos
+          if(aluout == 1) {//if snk_pos == food_pos          
+            gamefsm.d = gamefsm.INCREMENT_SCORE;            
+          }
+          else {
+            gamefsm.d = gamefsm.MOVE_SNK_HD; //if didn't eat just move snake this clk
+          }
+        case gamefsm.INCREMENT_SCORE:          
+          opcode = OPC_INCREMENT_SCORE; //request to increment score and write to score
+          gamefsm.d = gamefsm.SPAWN_FOOD;
+
+        case gamefsm.SPAWN_FOOD:
+          opcode = OPC_SPAWN_FOOD;
+          gamefsm.d = gamefsm.MOVE_SNK_HD;
+
+        case gamefsm.MOVE_SNK_HD:
+          opcode = OPC_MOVE_SNK_HD;
+          gamefsm.d = gamefsm.UPDATE_SNAKE_POS;
+
+        case gamefsm.UPDATE_SNAKE_POS:
+          opcode = OPC_UPDATE_SNK_POS;
+          gamefsm.d = gamefsm.RENDER;
+
+        case gamefsm.RENDER:                 
+          opcode = OPC_RENDER; 
+          gamefsm.d = gamefsm.WAIT_FRAME;
+
+        case gamefsm.GAME_OVER:
+          gamefsm.d = gamefsm.GAME_OVER;
+      }
+  }
+}

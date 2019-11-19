@@ -1,6 +1,11 @@
 module render (
     input clk,  // clock
     input rst,  // reset
+    input snk_hd_pos[12],
+    input snk_bd_pos[12],
+    input snk_tl_pos[12],  
+    input food_pos[12],  
+    input wernd,
     output cols[5],
     output rows[25],
   ) {
@@ -9,12 +14,19 @@ module render (
   {
     .rst(rst)
     {
+      dff food_state[125];
+      dff snake_state[125];
       dff led_state[125];
     } 
   }
-  
-  
-  always {
+    
+  always {    
     led_state.d = 0;
+
+    //if render state, load up the position to the led_state
+    if(wernd)
+    {
+
+    }
   }
 }

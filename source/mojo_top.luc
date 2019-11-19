@@ -21,24 +21,80 @@ module mojo_top (
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
-    .rst(rst){
-      counter slowclk(#SIZE(1),#DIV(25));
+
+    .rst(rst){                        
+      gameengine game;
+      controllogic clogic;
+
+      //alu
+      alu16 alu;
+      sel4 aselector;
+      sel4 bselector;
+
+      //modules
       controls control;
-      }
+      snake snake;
+      score score;
+      timer timer;
+      food food;
+      render render;
+    }
   }
 
     
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
-    rst = reset_cond.out;   // conditioned reset
-    
+    rst = reset_cond.out;   // conditioned reset    
     led = 8h00;             // turn LEDs off
     spi_miso = bz;          // not using SPI
     spi_channel = bzzzz;    // not using flags
-    avr_rx = bz;            // not using serial port
-    
+    avr_rx = bz;            // not using serial port    
     io_led[23:0] = 24h00;
     
     control.buttons = io_button[4:0];
+
+    //ALU circuit
+    game.aluout = alu.out;
+
+    //control logic
+    clogic.opcode = game.opcode;
+    aselector.sel = clogic.asel;
+    bselector.sel = clogic.bsel;
+
+    //==========module inputs==========
+    //snake
+    snake.dx = control.dx;
+    snake.dy = control.dy;
+    snake.dz = control.dz;
+    snake.wesnkhd = clogic.wesnkhd;    
+    snake.wesnkpos = clogic.wesnkpos;    
+
+    //score
+    score.aluout = alu.out;
+    score.wescr = clogic.wescr;    
+    //timer    
+    //food
+    food.wefood = clogic.wefood;
+    
+    //render circuits
+    render.snk_hd_pos = snake.snk_hd_pos;
+    render.snk_bd_pos = snake.snk_bd_pos;
+    render.snk_tl_pos = snake.snk_tl_pos;
+    render.food_pos = food.food_pos;
+    render.wernd = render.wernd;
+
+    //==========module outputs==========        
+    //snake
+    aselector.b = snake.snake_hd_pos;
+    //score
+    aselector.c = score.score;
+    bselector.c = 1; //for score increment
+    //timer
+    game.time_out = timer.time_out;
+    aselector.a = timer.clk_count;
+    bselector.a = timer.frame_period;
+    aselector.d = 0; //for timer reset after render
+    //food
+    bselector.b = food.food_pos;    
   }
 }
