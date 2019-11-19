@@ -1,16 +1,25 @@
 module controllogic (
     input opcode[16],
-    output asel,
-    output bsel,
+    output asel[2],
+    output bsel[2],
     output alufn[6],
     output wesnkhd,
     output wesnkpos,
     output wefood,
     output wescr,
     output wernd,    
+    output wetmr,    
   ) {
 
-  always {
-    
+  always {    
+    alufn = opcode[15:10];
+    asel = opcode[9:8];
+    bsel = opcode[7:6];
+    wesnkhd = opcode[5];
+    wesnkpos = opcode[4];
+    wefood = opcode[3];
+    wescr = opcode[2];
+    wernd = opcode[1];
+    wetmr = opcode[0];
   }
 }

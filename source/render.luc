@@ -26,7 +26,7 @@ module render (
     //if render state, load up the position to the led_state
     if(wernd)
     {
-
+      //TODO: convert snk_hd/bd/tl_pos into a single snake_state      
     }
   }
 }
