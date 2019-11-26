@@ -1,22 +1,22 @@
-module sel4{
+module sel4(
     input a[16],
     input b[16],
     input c[16],
     input d[16],
     input sel[2],
-    output out[16],
-}{
+    output out[16]
+){
     always{
         out = 0;        
-        switch(sel)
+        case(sel)
         {
-            case 2b00:
+            2b00:
                 out = a;
-            case 2b01:
+            2b01:
                 out = b;
-            case 2b10:
+            2b10:
                 out = c;
-            case 2b11:
+            2b11:
                 out = d;
         }
     }

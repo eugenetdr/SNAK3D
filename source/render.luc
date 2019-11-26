@@ -7,7 +7,7 @@ module render (
     input food_pos[12],  
     input wernd,
     output cols[5],
-    output rows[25],
+    output rows[25]
   ) {
   
   .clk(clk)
@@ -22,6 +22,8 @@ module render (
     
   always {    
     led_state.d = 0;
+    cols = 0;
+    rows = 0;
 
     //if render state, load up the position to the led_state
     if(wernd)

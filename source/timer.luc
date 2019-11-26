@@ -30,6 +30,8 @@ module timer (
     
     //increment the time every clock
     clk_counter.d = clk_counter.q + 1;
+    
+        //output the current count to be used by alu
     clk_count = clk_counter.q[26:11];
 
     if(wetmr) {
@@ -39,9 +41,6 @@ module timer (
 
     //give the time from 60 to 0s
     game_time = 60 - game_time_counter.q;
-
-    //output the current count to be used by alu
-    clk_count = clk_counter.q;
 
     //if the game has run out of time
     if(game_time_counter.q > 60) {
