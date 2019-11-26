@@ -8,7 +8,7 @@ module controllogic (
     output wefood,
     output wescr,
     output wernd,    
-    output wetmr,    
+    output wetmr
   ) {
 
   always {    

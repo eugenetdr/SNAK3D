@@ -2,7 +2,7 @@ module food (
     input clk,  // clock
     input rst,  // reset
     input wefood,
-    output food_pos[12],
+    output food_pos[12]
   ) {
   .clk(clk) {
     .rst(rst) {
@@ -12,14 +12,11 @@ module food (
     }
   }  
   always {
-    pos_x = 0;
-    pos_y = 0;
-    pos_z = 0;
-
+  
     if(wefood) {
       //TODO: assign random values to pos_x, pos_y, pos_z
     }    
 
-    food_pos = c{pos_x, pos_y, pos_z};
+    food_pos = c{pos_x.q, pos_y.q, pos_z.q};
   }
 }

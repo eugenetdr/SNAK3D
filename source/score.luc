@@ -2,7 +2,7 @@ module score (
     input clk,  // clock
     input rst,  // reset
     input wescr,
-    input aluout,
+    input aluout[16],
     output out
   ) {
 
