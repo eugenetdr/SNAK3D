@@ -2,7 +2,7 @@ module gameengine (
     input clk,              // 50MHz clock
     input rst,            // reset button (active low)
     input time_out, //taken in from the timer module, meaning that time has run out
-    input aluout,
+    input aluout[16],
     output opcode[16]
   ) {
   

@@ -11,8 +11,11 @@ module mojo_top (
     input avr_tx,           // AVR TX (FPGA RX)
     output avr_rx,          // AVR RX (FPGA TX)
     input avr_rx_busy,      // AVR RX buffer full
-    input io_button[5],
-    output io_led [24]
+    output io_led [3][8],   // LEDs on IO Shield
+    output io_seg [8],      // 7-segment LEDs on IO Shield
+    output io_sel [4],      // Digit select on IO Shield
+    input io_button [5],    // 5 buttons on IO Shield
+    input io_dip [3][8]     // DIP switches on IO Shield
   ) {
   
   sig rst;                  // reset signal
@@ -48,7 +51,10 @@ module mojo_top (
     spi_miso = bz;          // not using SPI
     spi_channel = bzzzz;    // not using flags
     avr_rx = bz;            // not using serial port    
-    io_led[23:0] = 24h00;
+       
+    io_led = 3x{{8h00}};    // turn LEDs off
+    io_seg = 8hff;          // turn segments off
+    io_sel = 4hf;           // select no digits
     
     bselector.d = 0;
     control.buttons = io_button[4:0];
@@ -96,10 +102,17 @@ module mojo_top (
     bselector.c = 1; //for score increment
     //timer
     game.time_out = timer.time_out;
-    aselector.a = timer.clk_count;
-    bselector.a = timer.frame_period;
+    aselector.a = timer.frame_period;
+    bselector.a = timer.clk_count;
     aselector.d = 0; //for timer reset after render
     //food
     bselector.b = food.food_pos;    
+    
+    
+    //testing
+    io_led[2][5:0] = timer.game_time;
+    io_led[1][3:0] = snake.snk_hd_pos[11:8]; 
+    io_led[0][7:4] = snake.snk_hd_pos[7:4]; 
+    io_led[0][3:0] = snake.snk_hd_pos[3:0]; 
   }
 }
