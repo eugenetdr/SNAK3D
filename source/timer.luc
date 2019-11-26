@@ -3,14 +3,14 @@ module timer (
     input rst,  // reset
     output game_time,
     output time_out,
-    output clk_count[16],
-    output frame_period[16]
+    output clk_count[16]
+    //output frame_period[16]
   ) {
 
   //const FRAME_PERIOD = 50000000; 50MHz
   //frame period can be truncated
   //const FRAME_PERIOD = 48828; Truncate the 10 LSBs (done by slowclk counter)
-  const FRAME_PERIOD = 50000;
+  const FRAME_PERIOD = 50000000;
 
   .clk(clk)
   {
@@ -18,30 +18,25 @@ module timer (
     {
       counter slowclk(#SIZE(1),#DIV(10));
     }
+  dff clk_counter[16]; // 26 bits to represent 50 million
+  dff game_time_counter[6]; // 6 bits to represent 60
   }
 
-  .clk(slowclk.value)
-  {
-    .rst(rst)
-    {      
-      dff clk_counter[16]; // 26 bits to represent 50 million
-      dff game_time_counter[6]; // 6 bits to represent 60
-    }
-  }
 
   always {    
     //increment the time every clock
     clk_counter.d = clk_counter.q + 1;
 
+    if(clk_counter.q >= FRAME_PERIOD) {
+      game_time_counter.d = game_time_counter.q + 1;
+      clk_counter.d = 0;
+    }
+    
     //give the time from 60 to 0s
     game_time = 60 - game_time_counter.q;
 
     //output the current count to be used by alu
     clk_count = clk_counter.q;
-
-    if(clk_counter.q >= FRAME_PERIOD) {
-      game_time_counter.d = game_time_counter.q + 1;
-    }
 
     //if the game has run out of time
     if(game_time_counter.q > 60) {
