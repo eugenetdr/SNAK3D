@@ -1,39 +1,38 @@
 module timer (
     input clk,  //50MHz clock
     input rst,  // reset
+    input wetmr,
     output game_time[6],
     output time_out,
-    output clk_count[16]
-    //output frame_period[16]
+    output clk_count[16],
+    output frame_period[16]
   ) {
 
   //const FRAME_PERIOD = 50000000; 50MHz
   //frame period can be truncated
   //const FRAME_PERIOD = 48828; Truncate the 10 LSBs (done by slowclk counter)
-  const FRAME_PERIOD = 50000;
+  const FRAME_PERIOD = 16b0101111110000000;
 
   .clk(clk)
   {
     .rst(rst)
     {
-      counter slowclk(#SIZE(1),#DIV(9));
-    }
-  }
-
-  .clk(slowclk.value)
-  {
-    .rst(rst)
-    {      
-      dff clk_counter[16]; // 26 bits to represent 50 million
+      dff clk_counter[27]; // 26 bits to represent 50 million
       dff game_time_counter[6]; // 6 bits to represent 60
     }
   }
 
+
   always {    
+  
+    
+    frame_period = FRAME_PERIOD;
+    
     //increment the time every clock
     clk_counter.d = clk_counter.q + 1;
+    clk_count = clk_counter.q[26:11];
 
-    if(clk_counter.q >= FRAME_PERIOD) {
+    if(wetmr) {
       game_time_counter.d = game_time_counter.q + 1;
       clk_counter.d = 0;
     }
@@ -52,5 +51,6 @@ module timer (
     {
       time_out = 0;
     }
+
   }
 }
