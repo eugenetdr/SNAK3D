@@ -105,6 +105,7 @@ module mojo_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
+  reg [3:0] M_counter_d, M_counter_q = 1'h0;
   wire [16-1:0] M_game_opcode;
   reg [1-1:0] M_game_time_out;
   reg [16-1:0] M_game_aluout;
@@ -130,6 +131,7 @@ module mojo_top_0 (
   wire [12-1:0] M_snake_snk_hd_pos;
   wire [12-1:0] M_snake_snk_bd_pos;
   wire [12-1:0] M_snake_snk_tl_pos;
+  wire [1-1:0] M_snake_test_hd_count;
   reg [4-1:0] M_snake_dx;
   reg [4-1:0] M_snake_dy;
   reg [4-1:0] M_snake_dz;
@@ -145,7 +147,8 @@ module mojo_top_0 (
     .wesnkpos(M_snake_wesnkpos),
     .snk_hd_pos(M_snake_snk_hd_pos),
     .snk_bd_pos(M_snake_snk_bd_pos),
-    .snk_tl_pos(M_snake_snk_tl_pos)
+    .snk_tl_pos(M_snake_snk_tl_pos),
+    .test_hd_count(M_snake_test_hd_count)
   );
   wire [1-1:0] M_score_out;
   reg [1-1:0] M_score_wescr;
@@ -199,6 +202,8 @@ module mojo_top_0 (
   );
   
   always @* begin
+    M_counter_d = M_counter_q;
+    
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
     led = 8'h00;
@@ -239,9 +244,18 @@ module mojo_top_0 (
     M_bselector_a = M_timer_clk_count;
     M_aselector_d = 1'h0;
     M_bselector_b = M_food_food_pos;
+    if (M_clogic_wesnkhd) begin
+      M_counter_d = (M_counter_q + 1'h1);
+    end
     io_led[16+0+5-:6] = M_timer_game_time;
     io_led[8+0+3-:4] = M_snake_snk_hd_pos[8+3-:4];
     io_led[0+4+3-:4] = M_snake_snk_hd_pos[4+3-:4];
     io_led[0+0+3-:4] = M_snake_snk_hd_pos[0+3-:4];
+    io_led[8+4+3-:4] = M_counter_q;
   end
+  
+  always @(posedge clk) begin
+    M_counter_q <= M_counter_d;
+  end
+  
 endmodule

@@ -20,11 +20,11 @@ module gameengine_6 (
   
   localparam OPC_INCREMENT_SCORE = 16'h0284;
   
-  localparam OPC_SPAWN_FOOD = 16'h0020;
+  localparam OPC_MOVE_SNK_HD = 16'h0020;
   
-  localparam OPC_MOVE_SNK_HD = 16'h0010;
+  localparam OPC_UPDATE_SNK_POS = 16'h0010;
   
-  localparam OPC_UPDATE_SNK_POS = 16'h0008;
+  localparam OPC_SPAWN_FOOD = 16'h0008;
   
   localparam OPC_RENDER = 16'h0003;
   
@@ -73,15 +73,15 @@ module gameengine_6 (
         M_gamefsm_d = SPAWN_FOOD_gamefsm;
       end
       SPAWN_FOOD_gamefsm: begin
-        opcode = 16'h0020;
+        opcode = 16'h0008;
         M_gamefsm_d = MOVE_SNK_HD_gamefsm;
       end
       MOVE_SNK_HD_gamefsm: begin
-        opcode = 16'h0010;
+        opcode = 16'h0020;
         M_gamefsm_d = UPDATE_SNAKE_POS_gamefsm;
       end
       UPDATE_SNAKE_POS_gamefsm: begin
-        opcode = 16'h0008;
+        opcode = 16'h0010;
         M_gamefsm_d = RENDER_gamefsm;
       end
       RENDER_gamefsm: begin

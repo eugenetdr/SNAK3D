@@ -6,7 +6,18 @@ module score (
     output out
   ) {
 
+  .clk(clk) {
+    .rst(rst) {
+      dff score[16];
+    }
+  }
+  
+  
   always {
-    out = 0;
+    out = score.q;
+    
+    if(wescr) {
+      score.d = aluout;
+    }
   }
 }
