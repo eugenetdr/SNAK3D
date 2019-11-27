@@ -12,37 +12,105 @@ module render_12 (
     input [11:0] snk_tl_pos,
     input [11:0] food_pos,
     input wernd,
-    output reg [4:0] cols,
-    output reg [24:0] rows
+    output reg [4:0] led_rows_out,
+    output reg [24:0] led_cols_out
   );
   
   
   
+  localparam NUMBER_ROWS = 3'h5;
+  
+  localparam NUMBER_COLUMNS = 5'h19;
+  
+  wire [1-1:0] M_muxclk_value;
+  counter_17 muxclk (
+    .clk(clk),
+    .rst(rst),
+    .value(M_muxclk_value)
+  );
+  reg [124:0] M_snk_hd_state_d, M_snk_hd_state_q = 1'h0;
+  reg [124:0] M_snk_bd_state_d, M_snk_bd_state_q = 1'h0;
+  reg [124:0] M_snk_tl_state_d, M_snk_tl_state_q = 1'h0;
   reg [124:0] M_food_state_d, M_food_state_q = 1'h0;
-  reg [124:0] M_snake_state_d, M_snake_state_q = 1'h0;
   reg [124:0] M_led_state_d, M_led_state_q = 1'h0;
+  reg [15:0] M_count_d, M_count_q = 1'h0;
+  
+  reg [4:0] M_rows_d, M_rows_q = 1'h0;
+  reg [24:0] M_cols_d, M_cols_q = 1'h0;
+  
+  localparam TEMPLATE = 125'h00000000000000000000000000000001;
   
   always @* begin
+    M_food_state_d = M_food_state_q;
+    M_snk_hd_state_d = M_snk_hd_state_q;
+    M_cols_d = M_cols_q;
+    M_count_d = M_count_q;
     M_led_state_d = M_led_state_q;
+    M_snk_bd_state_d = M_snk_bd_state_q;
+    M_snk_tl_state_d = M_snk_tl_state_q;
+    M_rows_d = M_rows_q;
     
-    M_led_state_d = 1'h0;
-    cols = 1'h0;
-    rows = 1'h0;
     if (wernd) begin
-      
+      M_count_d = (M_count_q + 1'h1);
+      M_snk_hd_state_d = (125'h00000000000000000000000000000001 << M_count_q);
+      M_snk_bd_state_d = 125'h00000000000000000000000000000001 << (snk_bd_pos[8+3-:4] + (3'h5 * snk_bd_pos[4+3-:4]) + (5'h19 * snk_bd_pos[0+3-:4]));
+      M_snk_tl_state_d = 125'h00000000000000000000000000000001 << (snk_tl_pos[8+3-:4] + (3'h5 * snk_tl_pos[4+3-:4]) + (5'h19 * snk_tl_pos[0+3-:4]));
+      M_food_state_d = 125'h00000000000000000000000000000001 << (food_pos[8+3-:4] + (3'h5 * food_pos[4+3-:4]) + (5'h19 * food_pos[0+3-:4]));
     end
+    M_led_state_d = M_snk_hd_state_q;
+    M_rows_d = 5'h01;
+    if (M_rows_q == 5'h01) begin
+      M_cols_d = M_led_state_q[0+24-:25];
+      M_rows_d = M_rows_q << 1'h1;
+    end else begin
+      if (M_rows_q == 5'h02) begin
+        M_cols_d = M_led_state_q[25+24-:25];
+        M_rows_d = M_rows_q << 1'h1;
+      end else begin
+        if (M_rows_q == 5'h04) begin
+          M_cols_d = M_led_state_q[50+24-:25];
+          M_rows_d = M_rows_q << 1'h1;
+        end else begin
+          if (M_rows_q == 5'h08) begin
+            M_cols_d = M_led_state_q[75+24-:25];
+            M_rows_d = M_rows_q << 1'h1;
+          end else begin
+            if (M_rows_q == 5'h10) begin
+              M_cols_d = M_led_state_q[100+24-:25];
+              M_rows_d = 5'h01;
+            end else begin
+              M_rows_d = 5'h01;
+            end
+          end
+        end
+      end
+    end
+    led_rows_out = M_rows_q;
+    led_cols_out = M_cols_q;
   end
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
+      M_snk_hd_state_q <= 1'h0;
+      M_snk_bd_state_q <= 1'h0;
+      M_snk_tl_state_q <= 1'h0;
       M_food_state_q <= 1'h0;
-      M_snake_state_q <= 1'h0;
       M_led_state_q <= 1'h0;
+      M_count_q <= 1'h0;
     end else begin
+      M_snk_hd_state_q <= M_snk_hd_state_d;
+      M_snk_bd_state_q <= M_snk_bd_state_d;
+      M_snk_tl_state_q <= M_snk_tl_state_d;
       M_food_state_q <= M_food_state_d;
-      M_snake_state_q <= M_snake_state_d;
       M_led_state_q <= M_led_state_d;
+      M_count_q <= M_count_d;
     end
+  end
+  
+  
+  always @(posedge M_muxclk_value) begin
+    M_rows_q <= M_rows_d;
+    M_cols_q <= M_cols_d;
   end
   
 endmodule

@@ -11,8 +11,8 @@ module timer (
   //const FRAME_PERIOD = 50000000; 50MHz
   //frame period can be truncated
   //const FRAME_PERIOD = 48828; Truncate the 10 LSBs (done by slowclk counter)
-  const FRAME_PERIOD = 16b0101111110000000;
-
+  //const FRAME_PERIOD = 16b0101111110000000;
+  const FRAME_PERIOD = 16b0010111111000000;
   .clk(clk)
   {
     .rst(rst)
@@ -43,7 +43,7 @@ module timer (
     game_time = 60 - game_time_counter.q;
 
     //if the game has run out of time
-    if(game_time_counter.q > 60) {
+    if(game_time_counter.q > 200) {
       time_out = 1;
     }
     else

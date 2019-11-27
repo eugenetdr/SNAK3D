@@ -11,11 +11,17 @@ module mojo_top (
     input avr_tx,           // AVR TX (FPGA RX)
     output avr_rx,          // AVR RX (FPGA TX)
     input avr_rx_busy,      // AVR RX buffer full
-    output io_led [3][8],   // LEDs on IO Shield
-    output io_seg [8],      // 7-segment LEDs on IO Shield
-    output io_sel [4],      // Digit select on IO Shield
-    input io_button [5],    // 5 buttons on IO Shield
-    input io_dip [3][8]     // DIP switches on IO Shield
+    input x_button[2],
+    input y_button[2],
+    input z_button[2],
+    input game_button[2],
+    output col_led[25],
+    output layer_gnd[5]
+    //output io_led [3][8],   // LEDs on IO Shield
+    //output io_seg [8],      // 7-segment LEDs on IO Shield
+    //output io_sel [4],      // Digit select on IO Shield
+    //input io_button [5],    // 5 buttons on IO Shield
+    //input io_dip [3][8]     // DIP switches on IO Shield
   ) {
   
   sig rst;                  // reset signal
@@ -52,12 +58,8 @@ module mojo_top (
     spi_channel = bzzzz;    // not using flags
     avr_rx = bz;            // not using serial port    
        
-    io_led = 3x{{8h00}};    // turn LEDs off
-    io_seg = 8hff;          // turn segments off
-    io_sel = 4hf;           // select no digits
     
     bselector.d = 0;
-    control.buttons = io_button[4:0];
 
     //ALU circuit
     game.aluout = alu.out;
@@ -70,6 +72,10 @@ module mojo_top (
     clogic.opcode = game.opcode;
     aselector.sel = clogic.asel;
     bselector.sel = clogic.bsel;
+    control.buttons[1:0] = x_button[1:0];
+    control.buttons[3:2] = y_button[1:0];
+    control.buttons[5:4] = z_button[1:0];
+    
 
     //==========module inputs==========
     //snake
@@ -91,8 +97,11 @@ module mojo_top (
     render.snk_hd_pos = snake.snk_hd_pos;
     render.snk_bd_pos = snake.snk_bd_pos;
     render.snk_tl_pos = snake.snk_tl_pos;
+    
     render.food_pos = food.food_pos;
     render.wernd = clogic.wernd;
+    layer_gnd[4:0] = render.led_rows_out[4:0];
+    col_led[24:0] = render.led_cols_out[24:0];
 
     //==========module outputs==========        
     //snake
@@ -109,9 +118,9 @@ module mojo_top (
     bselector.b = food.food_pos;    
   
     //testing
-    io_led[2][5:0] = timer.game_time;
-    io_led[1][3:0] = snake.snk_hd_pos[11:8]; 
-    io_led[0][7:4] = snake.snk_hd_pos[7:4]; 
-    io_led[0][3:0] = snake.snk_hd_pos[3:0]; 
+    //io_led[2][5:0] = timer.game_time;
+    //io_led[1][3:0] = snake.snk_hd_pos[11:8]; 
+    //io_led[0][7:4] = snake.snk_hd_pos[7:4]; 
+    //io_led[0][3:0] = snake.snk_hd_pos[3:0]; 
   }
 }

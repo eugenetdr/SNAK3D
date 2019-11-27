@@ -8,8 +8,7 @@ module snake (
     input wesnkpos,
     output snk_hd_pos[12],
     output snk_bd_pos[12],
-    output snk_tl_pos[12],
-    output test_hd_count    
+    output snk_tl_pos[12]  
   ) {
   
 
@@ -21,7 +20,6 @@ module snake (
       dff hd_x[4];
       dff hd_y[4];
       dff hd_z[4];
-      dff hd_count[4];
       
       //these flip flops are meant to sustain the signals and support ease of comparison
       dff hd_pos[12];
@@ -31,11 +29,9 @@ module snake (
   }
 
   always {
-    test_hd_count = hd_count.q;
 
     //if game fsm is in move_snake state, receive controls
     if(wesnkhd) {
-      hd_count.d = (hd_count.q + 1);
       hd_x.d = (hd_x.q + dx);
       hd_y.d = (hd_y.q + dy);
       hd_z.d = (hd_z.q + dz);

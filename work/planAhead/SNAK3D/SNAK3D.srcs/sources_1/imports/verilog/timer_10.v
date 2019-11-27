@@ -16,7 +16,7 @@ module timer_10 (
   
   
   
-  localparam FRAME_PERIOD = 16'h5f80;
+  localparam FRAME_PERIOD = 16'h2fc0;
   
   reg [26:0] M_clk_counter_d, M_clk_counter_q = 1'h0;
   reg [5:0] M_game_time_counter_d, M_game_time_counter_q = 1'h0;
@@ -25,7 +25,7 @@ module timer_10 (
     M_game_time_counter_d = M_game_time_counter_q;
     M_clk_counter_d = M_clk_counter_q;
     
-    frame_period = 16'h5f80;
+    frame_period = 16'h2fc0;
     M_clk_counter_d = M_clk_counter_q + 1'h1;
     clk_count = M_clk_counter_q[11+15-:16];
     if (wetmr) begin
@@ -33,7 +33,7 @@ module timer_10 (
       M_clk_counter_d = 1'h0;
     end
     game_time = 6'h3c - M_game_time_counter_q;
-    if (M_game_time_counter_q > 6'h3c) begin
+    if (M_game_time_counter_q > 8'hc8) begin
       time_out = 1'h1;
     end else begin
       time_out = 1'h0;
