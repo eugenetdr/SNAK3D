@@ -28,16 +28,16 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 12932 paths analyzed, 1679 endpoints analyzed, 0 failing endpoints
+ 77355 paths analyzed, 1589 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   7.618ns.
+ Minimum period is  10.613ns.
 --------------------------------------------------------------------------------
-Slack:                  12.382ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          game/M_gamefsm_q_FSM_FFd4_1 (FF)
+Slack:                  9.387ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      7.554ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.029ns (0.793 - 0.822)
+  Data Path Delay:      10.516ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -48,32 +48,38 @@ Slack:                  12.382ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to game/M_gamefsm_q_FSM_FFd4_1
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X3Y61.A5       net (fanout=82)       5.071   M_reset_cond_out
-    SLICE_X3Y61.A        Tilo                  0.259   M_clogic_alufn[2]
-                                                       game/aluout[15]_GND_13_o_equal_5_o_01_SW4
-    SLICE_X0Y60.A2       net (fanout=1)        0.747   game/N79
-    SLICE_X0Y60.A        Tilo                  0.254   M_clogic_wescr
-                                                       game/M_gamefsm_q_FSM_FFd4_rstpot
-    SLICE_X2Y60.DX       net (fanout=1)        0.584   game/M_gamefsm_q_FSM_FFd4_rstpot
-    SLICE_X2Y60.CLK      Tdick                 0.114   M_gamefsm_q_FSM_FFd4_1
-                                                       game/M_gamefsm_q_FSM_FFd4_1
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.AMUX     Topaa                 0.449   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.A4       net (fanout=2)        0.884   render/n0068[7:0][0]
+    SLICE_X6Y42.CMUX     Topac                 0.636   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<0>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      7.554ns (1.152ns logic, 6.402ns route)
-                                                       (15.3% logic, 84.7% route)
+    Total                                     10.516ns (2.184ns logic, 8.332ns route)
+                                                       (20.8% logic, 79.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  12.894ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          game/M_gamefsm_q_FSM_FFd4_1 (FF)
+Slack:                  9.577ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      7.042ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.029ns (0.793 - 0.822)
+  Data Path Delay:      10.326ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -84,32 +90,38 @@ Slack:                  12.894ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to game/M_gamefsm_q_FSM_FFd4_1
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X1Y60.A4       net (fanout=82)       5.163   M_reset_cond_out
-    SLICE_X1Y60.A        Tilo                  0.259   M_clogic_wesnkhd
-                                                       game/M_gamefsm_q_FSM_FFd4_rstpot_SW0
-    SLICE_X0Y60.A6       net (fanout=1)        0.143   game/N105
-    SLICE_X0Y60.A        Tilo                  0.254   M_clogic_wescr
-                                                       game/M_gamefsm_q_FSM_FFd4_rstpot
-    SLICE_X2Y60.DX       net (fanout=1)        0.584   game/M_gamefsm_q_FSM_FFd4_rstpot
-    SLICE_X2Y60.CLK      Tdick                 0.114   M_gamefsm_q_FSM_FFd4_1
-                                                       game/M_gamefsm_q_FSM_FFd4_1
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.BMUX     Topab                 0.519   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.B3       net (fanout=2)        0.647   render/n0068[7:0][1]
+    SLICE_X6Y42.CMUX     Topbc                 0.613   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<1>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      7.042ns (1.152ns logic, 5.890ns route)
-                                                       (16.4% logic, 83.6% route)
+    Total                                     10.326ns (2.231ns logic, 8.095ns route)
+                                                       (21.6% logic, 78.4% route)
 
 --------------------------------------------------------------------------------
-Slack:                  12.942ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          game/M_gamefsm_q_FSM_FFd8 (FF)
+Slack:                  9.618ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.996ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.027ns (0.795 - 0.822)
+  Data Path Delay:      10.285ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -120,30 +132,38 @@ Slack:                  12.942ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to game/M_gamefsm_q_FSM_FFd8
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X1Y61.D5       net (fanout=82)       5.296   M_reset_cond_out
-    SLICE_X1Y61.D        Tilo                  0.259   game/M_gamefsm_q_FSM_FFd8
-                                                       game/aluout[15]_GND_13_o_equal_5_o_01_SW2
-    SLICE_X1Y61.B2       net (fanout=1)        0.543   game/N76
-    SLICE_X1Y61.CLK      Tas                   0.373   game/M_gamefsm_q_FSM_FFd8
-                                                       game/M_gamefsm_q_FSM_FFd8_rstpot
-                                                       game/M_gamefsm_q_FSM_FFd8
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.CMUX     Topac                 0.636   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.996ns (1.157ns logic, 5.839ns route)
-                                                       (16.5% logic, 83.5% route)
+    Total                                     10.285ns (2.204ns logic, 8.081ns route)
+                                                       (21.4% logic, 78.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  12.995ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          game/M_gamefsm_q_FSM_FFd4 (FF)
+Slack:                  9.647ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_1 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.941ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.029ns (0.793 - 0.822)
+  Data Path Delay:      10.256ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -154,30 +174,38 @@ Slack:                  12.995ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to game/M_gamefsm_q_FSM_FFd4
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_1 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X3Y61.A5       net (fanout=82)       5.071   M_reset_cond_out
-    SLICE_X3Y61.A        Tilo                  0.259   M_clogic_alufn[2]
-                                                       game/aluout[15]_GND_13_o_equal_5_o_01_SW4
-    SLICE_X0Y60.A2       net (fanout=1)        0.747   game/N79
-    SLICE_X0Y60.CLK      Tas                   0.339   M_clogic_wescr
-                                                       game/M_gamefsm_q_FSM_FFd4_rstpot
-                                                       game/M_gamefsm_q_FSM_FFd4
+    SLICE_X1Y34.AQ       Tcko                  0.430   M_hd_x_q_2
+                                                       M_hd_x_q_1
+    SLICE_X6Y40.B5       net (fanout=8)        1.651   M_hd_x_q_1
+    SLICE_X6Y40.CMUX     Topbc                 0.613   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<1>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.941ns (1.123ns logic, 5.818ns route)
-                                                       (16.2% logic, 83.8% route)
+    Total                                     10.256ns (2.086ns logic, 8.170ns route)
+                                                       (20.3% logic, 79.7% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.156ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               timer/M_clk_counter_q_11 (FF)
-  Destination:          game/M_gamefsm_q_FSM_FFd9_2 (FF)
+Slack:                  9.674ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_1 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.805ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.004ns (0.336 - 0.340)
+  Data Path Delay:      10.229ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -188,48 +216,38 @@ Slack:                  13.156ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: timer/M_clk_counter_q_11 to game/M_gamefsm_q_FSM_FFd9_2
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_1 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X4Y57.DQ       Tcko                  0.525   M_timer_clk_count[0]
-                                                       timer/M_clk_counter_q_11
-    SLICE_X2Y57.A1       net (fanout=2)        1.109   M_timer_clk_count[0]
-    SLICE_X2Y57.A        Tilo                  0.235   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut[0]
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut<0>
-    SLICE_X2Y58.A4       net (fanout=1)        0.471   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut[0]
-    SLICE_X2Y58.COUT     Topcya                0.472   M_clogic_wesnkpos
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut[0]_rt
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<3>
-    SLICE_X2Y59.CIN      net (fanout=1)        0.003   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[3]
-    SLICE_X2Y59.COUT     Tbyp                  0.091   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[7]
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<7>
-    SLICE_X2Y60.CIN      net (fanout=1)        0.003   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[7]
-    SLICE_X2Y60.COUT     Tbyp                  0.091   M_gamefsm_q_FSM_FFd4_1
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<11>
-    SLICE_X2Y61.CIN      net (fanout=1)        0.003   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[11]
-    SLICE_X2Y61.DMUX     Tcind                 0.289   M_gamefsm_q_FSM_FFd7_1
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_xor<15>
-    SLICE_X5Y61.C4       net (fanout=6)        0.781   a[15]_GND_3_o_add_2_OUT[15]
-    SLICE_X5Y61.C        Tilo                  0.259   game/N86
-                                                       game/aluout[15]_GND_13_o_equal_5_o<15>33_SW3
-    SLICE_X3Y61.B3       net (fanout=1)        1.120   game/N86
-    SLICE_X3Y61.B        Tilo                  0.259   M_clogic_alufn[2]
-                                                       game/M_gamefsm_q_FSM_FFd9-In1
-    SLICE_X1Y59.BX       net (fanout=2)        0.980   game/M_gamefsm_q_FSM_FFd9-In
-    SLICE_X1Y59.CLK      Tdick                 0.114   M_gamefsm_q_FSM_FFd9_2
-                                                       game/M_gamefsm_q_FSM_FFd9_2
+    SLICE_X1Y34.AQ       Tcko                  0.430   M_hd_x_q_2
+                                                       M_hd_x_q_1
+    SLICE_X6Y40.B5       net (fanout=8)        1.651   M_hd_x_q_1
+    SLICE_X6Y40.BMUX     Topbb                 0.428   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<1>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.B3       net (fanout=2)        0.647   render/n0068[7:0][1]
+    SLICE_X6Y42.CMUX     Topbc                 0.613   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<1>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.805ns (2.335ns logic, 4.470ns route)
-                                                       (34.3% logic, 65.7% route)
+    Total                                     10.229ns (2.045ns logic, 8.184ns route)
+                                                       (20.0% logic, 80.0% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.166ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          game/M_gamefsm_q_FSM_FFd8 (FF)
+Slack:                  9.674ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.772ns (Levels of Logic = 2)
-  Clock Path Skew:      -0.027ns (0.795 - 0.822)
+  Data Path Delay:      10.229ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -240,30 +258,38 @@ Slack:                  13.166ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to game/M_gamefsm_q_FSM_FFd8
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X1Y61.C5       net (fanout=82)       5.263   M_reset_cond_out
-    SLICE_X1Y61.C        Tilo                  0.259   game/M_gamefsm_q_FSM_FFd8
-                                                       game/M_gamefsm_q_FSM_FFd8_rstpot_SW0
-    SLICE_X1Y61.B4       net (fanout=1)        0.352   game/N107
-    SLICE_X1Y61.CLK      Tas                   0.373   game/M_gamefsm_q_FSM_FFd8
-                                                       game/M_gamefsm_q_FSM_FFd8_rstpot
-                                                       game/M_gamefsm_q_FSM_FFd8
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.AMUX     Topaa                 0.449   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.A4       net (fanout=2)        0.884   render/n0068[7:0][0]
+    SLICE_X6Y42.CMUX     Topac                 0.636   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<0>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.772ns (1.157ns logic, 5.615ns route)
-                                                       (17.1% logic, 82.9% route)
+    Total                                     10.229ns (2.208ns logic, 8.021ns route)
+                                                       (21.6% logic, 78.4% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.290ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_snk_hd_state_q_74 (FF)
+Slack:                  9.702ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_y_q_2 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.593ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      10.213ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.050ns (0.606 - 0.656)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -274,26 +300,42 @@ Slack:                  13.290ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_snk_hd_state_q_74
+  Maximum Data Path at Slow Process Corner: M_hd_y_q_2 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X16Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X16Y55.CLK     Tsrck                 0.544   render/M_snk_hd_state_q[11]
-                                                       render/M_snk_hd_state_q_74
+    SLICE_X6Y36.BQ       Tcko                  0.476   M_hd_y_q_2
+                                                       M_hd_y_q_2
+    SLICE_X6Y39.A5       net (fanout=5)        0.625   M_hd_y_q_2
+    SLICE_X6Y39.AMUX     Topaa                 0.449   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_5
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd1_lut<2>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd1_xor<5>
+    SLICE_X6Y40.C6       net (fanout=1)        0.632   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_2
+    SLICE_X6Y40.CMUX     Topcc                 0.469   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<2>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.593ns (1.069ns logic, 5.524ns route)
-                                                       (16.2% logic, 83.8% route)
+    Total                                     10.213ns (2.437ns logic, 7.776ns route)
+                                                       (23.9% logic, 76.1% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.311ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               score/M_score_q_0 (FF)
-  Destination:          game/M_gamefsm_q_FSM_FFd9_2 (FF)
+Slack:                  9.747ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_y_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.639ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.015ns (0.191 - 0.206)
+  Data Path Delay:      10.168ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.050ns (0.606 - 0.656)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -304,48 +346,42 @@ Slack:                  13.311ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: score/M_score_q_0 to game/M_gamefsm_q_FSM_FFd9_2
+  Maximum Data Path at Slow Process Corner: M_hd_y_q_0 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y61.BQ       Tcko                  0.525   M_score_out
-                                                       score/M_score_q_0
-    SLICE_X2Y57.A4       net (fanout=2)        0.943   M_score_out
-    SLICE_X2Y57.A        Tilo                  0.235   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut[0]
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut<0>
-    SLICE_X2Y58.A4       net (fanout=1)        0.471   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut[0]
-    SLICE_X2Y58.COUT     Topcya                0.472   M_clogic_wesnkpos
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut[0]_rt
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<3>
-    SLICE_X2Y59.CIN      net (fanout=1)        0.003   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[3]
-    SLICE_X2Y59.COUT     Tbyp                  0.091   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[7]
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<7>
-    SLICE_X2Y60.CIN      net (fanout=1)        0.003   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[7]
-    SLICE_X2Y60.COUT     Tbyp                  0.091   M_gamefsm_q_FSM_FFd4_1
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<11>
-    SLICE_X2Y61.CIN      net (fanout=1)        0.003   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[11]
-    SLICE_X2Y61.DMUX     Tcind                 0.289   M_gamefsm_q_FSM_FFd7_1
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_xor<15>
-    SLICE_X5Y61.C4       net (fanout=6)        0.781   a[15]_GND_3_o_add_2_OUT[15]
-    SLICE_X5Y61.C        Tilo                  0.259   game/N86
-                                                       game/aluout[15]_GND_13_o_equal_5_o<15>33_SW3
-    SLICE_X3Y61.B3       net (fanout=1)        1.120   game/N86
-    SLICE_X3Y61.B        Tilo                  0.259   M_clogic_alufn[2]
-                                                       game/M_gamefsm_q_FSM_FFd9-In1
-    SLICE_X1Y59.BX       net (fanout=2)        0.980   game/M_gamefsm_q_FSM_FFd9-In
-    SLICE_X1Y59.CLK      Tdick                 0.114   M_gamefsm_q_FSM_FFd9_2
-                                                       game/M_gamefsm_q_FSM_FFd9_2
+    SLICE_X6Y36.AQ       Tcko                  0.476   M_hd_y_q_2
+                                                       M_hd_y_q_0
+    SLICE_X6Y39.A6       net (fanout=6)        0.580   M_hd_y_q_0
+    SLICE_X6Y39.AMUX     Topaa                 0.449   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_5
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd1_lut<2>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd1_xor<5>
+    SLICE_X6Y40.C6       net (fanout=1)        0.632   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_2
+    SLICE_X6Y40.CMUX     Topcc                 0.469   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<2>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.639ns (2.335ns logic, 4.304ns route)
-                                                       (35.2% logic, 64.8% route)
+    Total                                     10.168ns (2.437ns logic, 7.731ns route)
+                                                       (24.0% logic, 76.0% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.359ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_led_state_q_59 (FF)
+Slack:                  9.751ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.526ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.080ns (0.742 - 0.822)
+  Data Path Delay:      10.152ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -356,26 +392,38 @@ Slack:                  13.359ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_led_state_q_59
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X19Y54.SR      net (fanout=82)       5.533   M_reset_cond_out
-    SLICE_X19Y54.CLK     Tsrck                 0.468   render/M_led_state_q[59]
-                                                       render/M_led_state_q_59
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.AMUX     Topaa                 0.449   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.A4       net (fanout=2)        0.884   render/n0068[7:0][0]
+    SLICE_X6Y42.AMUX     Topaa                 0.449   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<0>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C4      net (fanout=8)        2.506   render/n0052[0]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.526ns (0.993ns logic, 5.533ns route)
-                                                       (15.2% logic, 84.8% route)
+    Total                                     10.152ns (1.997ns logic, 8.155ns route)
+                                                       (19.7% logic, 80.3% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.364ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_snk_hd_state_q_11 (FF)
+Slack:                  9.779ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.519ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      10.124ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -386,26 +434,37 @@ Slack:                  13.364ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_snk_hd_state_q_11
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X16Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X16Y55.CLK     Tsrck                 0.470   render/M_snk_hd_state_q[11]
-                                                       render/M_snk_hd_state_q_11
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.BMUX     Topab                 0.519   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.BX       net (fanout=2)        0.718   render/n0068[7:0][1]
+    SLICE_X6Y42.CMUX     Taxc                  0.340   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.519ns (0.995ns logic, 5.524ns route)
-                                                       (15.3% logic, 84.7% route)
+    Total                                     10.124ns (1.958ns logic, 8.166ns route)
+                                                       (19.3% logic, 80.7% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.366ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_snk_hd_state_q_75 (FF)
+Slack:                  9.805ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_2 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.517ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      10.098ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -416,26 +475,38 @@ Slack:                  13.366ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_snk_hd_state_q_75
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_2 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X16Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X16Y55.CLK     Tsrck                 0.468   render/M_snk_hd_state_q[11]
-                                                       render/M_snk_hd_state_q_75
+    SLICE_X1Y34.BQ       Tcko                  0.430   M_hd_x_q_2
+                                                       M_hd_x_q_2
+    SLICE_X6Y40.C5       net (fanout=8)        1.637   M_hd_x_q_2
+    SLICE_X6Y40.CMUX     Topcc                 0.469   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<2>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.517ns (0.993ns logic, 5.524ns route)
-                                                       (15.2% logic, 84.8% route)
+    Total                                     10.098ns (1.942ns logic, 8.156ns route)
+                                                       (19.2% logic, 80.8% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.366ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_led_state_q_75 (FF)
+Slack:                  9.831ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.517ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      10.072ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -446,26 +517,37 @@ Slack:                  13.366ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_led_state_q_75
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X17Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X17Y55.CLK     Tsrck                 0.468   render/M_led_state_q[75]
-                                                       render/M_led_state_q_75
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.AMUX     Topaa                 0.449   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.AX       net (fanout=2)        0.666   render/n0068[7:0][0]
+    SLICE_X6Y42.CMUX     Taxc                  0.410   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.517ns (0.993ns logic, 5.524ns route)
-                                                       (15.2% logic, 84.8% route)
+    Total                                     10.072ns (1.958ns logic, 8.114ns route)
+                                                       (19.4% logic, 80.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.373ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_snk_hd_state_q_10 (FF)
+Slack:                  9.864ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.510ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      10.039ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -476,26 +558,38 @@ Slack:                  13.373ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_snk_hd_state_q_10
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X16Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X16Y55.CLK     Tsrck                 0.461   render/M_snk_hd_state_q[11]
-                                                       render/M_snk_hd_state_q_10
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.BMUX     Topab                 0.519   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.B3       net (fanout=2)        0.647   render/n0068[7:0][1]
+    SLICE_X6Y42.CMUX     Topbc                 0.613   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<1>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.510ns (0.986ns logic, 5.524ns route)
-                                                       (15.1% logic, 84.9% route)
+    Total                                     10.039ns (2.255ns logic, 7.784ns route)
+                                                       (22.5% logic, 77.5% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.377ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               game/M_gamefsm_q_FSM_FFd9_2 (FF)
-  Destination:          game/M_gamefsm_q_FSM_FFd9_2 (FF)
+Slack:                  9.876ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_1 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.588ns (Levels of Logic = 7)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      10.027ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -506,48 +600,37 @@ Slack:                  13.377ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: game/M_gamefsm_q_FSM_FFd9_2 to game/M_gamefsm_q_FSM_FFd9_2
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_1 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X1Y59.BQ       Tcko                  0.430   M_gamefsm_q_FSM_FFd9_2
-                                                       game/M_gamefsm_q_FSM_FFd9_2
-    SLICE_X2Y57.A2       net (fanout=11)       0.987   M_gamefsm_q_FSM_FFd9_2
-    SLICE_X2Y57.A        Tilo                  0.235   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut[0]
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut<0>
-    SLICE_X2Y58.A4       net (fanout=1)        0.471   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut[0]
-    SLICE_X2Y58.COUT     Topcya                0.472   M_clogic_wesnkpos
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut[0]_rt
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<3>
-    SLICE_X2Y59.CIN      net (fanout=1)        0.003   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[3]
-    SLICE_X2Y59.COUT     Tbyp                  0.091   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[7]
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<7>
-    SLICE_X2Y60.CIN      net (fanout=1)        0.003   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[7]
-    SLICE_X2Y60.COUT     Tbyp                  0.091   M_gamefsm_q_FSM_FFd4_1
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<11>
-    SLICE_X2Y61.CIN      net (fanout=1)        0.003   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[11]
-    SLICE_X2Y61.DMUX     Tcind                 0.289   M_gamefsm_q_FSM_FFd7_1
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_xor<15>
-    SLICE_X5Y61.C4       net (fanout=6)        0.781   a[15]_GND_3_o_add_2_OUT[15]
-    SLICE_X5Y61.C        Tilo                  0.259   game/N86
-                                                       game/aluout[15]_GND_13_o_equal_5_o<15>33_SW3
-    SLICE_X3Y61.B3       net (fanout=1)        1.120   game/N86
-    SLICE_X3Y61.B        Tilo                  0.259   M_clogic_alufn[2]
-                                                       game/M_gamefsm_q_FSM_FFd9-In1
-    SLICE_X1Y59.BX       net (fanout=2)        0.980   game/M_gamefsm_q_FSM_FFd9-In
-    SLICE_X1Y59.CLK      Tdick                 0.114   M_gamefsm_q_FSM_FFd9_2
-                                                       game/M_gamefsm_q_FSM_FFd9_2
+    SLICE_X1Y34.AQ       Tcko                  0.430   M_hd_x_q_2
+                                                       M_hd_x_q_1
+    SLICE_X6Y40.B5       net (fanout=8)        1.651   M_hd_x_q_1
+    SLICE_X6Y40.BMUX     Topbb                 0.428   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<1>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.BX       net (fanout=2)        0.718   render/n0068[7:0][1]
+    SLICE_X6Y42.CMUX     Taxc                  0.340   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.588ns (2.240ns logic, 4.348ns route)
-                                                       (34.0% logic, 66.0% route)
+    Total                                     10.027ns (1.772ns logic, 8.255ns route)
+                                                       (17.7% logic, 82.3% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.389ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_led_state_q_58 (FF)
+Slack:                  9.885ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_1 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.496ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.080ns (0.742 - 0.822)
+  Data Path Delay:      10.018ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -558,26 +641,37 @@ Slack:                  13.389ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_led_state_q_58
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_1 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X19Y54.SR      net (fanout=82)       5.533   M_reset_cond_out
-    SLICE_X19Y54.CLK     Tsrck                 0.438   render/M_led_state_q[59]
-                                                       render/M_led_state_q_58
+    SLICE_X1Y34.AQ       Tcko                  0.430   M_hd_x_q_2
+                                                       M_hd_x_q_1
+    SLICE_X6Y40.BX       net (fanout=8)        1.686   M_hd_x_q_1
+    SLICE_X6Y40.CMUX     Taxc                  0.340   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.496ns (0.963ns logic, 5.533ns route)
-                                                       (14.8% logic, 85.2% route)
+    Total                                     10.018ns (1.813ns logic, 8.205ns route)
+                                                       (18.1% logic, 81.9% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.391ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_led_state_q_10 (FF)
+Slack:                  9.905ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.492ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      9.998ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -588,26 +682,38 @@ Slack:                  13.391ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_led_state_q_10
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X17Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X17Y55.CLK     Tsrck                 0.443   render/M_led_state_q[75]
-                                                       render/M_led_state_q_10
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.CMUX     Topac                 0.636   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.492ns (0.968ns logic, 5.524ns route)
-                                                       (14.9% logic, 85.1% route)
+    Total                                      9.998ns (2.228ns logic, 7.770ns route)
+                                                       (22.3% logic, 77.7% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.394ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_led_state_q_11 (FF)
+Slack:                  9.934ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_1 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.489ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      9.969ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -618,26 +724,38 @@ Slack:                  13.394ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_led_state_q_11
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_1 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X17Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X17Y55.CLK     Tsrck                 0.440   render/M_led_state_q[75]
-                                                       render/M_led_state_q_11
+    SLICE_X1Y34.AQ       Tcko                  0.430   M_hd_x_q_2
+                                                       M_hd_x_q_1
+    SLICE_X6Y40.B5       net (fanout=8)        1.651   M_hd_x_q_1
+    SLICE_X6Y40.CMUX     Topbc                 0.613   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<1>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.489ns (0.965ns logic, 5.524ns route)
-                                                       (14.9% logic, 85.1% route)
+    Total                                      9.969ns (2.110ns logic, 7.859ns route)
+                                                       (21.2% logic, 78.8% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.394ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_snk_hd_state_q_60 (FF)
+Slack:                  9.961ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_1 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.491ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.080ns (0.742 - 0.822)
+  Data Path Delay:      9.942ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -648,26 +766,38 @@ Slack:                  13.394ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_snk_hd_state_q_60
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_1 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X18Y54.SR      net (fanout=82)       5.533   M_reset_cond_out
-    SLICE_X18Y54.CLK     Tsrck                 0.433   render/M_snk_hd_state_q[124]
-                                                       render/M_snk_hd_state_q_60
+    SLICE_X1Y34.AQ       Tcko                  0.430   M_hd_x_q_2
+                                                       M_hd_x_q_1
+    SLICE_X6Y40.B5       net (fanout=8)        1.651   M_hd_x_q_1
+    SLICE_X6Y40.BMUX     Topbb                 0.428   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<1>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.B3       net (fanout=2)        0.647   render/n0068[7:0][1]
+    SLICE_X6Y42.CMUX     Topbc                 0.613   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<1>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.491ns (0.958ns logic, 5.533ns route)
-                                                       (14.8% logic, 85.2% route)
+    Total                                      9.942ns (2.069ns logic, 7.873ns route)
+                                                       (20.8% logic, 79.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.396ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_led_state_q_74 (FF)
+Slack:                  9.989ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_y_q_2 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.487ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      9.926ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.050ns (0.606 - 0.656)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -678,26 +808,42 @@ Slack:                  13.396ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_led_state_q_74
+  Maximum Data Path at Slow Process Corner: M_hd_y_q_2 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X17Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X17Y55.CLK     Tsrck                 0.438   render/M_led_state_q[75]
-                                                       render/M_led_state_q_74
+    SLICE_X6Y36.BQ       Tcko                  0.476   M_hd_y_q_2
+                                                       M_hd_y_q_2
+    SLICE_X6Y39.A5       net (fanout=5)        0.625   M_hd_y_q_2
+    SLICE_X6Y39.AMUX     Topaa                 0.449   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_5
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd1_lut<2>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd1_xor<5>
+    SLICE_X6Y40.C6       net (fanout=1)        0.632   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_2
+    SLICE_X6Y40.CMUX     Topcc                 0.469   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<2>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.487ns (0.963ns logic, 5.524ns route)
-                                                       (14.8% logic, 85.2% route)
+    Total                                      9.926ns (2.461ns logic, 7.465ns route)
+                                                       (24.8% logic, 75.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.398ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_snk_hd_state_q_124 (FF)
+Slack:                  10.007ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.487ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.080ns (0.742 - 0.822)
+  Data Path Delay:      9.896ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -708,26 +854,37 @@ Slack:                  13.398ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_snk_hd_state_q_124
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X18Y54.SR      net (fanout=82)       5.533   M_reset_cond_out
-    SLICE_X18Y54.CLK     Tsrck                 0.429   render/M_snk_hd_state_q[124]
-                                                       render/M_snk_hd_state_q_124
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.AX       net (fanout=6)        1.341   M_hd_x_q_0
+    SLICE_X6Y40.BMUX     Taxb                  0.310   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.B3       net (fanout=2)        0.647   render/n0068[7:0][1]
+    SLICE_X6Y42.CMUX     Topbc                 0.613   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<1>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.487ns (0.954ns logic, 5.533ns route)
-                                                       (14.7% logic, 85.3% route)
+    Total                                      9.896ns (2.022ns logic, 7.874ns route)
+                                                       (20.4% logic, 79.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.406ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_snk_hd_state_q_8 (FF)
+Slack:                  10.034ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_y_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.477ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      9.881ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.050ns (0.606 - 0.656)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -738,26 +895,42 @@ Slack:                  13.406ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_snk_hd_state_q_8
+  Maximum Data Path at Slow Process Corner: M_hd_y_q_0 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X16Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X16Y55.CLK     Tsrck                 0.428   render/M_snk_hd_state_q[11]
-                                                       render/M_snk_hd_state_q_8
+    SLICE_X6Y36.AQ       Tcko                  0.476   M_hd_y_q_2
+                                                       M_hd_y_q_0
+    SLICE_X6Y39.A6       net (fanout=6)        0.580   M_hd_y_q_0
+    SLICE_X6Y39.AMUX     Topaa                 0.449   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_5
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd1_lut<2>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd1_xor<5>
+    SLICE_X6Y40.C6       net (fanout=1)        0.632   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_2
+    SLICE_X6Y40.CMUX     Topcc                 0.469   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<2>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.477ns (0.953ns logic, 5.524ns route)
-                                                       (14.7% logic, 85.3% route)
+    Total                                      9.881ns (2.461ns logic, 7.420ns route)
+                                                       (24.9% logic, 75.1% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.409ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_snk_hd_state_q_123 (FF)
+Slack:                  10.065ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.476ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.080ns (0.742 - 0.822)
+  Data Path Delay:      9.838ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -768,26 +941,37 @@ Slack:                  13.409ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_snk_hd_state_q_123
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X18Y54.SR      net (fanout=82)       5.533   M_reset_cond_out
-    SLICE_X18Y54.CLK     Tsrck                 0.418   render/M_snk_hd_state_q[124]
-                                                       render/M_snk_hd_state_q_123
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.AX       net (fanout=6)        1.341   M_hd_x_q_0
+    SLICE_X6Y40.CMUX     Taxc                  0.410   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C3      net (fanout=21)       2.683   render/n0052[2]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.476ns (0.943ns logic, 5.533ns route)
-                                                       (14.6% logic, 85.4% route)
+    Total                                      9.838ns (1.978ns logic, 7.860ns route)
+                                                       (20.1% logic, 79.9% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.411ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_led_state_q_9 (FF)
+Slack:                  10.066ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.472ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      9.837ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -798,26 +982,37 @@ Slack:                  13.411ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_led_state_q_9
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X17Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X17Y55.CLK     Tsrck                 0.423   render/M_led_state_q[75]
-                                                       render/M_led_state_q_9
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.BMUX     Topab                 0.519   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.BX       net (fanout=2)        0.718   render/n0068[7:0][1]
+    SLICE_X6Y42.CMUX     Taxc                  0.340   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.472ns (0.948ns logic, 5.524ns route)
-                                                       (14.6% logic, 85.4% route)
+    Total                                      9.837ns (1.982ns logic, 7.855ns route)
+                                                       (20.1% logic, 79.9% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.414ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_led_state_q_57 (FF)
+Slack:                  10.081ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_80 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.471ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.080ns (0.742 - 0.822)
+  Data Path Delay:      9.822ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -828,26 +1023,38 @@ Slack:                  13.414ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_led_state_q_57
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_80
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X19Y54.SR      net (fanout=82)       5.533   M_reset_cond_out
-    SLICE_X19Y54.CLK     Tsrck                 0.413   render/M_led_state_q[59]
-                                                       render/M_led_state_q_57
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.AMUX     Topaa                 0.449   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.A4       net (fanout=2)        0.884   render/n0068[7:0][0]
+    SLICE_X6Y42.BMUX     Topab                 0.519   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<0>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X14Y55.C6      net (fanout=23)       2.106   render/n0052[1]
+    SLICE_X14Y55.C       Tilo                  0.235   render/M_snk_hd_state_q[24]
+                                                       render/_n0259<6>11
+    SLICE_X20Y32.A6      net (fanout=16)       3.203   render/_n0259<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0495<6>1
+                                                       render/M_snk_hd_state_q_80
     -------------------------------------------------  ---------------------------
-    Total                                      6.471ns (0.938ns logic, 5.533ns route)
-                                                       (14.5% logic, 85.5% route)
+    Total                                      9.822ns (2.067ns logic, 7.755ns route)
+                                                       (21.0% logic, 79.0% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.417ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_led_state_q_8 (FF)
+Slack:                  10.092ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_2 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.466ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      9.811ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -858,26 +1065,38 @@ Slack:                  13.417ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_led_state_q_8
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_2 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X17Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X17Y55.CLK     Tsrck                 0.417   render/M_led_state_q[75]
-                                                       render/M_led_state_q_8
+    SLICE_X1Y34.BQ       Tcko                  0.430   M_hd_x_q_2
+                                                       M_hd_x_q_2
+    SLICE_X6Y40.C5       net (fanout=8)        1.637   M_hd_x_q_2
+    SLICE_X6Y40.CMUX     Topcc                 0.469   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<2>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.466ns (0.942ns logic, 5.524ns route)
-                                                       (14.6% logic, 85.4% route)
+    Total                                      9.811ns (1.966ns logic, 7.845ns route)
+                                                       (20.0% logic, 80.0% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.417ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_led_state_q_56 (FF)
+Slack:                  10.118ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.468ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.080ns (0.742 - 0.822)
+  Data Path Delay:      9.785ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -888,26 +1107,37 @@ Slack:                  13.417ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_led_state_q_56
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X19Y54.SR      net (fanout=82)       5.533   M_reset_cond_out
-    SLICE_X19Y54.CLK     Tsrck                 0.410   render/M_led_state_q[59]
-                                                       render/M_led_state_q_56
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.AMUX     Topaa                 0.449   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.AX       net (fanout=2)        0.666   render/n0068[7:0][0]
+    SLICE_X6Y42.CMUX     Taxc                  0.410   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.468ns (0.935ns logic, 5.533ns route)
-                                                       (14.5% logic, 85.5% route)
+    Total                                      9.785ns (1.982ns logic, 7.803ns route)
+                                                       (20.3% logic, 79.7% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.421ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_led_state_q_73 (FF)
+Slack:                  10.163ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_1 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.462ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      9.740ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -918,26 +1148,37 @@ Slack:                  13.421ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_led_state_q_73
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_1 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X17Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X17Y55.CLK     Tsrck                 0.413   render/M_led_state_q[75]
-                                                       render/M_led_state_q_73
+    SLICE_X1Y34.AQ       Tcko                  0.430   M_hd_x_q_2
+                                                       M_hd_x_q_1
+    SLICE_X6Y40.B5       net (fanout=8)        1.651   M_hd_x_q_1
+    SLICE_X6Y40.BMUX     Topbb                 0.428   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<1>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.BX       net (fanout=2)        0.718   render/n0068[7:0][1]
+    SLICE_X6Y42.CMUX     Taxc                  0.340   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.462ns (0.938ns logic, 5.524ns route)
-                                                       (14.5% logic, 85.5% route)
+    Total                                      9.740ns (1.796ns logic, 7.944ns route)
+                                                       (18.4% logic, 81.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.424ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_led_state_q_72 (FF)
+Slack:                  10.172ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_1 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.459ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.082ns (0.740 - 0.822)
+  Data Path Delay:      9.731ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -948,26 +1189,37 @@ Slack:                  13.424ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_led_state_q_72
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_1 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X17Y55.SR      net (fanout=82)       5.524   M_reset_cond_out
-    SLICE_X17Y55.CLK     Tsrck                 0.410   render/M_led_state_q[75]
-                                                       render/M_led_state_q_72
+    SLICE_X1Y34.AQ       Tcko                  0.430   M_hd_x_q_2
+                                                       M_hd_x_q_1
+    SLICE_X6Y40.BX       net (fanout=8)        1.686   M_hd_x_q_1
+    SLICE_X6Y40.CMUX     Taxc                  0.340   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.C3       net (fanout=2)        0.633   render/n0068[7:0][2]
+    SLICE_X6Y42.CMUX     Topcc                 0.469   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<2>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.459ns (0.935ns logic, 5.524ns route)
-                                                       (14.5% logic, 85.5% route)
+    Total                                      9.731ns (1.837ns logic, 7.894ns route)
+                                                       (18.9% logic, 81.1% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.432ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               timer/M_clk_counter_q_11 (FF)
-  Destination:          game/M_gamefsm_q_FSM_FFd9_1 (FF)
+Slack:                  10.189ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_82 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.529ns (Levels of Logic = 7)
-  Clock Path Skew:      -0.004ns (0.336 - 0.340)
+  Data Path Delay:      9.714ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.062ns (0.606 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -978,48 +1230,38 @@ Slack:                  13.432ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: timer/M_clk_counter_q_11 to game/M_gamefsm_q_FSM_FFd9_1
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_82
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X4Y57.DQ       Tcko                  0.525   M_timer_clk_count[0]
-                                                       timer/M_clk_counter_q_11
-    SLICE_X2Y57.A1       net (fanout=2)        1.109   M_timer_clk_count[0]
-    SLICE_X2Y57.A        Tilo                  0.235   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut[0]
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut<0>
-    SLICE_X2Y58.A4       net (fanout=1)        0.471   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut[0]
-    SLICE_X2Y58.COUT     Topcya                0.472   M_clogic_wesnkpos
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut[0]_rt
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<3>
-    SLICE_X2Y59.CIN      net (fanout=1)        0.003   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[3]
-    SLICE_X2Y59.COUT     Tbyp                  0.091   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[7]
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<7>
-    SLICE_X2Y60.CIN      net (fanout=1)        0.003   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[7]
-    SLICE_X2Y60.COUT     Tbyp                  0.091   M_gamefsm_q_FSM_FFd4_1
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<11>
-    SLICE_X2Y61.CIN      net (fanout=1)        0.003   alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy[11]
-    SLICE_X2Y61.DMUX     Tcind                 0.289   M_gamefsm_q_FSM_FFd7_1
-                                                       alu/adder/Madd_a[15]_GND_3_o_add_2_OUT_Madd_xor<15>
-    SLICE_X5Y61.C4       net (fanout=6)        0.781   a[15]_GND_3_o_add_2_OUT[15]
-    SLICE_X5Y61.C        Tilo                  0.259   game/N86
-                                                       game/aluout[15]_GND_13_o_equal_5_o<15>33_SW3
-    SLICE_X3Y61.B3       net (fanout=1)        1.120   game/N86
-    SLICE_X3Y61.B        Tilo                  0.259   M_clogic_alufn[2]
-                                                       game/M_gamefsm_q_FSM_FFd9-In1
-    SLICE_X1Y59.AX       net (fanout=2)        0.704   game/M_gamefsm_q_FSM_FFd9-In
-    SLICE_X1Y59.CLK      Tdick                 0.114   M_gamefsm_q_FSM_FFd9_2
-                                                       game/M_gamefsm_q_FSM_FFd9_1
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.AMUX     Topaa                 0.449   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.A4       net (fanout=2)        0.884   render/n0068[7:0][0]
+    SLICE_X6Y42.BMUX     Topab                 0.519   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<0>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C6       net (fanout=23)       1.463   render/n0052[1]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X20Y32.C1      net (fanout=16)       3.714   render/_n0248<6>1
+    SLICE_X20Y32.CLK     Tas                   0.339   render/M_snk_hd_state_q[83]
+                                                       render/_n0480<6>1
+                                                       render/M_snk_hd_state_q_82
     -------------------------------------------------  ---------------------------
-    Total                                      6.529ns (2.335ns logic, 4.194ns route)
-                                                       (35.8% logic, 64.2% route)
+    Total                                      9.714ns (2.091ns logic, 7.623ns route)
+                                                       (21.5% logic, 78.5% route)
 
 --------------------------------------------------------------------------------
-Slack:                  13.444ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               reset_cond/M_stage_q_3 (FF)
-  Destination:          render/M_snk_hd_state_q_59 (FF)
+Slack:                  10.189ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M_hd_x_q_0 (FF)
+  Destination:          render/M_snk_hd_state_q_58 (FF)
   Requirement:          20.000ns
-  Data Path Delay:      6.441ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.080ns (0.742 - 0.822)
+  Data Path Delay:      9.709ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.067ns (0.601 - 0.668)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1030,18 +1272,30 @@ Slack:                  13.444ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: reset_cond/M_stage_q_3 to render/M_snk_hd_state_q_59
+  Maximum Data Path at Slow Process Corner: M_hd_x_q_0 to render/M_snk_hd_state_q_58
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X0Y2.AQ        Tcko                  0.525   M_reset_cond_out
-                                                       reset_cond/M_stage_q_3
-    SLICE_X18Y54.SR      net (fanout=82)       5.533   M_reset_cond_out
-    SLICE_X18Y54.CLK     Tsrck                 0.383   render/M_snk_hd_state_q[124]
-                                                       render/M_snk_hd_state_q_59
+    SLICE_X0Y34.CQ       Tcko                  0.525   M_hd_x_q_0
+                                                       M_hd_x_q_0
+    SLICE_X6Y40.A2       net (fanout=6)        1.562   M_hd_x_q_0
+    SLICE_X6Y40.AMUX     Topaa                 0.449   render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy[3]
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_lut<0>
+                                                       render/Maddsub_PWR_17_o_y[3]_MuLt_1_OUT_Madd_cy<3>
+    SLICE_X6Y42.A4       net (fanout=2)        0.884   render/n0068[7:0][0]
+    SLICE_X6Y42.CMUX     Topac                 0.636   render/M_led_state_q[90]
+                                                       render/Maddsub_n0070_Madd_lut<0>
+                                                       render/Maddsub_n0070_Madd_cy<3>
+    SLICE_X9Y56.C3       net (fanout=21)       1.861   render/n0052[2]
+    SLICE_X9Y56.C        Tilo                  0.259   render/M_snk_hd_state_q[2]
+                                                       render/_n0248<6>11
+    SLICE_X13Y33.B1      net (fanout=16)       3.160   render/_n0248<6>1
+    SLICE_X13Y33.CLK     Tas                   0.373   render/M_snk_hd_state_q[60]
+                                                       render/_n0638<6>1
+                                                       render/M_snk_hd_state_q_58
     -------------------------------------------------  ---------------------------
-    Total                                      6.441ns (0.908ns logic, 5.533ns route)
-                                                       (14.1% logic, 85.9% route)
+    Total                                      9.709ns (2.242ns logic, 7.467ns route)
+                                                       (23.1% logic, 76.9% route)
 
 --------------------------------------------------------------------------------
 
@@ -1058,145 +1312,9 @@ Slack: 17.334ns (period - min period limit)
 Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[3]/CLK
-  Logical resource: render/muxclk/M_ctr_q_0/CK
-  Location pin: SLICE_X12Y30.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[3]/CLK
-  Logical resource: render/muxclk/M_ctr_q_1/CK
-  Location pin: SLICE_X12Y30.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[3]/CLK
-  Logical resource: render/muxclk/M_ctr_q_2/CK
-  Location pin: SLICE_X12Y30.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[3]/CLK
-  Logical resource: render/muxclk/M_ctr_q_3/CK
-  Location pin: SLICE_X12Y30.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[7]/CLK
-  Logical resource: render/muxclk/M_ctr_q_4/CK
-  Location pin: SLICE_X12Y31.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[7]/CLK
-  Logical resource: render/muxclk/M_ctr_q_5/CK
-  Location pin: SLICE_X12Y31.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[7]/CLK
-  Logical resource: render/muxclk/M_ctr_q_6/CK
-  Location pin: SLICE_X12Y31.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[7]/CLK
-  Logical resource: render/muxclk/M_ctr_q_7/CK
-  Location pin: SLICE_X12Y31.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[11]/CLK
-  Logical resource: render/muxclk/M_ctr_q_8/CK
-  Location pin: SLICE_X12Y32.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[11]/CLK
-  Logical resource: render/muxclk/M_ctr_q_9/CK
-  Location pin: SLICE_X12Y32.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[11]/CLK
-  Logical resource: render/muxclk/M_ctr_q_10/CK
-  Location pin: SLICE_X12Y32.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[11]/CLK
-  Logical resource: render/muxclk/M_ctr_q_11/CK
-  Location pin: SLICE_X12Y32.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[15]/CLK
-  Logical resource: render/muxclk/M_ctr_q_12/CK
-  Location pin: SLICE_X12Y33.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[15]/CLK
-  Logical resource: render/muxclk/M_ctr_q_13/CK
-  Location pin: SLICE_X12Y33.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[15]/CLK
-  Logical resource: render/muxclk/M_ctr_q_14/CK
-  Location pin: SLICE_X12Y33.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[15]/CLK
-  Logical resource: render/muxclk/M_ctr_q_15/CK
-  Location pin: SLICE_X12Y33.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
-  Physical resource: render/muxclk/M_ctr_q[16]/CLK
-  Logical resource: render/muxclk/M_ctr_q_16/CK
-  Location pin: SLICE_X12Y34.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.520ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: timer/M_clk_counter_q[3]/CLK
   Logical resource: timer/M_clk_counter_q_0/CK
-  Location pin: SLICE_X4Y55.CLK
+  Location pin: SLICE_X4Y22.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1204,7 +1322,7 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: timer/M_clk_counter_q[3]/CLK
   Logical resource: timer/M_clk_counter_q_1/CK
-  Location pin: SLICE_X4Y55.CLK
+  Location pin: SLICE_X4Y22.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1212,7 +1330,7 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: timer/M_clk_counter_q[3]/CLK
   Logical resource: timer/M_clk_counter_q_2/CK
-  Location pin: SLICE_X4Y55.CLK
+  Location pin: SLICE_X4Y22.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1220,7 +1338,7 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: timer/M_clk_counter_q[3]/CLK
   Logical resource: timer/M_clk_counter_q_3/CK
-  Location pin: SLICE_X4Y55.CLK
+  Location pin: SLICE_X4Y22.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1228,7 +1346,7 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: timer/M_clk_counter_q[7]/CLK
   Logical resource: timer/M_clk_counter_q_4/CK
-  Location pin: SLICE_X4Y56.CLK
+  Location pin: SLICE_X4Y23.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1236,7 +1354,7 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: timer/M_clk_counter_q[7]/CLK
   Logical resource: timer/M_clk_counter_q_5/CK
-  Location pin: SLICE_X4Y56.CLK
+  Location pin: SLICE_X4Y23.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1244,7 +1362,7 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: timer/M_clk_counter_q[7]/CLK
   Logical resource: timer/M_clk_counter_q_6/CK
-  Location pin: SLICE_X4Y56.CLK
+  Location pin: SLICE_X4Y23.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1252,7 +1370,7 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: timer/M_clk_counter_q[7]/CLK
   Logical resource: timer/M_clk_counter_q_7/CK
-  Location pin: SLICE_X4Y56.CLK
+  Location pin: SLICE_X4Y23.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1260,7 +1378,7 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: M_timer_clk_count[0]/CLK
   Logical resource: timer/M_clk_counter_q_8/CK
-  Location pin: SLICE_X4Y57.CLK
+  Location pin: SLICE_X4Y24.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1268,7 +1386,7 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: M_timer_clk_count[0]/CLK
   Logical resource: timer/M_clk_counter_q_9/CK
-  Location pin: SLICE_X4Y57.CLK
+  Location pin: SLICE_X4Y24.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1276,7 +1394,7 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: M_timer_clk_count[0]/CLK
   Logical resource: timer/M_clk_counter_q_10/CK
-  Location pin: SLICE_X4Y57.CLK
+  Location pin: SLICE_X4Y24.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 19.520ns (period - min period limit)
@@ -1284,8 +1402,145 @@ Slack: 19.520ns (period - min period limit)
   Min period limit: 0.480ns (2083.333MHz) (Tcp)
   Physical resource: M_timer_clk_count[0]/CLK
   Logical resource: timer/M_clk_counter_q_11/CK
-  Location pin: SLICE_X4Y57.CLK
+  Location pin: SLICE_X4Y24.CLK
   Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[4]/CLK
+  Logical resource: timer/M_clk_counter_q_12/CK
+  Location pin: SLICE_X4Y25.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[4]/CLK
+  Logical resource: timer/M_clk_counter_q_13/CK
+  Location pin: SLICE_X4Y25.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[4]/CLK
+  Logical resource: timer/M_clk_counter_q_14/CK
+  Location pin: SLICE_X4Y25.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[4]/CLK
+  Logical resource: timer/M_clk_counter_q_15/CK
+  Location pin: SLICE_X4Y25.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[8]/CLK
+  Logical resource: timer/M_clk_counter_q_16/CK
+  Location pin: SLICE_X4Y26.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[8]/CLK
+  Logical resource: timer/M_clk_counter_q_17/CK
+  Location pin: SLICE_X4Y26.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[8]/CLK
+  Logical resource: timer/M_clk_counter_q_18/CK
+  Location pin: SLICE_X4Y26.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[8]/CLK
+  Logical resource: timer/M_clk_counter_q_19/CK
+  Location pin: SLICE_X4Y26.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[12]/CLK
+  Logical resource: timer/M_clk_counter_q_20/CK
+  Location pin: SLICE_X4Y27.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[12]/CLK
+  Logical resource: timer/M_clk_counter_q_21/CK
+  Location pin: SLICE_X4Y27.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[12]/CLK
+  Logical resource: timer/M_clk_counter_q_22/CK
+  Location pin: SLICE_X4Y27.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[12]/CLK
+  Logical resource: timer/M_clk_counter_q_23/CK
+  Location pin: SLICE_X4Y27.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[15]/CLK
+  Logical resource: timer/M_clk_counter_q_24/CK
+  Location pin: SLICE_X4Y28.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[15]/CLK
+  Logical resource: timer/M_clk_counter_q_25/CK
+  Location pin: SLICE_X4Y28.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_timer_clk_count[15]/CLK
+  Logical resource: timer/M_clk_counter_q_26/CK
+  Location pin: SLICE_X4Y28.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: reset_cond/M_stage_q[2]/CLK
+  Logical resource: reset_cond/M_stage_q_3/CK
+  Location pin: SLICE_X0Y2.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.240ns (Trpw)
+  Physical resource: reset_cond/M_stage_q[2]/SR
+  Logical resource: reset_cond/M_stage_q_3/SR
+  Location pin: SLICE_X0Y2.SR
+  Clock network: M_reset_cond_in
 --------------------------------------------------------------------------------
 
 
@@ -1301,7 +1556,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    7.618|         |         |         |
+clk            |   10.613|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -1310,23 +1565,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 12932 paths, 0 nets, and 1187 connections
+Constraints cover 77355 paths, 0 nets, and 1437 connections
 
 Design statistics:
-   Minimum period:   7.618ns{1}   (Maximum frequency: 131.268MHz)
+   Minimum period:  10.613ns{1}   (Maximum frequency:  94.224MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Tue Nov 26 19:42:44 2019 
+Analysis completed Wed Nov 27 16:06:48 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 170 MB
+Peak Memory Usage: 171 MB
 
 
 

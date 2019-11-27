@@ -12,7 +12,8 @@ module timer (
   //frame period can be truncated
   //const FRAME_PERIOD = 48828; Truncate the 10 LSBs (done by slowclk counter)
   //const FRAME_PERIOD = 16b0101111110000000;
-  const FRAME_PERIOD = 16b0010111111000000;
+//  const FRAME_PERIOD = 16b0010111111000000;
+   const FRAME_PERIOD = 16b001111111000000;
   .clk(clk)
   {
     .rst(rst)

@@ -7,12 +7,25 @@ module render (
     input food_pos[12],  
     input wernd,
     output led_rows_out[5],
-    output led_cols_out[25]
+    output led_cols_out[25],
+    input x[4],
+    input y[4],
+    input z[4]
   ) {
   
     
   const NUMBER_ROWS = 5;
   const NUMBER_COLUMNS = 25;
+  
+  sig hd_x;
+  sig hd_y;
+  sig hd_z;
+  sig bd_x;
+  sig bd_y;
+  sig bd_z;
+  sig tl_x;
+  sig tl_y;
+  sig tl_z;
   
   .clk(clk)
   {
@@ -38,20 +51,39 @@ module render (
   const TEMPLATE = 125b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001;
     
   always {    
+  
+    hd_x = snk_hd_pos[11:8];
+    hd_y = snk_hd_pos[7:4];
+    hd_z = snk_hd_pos[3:0];
+    
+    bd_x = snk_bd_pos[11:8];
+    bd_y = snk_bd_pos[7:4];
+    bd_z = snk_bd_pos[3:0];
+    
+    tl_x = snk_tl_pos[11:8];
+    tl_y = snk_tl_pos[7:4];
+    tl_z = snk_tl_pos[3:0];
     
     //if render state, load up the position to the led_state
     if(wernd)
     {
       count.d = (count.q + 1);
       
-      snk_hd_state.d = (TEMPLATE << count.q);
+      //snk_hd_state.d = (TEMPLATE << count.q);
       
-      //snk_hd_state.d = TEMPLATE << (snk_hd_pos[11:8] + (NUMBER_ROWS * snk_hd_pos[7:4]) + (NUMBER_COLUMNS * snk_hd_pos[3:0]));
-      //snk_hd_state.d = 0;
-      //snk_hd_state.d[snk_hd_pos[11:8] + (NUMBER_ROWS * snk_hd_pos[7:4]) + (NUMBER_COLUMNS * snk_hd_pos[3:0])] = 1;
+      //snk_hd_state.d = (TEMPLATE << (snk_hd_pos[11:8] + (NUMBER_ROWS * snk_hd_pos[7:4]) + (NUMBER_COLUMNS * snk_hd_pos[3:0])));
+      snk_hd_state.d = 0;
+      snk_hd_state.d[x + (5*y) + (25*z)] = 1;
+      
+      //snk_bd_state.d = 0;
+      //snk_bd_state.d[bd_x + (bd_y*5) + (bd_z*25)] = 1;
+      
+      //snk_tl_state.d = 0;
+      //snk_tl_state.d[tl_x + (tl_y*5) + (tl_z*25)] = 1;
+      //snk_hd_state.d[z + 25] = 1;
       //snk_hd_state.d = TEMPLATE << (x + (y*5) + (z*25));
-      snk_bd_state.d = TEMPLATE << (snk_bd_pos[11:8] + (NUMBER_ROWS * snk_bd_pos[7:4]) + (NUMBER_COLUMNS * snk_bd_pos[3:0]));
-      snk_tl_state.d = TEMPLATE << (snk_tl_pos[11:8] + (NUMBER_ROWS * snk_tl_pos[7:4]) + (NUMBER_COLUMNS * snk_tl_pos[3:0]));
+      //snk_bd_state.d = TEMPLATE << (snk_bd_pos[11:8] + (NUMBER_ROWS * snk_bd_pos[7:4]) + (NUMBER_COLUMNS * snk_bd_pos[3:0]));
+      //snk_tl_state.d = TEMPLATE << (snk_tl_pos[11:8] + (NUMBER_ROWS * snk_tl_pos[7:4]) + (NUMBER_COLUMNS * snk_tl_pos[3:0]));
       food_state.d = TEMPLATE << (food_pos[11:8] + (NUMBER_ROWS * food_pos[7:4]) + (NUMBER_COLUMNS * food_pos[3:0]));
       //led_state.d = snk_hd_state.q | snk_bd_state.q | snk_tl_state.q | food_state.q;
     }
@@ -59,37 +91,37 @@ module render (
     led_state.d = snk_hd_state.q;
     
     rows.d = 5b00001;
-    //shift bit left to each row
     
+        
     //read respective cols for state
-    if (rows.q == 5b00001)
+    //if it is currently showing 10000, 
+    //means next clock cycle should
+    //emit rows = 00001 and the lsbs of cols 
+    if (rows.q == 5b10000)
     {
         cols.d = led_state.q[24:0];
-        rows.d = rows.q << 1;        
+        rows.d = 5b00001;  
     }    
+    else if(rows.q == 5b00001)
+    {
+        cols.d = led_state.q[49:25];  
+        rows.d = 5b00010;   
+    }     
     else if(rows.q == 5b00010)
     {
-        cols.d = led_state.q[49:25];
-        rows.d = rows.q << 1;        
-    }     
+        cols.d = led_state.q[74:50]; 
+        rows.d = 5b00100;     
+    }    
     else if(rows.q == 5b00100)
     {
-        cols.d = led_state.q[74:50];
-        rows.d = rows.q << 1;        
-    }    
+        cols.d = led_state.q[99:75];  
+        rows.d = 5b01000;      
+    }   
     else if(rows.q == 5b01000)
     {
-        cols.d = led_state.q[99:75];
-        rows.d = rows.q << 1;        
-    }   
-    else if(rows.q == 5b10000)
-    {
         cols.d = led_state.q[124:100];
-        rows.d = 5b00001;        
+        rows.d = 5b10000; 
     }   
-    else {
-       rows.d = 5b00001;        
-    }  
     
     led_rows_out = rows.q;
     led_cols_out = cols.q; 

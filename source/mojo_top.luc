@@ -11,9 +11,9 @@ module mojo_top (
     input avr_tx,           // AVR TX (FPGA RX)
     output avr_rx,          // AVR RX (FPGA TX)
     input avr_rx_busy,      // AVR RX buffer full
-    input x_button[2],
-    input y_button[2],
-    input z_button[2],
+    input button[6],
+    //input y_button[2],
+    //input z_button[2],
     input game_button[2],
     output col_led[25],
     output layer_gnd[5]
@@ -72,9 +72,9 @@ module mojo_top (
     clogic.opcode = game.opcode;
     aselector.sel = clogic.asel;
     bselector.sel = clogic.bsel;
-    control.buttons[1:0] = x_button[1:0];
-    control.buttons[3:2] = y_button[1:0];
-    control.buttons[5:4] = z_button[1:0];
+    control.buttons[5:0] = button[5:0];
+    //control.buttons[3:2] = y_button[1:0];
+    //control.buttons[5:4] = z_button[1:0];
     
 
     //==========module inputs==========
@@ -97,6 +97,9 @@ module mojo_top (
     render.snk_hd_pos = snake.snk_hd_pos;
     render.snk_bd_pos = snake.snk_bd_pos;
     render.snk_tl_pos = snake.snk_tl_pos;
+    render.x = snake.x;
+    render.y = snake.y;
+    render.z = snake.z;
     
     render.food_pos = food.food_pos;
     render.wernd = clogic.wernd;

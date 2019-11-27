@@ -10,73 +10,78 @@ module controls (
 
   .clk(clk){
     .rst(rst){
-        fsm direction = {X_POS, X_NEG, Y_POS, Y_NEG, Z_POS, Z_NEG};
+        fsm direction = {Z_POS, X_POS, X_NEG, Y_POS, Y_NEG, Z_NEG};
     }
+    dff x[4];
+    dff y[4];
+    dff z[4];
   }
   
   //X+: buttons[0], X-:buttons[1]
   //Y+: buttons[2], Y-:buttons[3]
   //Z+: buttons[4], Z-:buttons[5]
   always {
-    dx = 0;
-    dy = 0;
-    dz = 0;
     case (direction.q){
       direction.X_POS:
-        dx = 1;
-        dy = 0;
-        dz = 0;
+        x.d = 1;
+        y.d = 0;
+        z.d = 0;
         if (buttons[1]) {direction.d = direction.X_NEG;}
         if (buttons[2]) {direction.d = direction.Y_POS;}
         if (buttons[3]) {direction.d = direction.Y_NEG;}
         if (buttons[4]) {direction.d = direction.Z_POS;}
         if (buttons[5]) {direction.d = direction.Z_NEG;}
       direction.X_NEG:
-        dx = -1;
-        dy = 0;
-        dz = 0;
+        x.d = 15;
+        y.d = 0;
+        z.d = 0;
         if (buttons[0]) {direction.d = direction.X_POS;}
         if (buttons[2]) {direction.d = direction.Y_POS;}
         if (buttons[3]) {direction.d = direction.Y_NEG;}
         if (buttons[4]) {direction.d = direction.Z_POS;}
         if (buttons[5]) {direction.d = direction.Z_NEG;}
       direction.Y_POS:
-        dx = 0;
-        dy = 1;
-        dz = 0;
+        x.d = 0;
+        y.d = 1;
+        z.d = 0;
         if (buttons[0]) {direction.d = direction.X_POS;}
         if (buttons[1]) {direction.d = direction.X_NEG;}
         if (buttons[3]) {direction.d = direction.Y_NEG;}
         if (buttons[4]) {direction.d = direction.Z_POS;}
         if (buttons[5]) {direction.d = direction.Z_NEG;}
       direction.Y_NEG:
-        dx = 0;
-        dy = -1;
-        dz = 0;
+        x.d = 0;
+        y.d = 15;
+        z.d = 0;
         if (buttons[0]) {direction.d = direction.X_POS;}
         if (buttons[1]) {direction.d = direction.X_NEG;}
         if (buttons[2]) {direction.d = direction.Y_POS;}
         if (buttons[4]) {direction.d = direction.Z_POS;}
         if (buttons[5]) {direction.d = direction.Z_NEG;}
       direction.Z_POS:
-        dx = 0;
-        dy = 0;
-        dz = 1;
+        x.d = 0;
+        y.d = 0;
+        z.d = 1;
         if (buttons[0]) {direction.d = direction.X_POS;}
         if (buttons[1]) {direction.d = direction.X_NEG;}
         if (buttons[2]) {direction.d = direction.Y_POS;}
         if (buttons[3]) {direction.d = direction.Y_NEG;}
         if (buttons[5]) {direction.d = direction.Z_NEG;}
       direction.Z_NEG:
-        dx = 0;
-        dy = 0;
-        dz = -1;
+        x.d = 0;
+        y.d = 0;
+        z.d = 15;
         if (buttons[0]) {direction.d = direction.X_POS;}
         if (buttons[1]) {direction.d = direction.X_NEG;}
         if (buttons[2]) {direction.d = direction.Y_POS;}
         if (buttons[3]) {direction.d = direction.Y_NEG;}
         if (buttons[4]) {direction.d = direction.Z_POS;}
     }
+    
+    dx = x.q;
+    dy = y.q;
+    dz = z.q;
+    
     
   }
 }

@@ -17,9 +17,7 @@ module mojo_top_0 (
     input avr_tx,
     output reg avr_rx,
     input avr_rx_busy,
-    input [1:0] x_button,
-    input [1:0] y_button,
-    input [1:0] z_button,
+    input [5:0] button,
     input [1:0] game_button,
     output reg [24:0] col_led,
     output reg [4:0] layer_gnd
@@ -131,7 +129,9 @@ module mojo_top_0 (
   wire [12-1:0] M_snake_snk_hd_pos;
   wire [12-1:0] M_snake_snk_bd_pos;
   wire [12-1:0] M_snake_snk_tl_pos;
-  wire [1-1:0] M_snake_test_hd_count;
+  wire [4-1:0] M_snake_x;
+  wire [4-1:0] M_snake_y;
+  wire [4-1:0] M_snake_z;
   reg [4-1:0] M_snake_dx;
   reg [4-1:0] M_snake_dy;
   reg [4-1:0] M_snake_dz;
@@ -148,7 +148,9 @@ module mojo_top_0 (
     .snk_hd_pos(M_snake_snk_hd_pos),
     .snk_bd_pos(M_snake_snk_bd_pos),
     .snk_tl_pos(M_snake_snk_tl_pos),
-    .test_hd_count(M_snake_test_hd_count)
+    .x(M_snake_x),
+    .y(M_snake_y),
+    .z(M_snake_z)
   );
   wire [1-1:0] M_score_out;
   reg [1-1:0] M_score_wescr;
@@ -189,6 +191,9 @@ module mojo_top_0 (
   reg [12-1:0] M_render_snk_tl_pos;
   reg [12-1:0] M_render_food_pos;
   reg [1-1:0] M_render_wernd;
+  reg [4-1:0] M_render_x;
+  reg [4-1:0] M_render_y;
+  reg [4-1:0] M_render_z;
   render_12 render (
     .clk(clk),
     .rst(rst),
@@ -197,6 +202,9 @@ module mojo_top_0 (
     .snk_tl_pos(M_render_snk_tl_pos),
     .food_pos(M_render_food_pos),
     .wernd(M_render_wernd),
+    .x(M_render_x),
+    .y(M_render_y),
+    .z(M_render_z),
     .led_rows_out(M_render_led_rows_out),
     .led_cols_out(M_render_led_cols_out)
   );
@@ -216,9 +224,7 @@ module mojo_top_0 (
     M_clogic_opcode = M_game_opcode;
     M_aselector_sel = M_clogic_asel;
     M_bselector_sel = M_clogic_bsel;
-    M_control_buttons[0+1-:2] = x_button[0+1-:2];
-    M_control_buttons[2+1-:2] = y_button[0+1-:2];
-    M_control_buttons[4+1-:2] = z_button[0+1-:2];
+    M_control_buttons[0+5-:6] = button[0+5-:6];
     M_snake_dx = M_control_dx;
     M_snake_dy = M_control_dy;
     M_snake_dz = M_control_dz;
@@ -231,6 +237,9 @@ module mojo_top_0 (
     M_render_snk_hd_pos = M_snake_snk_hd_pos;
     M_render_snk_bd_pos = M_snake_snk_bd_pos;
     M_render_snk_tl_pos = M_snake_snk_tl_pos;
+    M_render_x = M_snake_x;
+    M_render_y = M_snake_y;
+    M_render_z = M_snake_z;
     M_render_food_pos = M_food_food_pos;
     M_render_wernd = M_clogic_wernd;
     layer_gnd[0+4-:5] = M_render_led_rows_out[0+4-:5];

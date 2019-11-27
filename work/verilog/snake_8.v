@@ -15,7 +15,9 @@ module snake_8 (
     output reg [11:0] snk_hd_pos,
     output reg [11:0] snk_bd_pos,
     output reg [11:0] snk_tl_pos,
-    output reg test_hd_count
+    output reg [3:0] x,
+    output reg [3:0] y,
+    output reg [3:0] z
   );
   
   
@@ -23,7 +25,6 @@ module snake_8 (
   reg [3:0] M_hd_x_d, M_hd_x_q = 1'h0;
   reg [3:0] M_hd_y_d, M_hd_y_q = 1'h0;
   reg [3:0] M_hd_z_d, M_hd_z_q = 1'h0;
-  reg [3:0] M_hd_count_d, M_hd_count_q = 1'h0;
   reg [11:0] M_hd_pos_d, M_hd_pos_q = 1'h0;
   reg [11:0] M_bd_pos_d, M_bd_pos_q = 1'h0;
   reg [11:0] M_tl_pos_d, M_tl_pos_q = 1'h0;
@@ -33,13 +34,10 @@ module snake_8 (
     M_hd_z_d = M_hd_z_q;
     M_hd_y_d = M_hd_y_q;
     M_hd_pos_d = M_hd_pos_q;
-    M_hd_count_d = M_hd_count_q;
     M_tl_pos_d = M_tl_pos_q;
     M_bd_pos_d = M_bd_pos_q;
     
-    test_hd_count = M_hd_count_q;
     if (wesnkhd) begin
-      M_hd_count_d = (M_hd_count_q + 1'h1);
       M_hd_x_d = (M_hd_x_q + dx);
       M_hd_y_d = (M_hd_y_q + dy);
       M_hd_z_d = (M_hd_z_q + dz);
@@ -70,6 +68,9 @@ module snake_8 (
     snk_hd_pos = M_hd_pos_q;
     snk_bd_pos = M_bd_pos_q;
     snk_tl_pos = M_tl_pos_q;
+    x = M_hd_x_q;
+    y = M_hd_y_q;
+    z = M_hd_z_q;
   end
   
   always @(posedge clk) begin
@@ -77,7 +78,6 @@ module snake_8 (
       M_hd_x_q <= 1'h0;
       M_hd_y_q <= 1'h0;
       M_hd_z_q <= 1'h0;
-      M_hd_count_q <= 1'h0;
       M_hd_pos_q <= 1'h0;
       M_bd_pos_q <= 1'h0;
       M_tl_pos_q <= 1'h0;
@@ -85,7 +85,6 @@ module snake_8 (
       M_hd_x_q <= M_hd_x_d;
       M_hd_y_q <= M_hd_y_d;
       M_hd_z_q <= M_hd_z_d;
-      M_hd_count_q <= M_hd_count_d;
       M_hd_pos_q <= M_hd_pos_d;
       M_bd_pos_q <= M_bd_pos_d;
       M_tl_pos_q <= M_tl_pos_d;
