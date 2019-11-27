@@ -97,9 +97,9 @@ module mojo_top (
     render.snk_hd_pos = snake.snk_hd_pos;
     render.snk_bd_pos = snake.snk_bd_pos;
     render.snk_tl_pos = snake.snk_tl_pos;
-    render.x = snake.x;
-    render.y = snake.y;
-    render.z = snake.z;
+    render.dx = button[1:0];
+    render.dy = button[3:0];
+    render.dz = button[5:4];
     
     render.food_pos = food.food_pos;
     render.wernd = clogic.wernd;

@@ -129,9 +129,6 @@ module mojo_top_0 (
   wire [12-1:0] M_snake_snk_hd_pos;
   wire [12-1:0] M_snake_snk_bd_pos;
   wire [12-1:0] M_snake_snk_tl_pos;
-  wire [4-1:0] M_snake_x;
-  wire [4-1:0] M_snake_y;
-  wire [4-1:0] M_snake_z;
   reg [4-1:0] M_snake_dx;
   reg [4-1:0] M_snake_dy;
   reg [4-1:0] M_snake_dz;
@@ -147,10 +144,7 @@ module mojo_top_0 (
     .wesnkpos(M_snake_wesnkpos),
     .snk_hd_pos(M_snake_snk_hd_pos),
     .snk_bd_pos(M_snake_snk_bd_pos),
-    .snk_tl_pos(M_snake_snk_tl_pos),
-    .x(M_snake_x),
-    .y(M_snake_y),
-    .z(M_snake_z)
+    .snk_tl_pos(M_snake_snk_tl_pos)
   );
   wire [1-1:0] M_score_out;
   reg [1-1:0] M_score_wescr;
@@ -191,9 +185,9 @@ module mojo_top_0 (
   reg [12-1:0] M_render_snk_tl_pos;
   reg [12-1:0] M_render_food_pos;
   reg [1-1:0] M_render_wernd;
-  reg [4-1:0] M_render_x;
-  reg [4-1:0] M_render_y;
-  reg [4-1:0] M_render_z;
+  reg [4-1:0] M_render_dx;
+  reg [4-1:0] M_render_dy;
+  reg [4-1:0] M_render_dz;
   render_12 render (
     .clk(clk),
     .rst(rst),
@@ -202,9 +196,9 @@ module mojo_top_0 (
     .snk_tl_pos(M_render_snk_tl_pos),
     .food_pos(M_render_food_pos),
     .wernd(M_render_wernd),
-    .x(M_render_x),
-    .y(M_render_y),
-    .z(M_render_z),
+    .dx(M_render_dx),
+    .dy(M_render_dy),
+    .dz(M_render_dz),
     .led_rows_out(M_render_led_rows_out),
     .led_cols_out(M_render_led_cols_out)
   );
@@ -237,9 +231,9 @@ module mojo_top_0 (
     M_render_snk_hd_pos = M_snake_snk_hd_pos;
     M_render_snk_bd_pos = M_snake_snk_bd_pos;
     M_render_snk_tl_pos = M_snake_snk_tl_pos;
-    M_render_x = M_snake_x;
-    M_render_y = M_snake_y;
-    M_render_z = M_snake_z;
+    M_render_dx = button[0+1-:2];
+    M_render_dy = button[0+3-:4];
+    M_render_dz = button[4+1-:2];
     M_render_food_pos = M_food_food_pos;
     M_render_wernd = M_clogic_wernd;
     layer_gnd[0+4-:5] = M_render_led_rows_out[0+4-:5];

@@ -14,9 +14,9 @@ module render_12 (
     input wernd,
     output reg [4:0] led_rows_out,
     output reg [24:0] led_cols_out,
-    input [3:0] x,
-    input [3:0] y,
-    input [3:0] z
+    input [3:0] dx,
+    input [3:0] dy,
+    input [3:0] dz
   );
   
   
@@ -25,23 +25,23 @@ module render_12 (
   
   localparam NUMBER_COLUMNS = 5'h19;
   
-  reg hd_x;
+  reg [3:0] hd_x;
   
-  reg hd_y;
+  reg [3:0] hd_y;
   
-  reg hd_z;
+  reg [3:0] hd_z;
   
-  reg bd_x;
+  reg [3:0] bd_x;
   
-  reg bd_y;
+  reg [3:0] bd_y;
   
-  reg bd_z;
+  reg [3:0] bd_z;
   
-  reg tl_x;
+  reg [3:0] tl_x;
   
-  reg tl_y;
+  reg [3:0] tl_y;
   
-  reg tl_z;
+  reg [3:0] tl_z;
   
   wire [1-1:0] M_muxclk_value;
   counter_17 muxclk (
@@ -80,11 +80,10 @@ module render_12 (
     tl_z = snk_tl_pos[0+3-:4];
     if (wernd) begin
       M_count_d = (M_count_q + 1'h1);
-      M_snk_hd_state_d = 1'h0;
-      M_snk_hd_state_d[(x + (3'h5 * y) + (5'h19 * z))*1+0-:1] = 1'h1;
+      M_snk_hd_state_d = {dx, dy, dz} << 6'h32;
       M_food_state_d = 125'h00000000000000000000000000000001 << (food_pos[8+3-:4] + (3'h5 * food_pos[4+3-:4]) + (5'h19 * food_pos[0+3-:4]));
     end
-    M_led_state_d = M_snk_hd_state_q;
+    M_led_state_d = (M_snk_hd_state_q | M_snk_bd_state_q | M_snk_tl_state_q);
     M_rows_d = 5'h01;
     if (M_rows_q == 5'h10) begin
       M_cols_d = M_led_state_q[0+24-:25];
@@ -114,12 +113,6 @@ module render_12 (
     led_cols_out = M_cols_q;
   end
   
-  always @(posedge M_muxclk_value) begin
-    M_rows_q <= M_rows_d;
-    M_cols_q <= M_cols_d;
-  end
-  
-  
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       M_snk_hd_state_q <= 1'h0;
@@ -136,6 +129,12 @@ module render_12 (
       M_led_state_q <= M_led_state_d;
       M_count_q <= M_count_d;
     end
+  end
+  
+  
+  always @(posedge M_muxclk_value) begin
+    M_rows_q <= M_rows_d;
+    M_cols_q <= M_cols_d;
   end
   
 endmodule

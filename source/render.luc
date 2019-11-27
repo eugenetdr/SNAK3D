@@ -8,30 +8,30 @@ module render (
     input wernd,
     output led_rows_out[5],
     output led_cols_out[25],
-    input x[4],
-    input y[4],
-    input z[4]
+    input dx[4],
+    input dy[4],
+    input dz[4]
   ) {
   
     
   const NUMBER_ROWS = 5;
   const NUMBER_COLUMNS = 25;
   
-  sig hd_x;
-  sig hd_y;
-  sig hd_z;
-  sig bd_x;
-  sig bd_y;
-  sig bd_z;
-  sig tl_x;
-  sig tl_y;
-  sig tl_z;
+  sig hd_x[4];
+  sig hd_y[4];
+  sig hd_z[4];
+  sig bd_x[4];
+  sig bd_y[4];
+  sig bd_z[4];
+  sig tl_x[4];
+  sig tl_y[4];
+  sig tl_z[4];
   
   .clk(clk)
   {
     .rst(rst)
     {
-      counter muxclk(#SIZE(1),#DIV(16));
+      counter muxclk(#SIZE(1),#DIV(15));
 
       dff snk_hd_state[125];
       dff snk_bd_state[125];
@@ -69,26 +69,21 @@ module render (
     {
       count.d = (count.q + 1);
       
-      //snk_hd_state.d = (TEMPLATE << count.q);
-      
-      //snk_hd_state.d = (TEMPLATE << (snk_hd_pos[11:8] + (NUMBER_ROWS * snk_hd_pos[7:4]) + (NUMBER_COLUMNS * snk_hd_pos[3:0])));
-      snk_hd_state.d = 0;
-      snk_hd_state.d[x + (5*y) + (25*z)] = 1;
+      snk_hd_state.d = c{dx,dy,dz} << 50;
+      //snk_hd_state.d = 0;
+      //snk_hd_state.d[hd_x + (5*hd_y) + (25*hd_z)] = 1;
       
       //snk_bd_state.d = 0;
       //snk_bd_state.d[bd_x + (bd_y*5) + (bd_z*25)] = 1;
       
       //snk_tl_state.d = 0;
       //snk_tl_state.d[tl_x + (tl_y*5) + (tl_z*25)] = 1;
-      //snk_hd_state.d[z + 25] = 1;
-      //snk_hd_state.d = TEMPLATE << (x + (y*5) + (z*25));
-      //snk_bd_state.d = TEMPLATE << (snk_bd_pos[11:8] + (NUMBER_ROWS * snk_bd_pos[7:4]) + (NUMBER_COLUMNS * snk_bd_pos[3:0]));
-      //snk_tl_state.d = TEMPLATE << (snk_tl_pos[11:8] + (NUMBER_ROWS * snk_tl_pos[7:4]) + (NUMBER_COLUMNS * snk_tl_pos[3:0]));
+      
       food_state.d = TEMPLATE << (food_pos[11:8] + (NUMBER_ROWS * food_pos[7:4]) + (NUMBER_COLUMNS * food_pos[3:0]));
       //led_state.d = snk_hd_state.q | snk_bd_state.q | snk_tl_state.q | food_state.q;
     }
     
-    led_state.d = snk_hd_state.q;
+    led_state.d = (snk_hd_state.q | snk_bd_state.q | snk_tl_state.q);
     
     rows.d = 5b00001;
     

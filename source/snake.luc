@@ -8,10 +8,7 @@ module snake (
     input wesnkpos,
     output snk_hd_pos[12],
     output snk_bd_pos[12],
-    output snk_tl_pos[12],  
-    output x[4],  
-    output y[4],  
-    output z[4]
+    output snk_tl_pos[12]
   ) {
   
 
@@ -78,10 +75,6 @@ module snake (
     snk_hd_pos = hd_pos.q;
     snk_bd_pos = bd_pos.q;
     snk_tl_pos = tl_pos.q;    
-    
-    x = hd_x.q;
-    y = hd_y.q;
-    z = hd_z.q;
     
   }
 }
