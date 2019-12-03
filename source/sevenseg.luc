@@ -1,0 +1,10 @@
+module sevenseg (
+    input clk,  // clock
+    input rst,  // reset_conditioner
+    output out
+  ) {
+
+  always {
+    out = 0;
+  }
+}
