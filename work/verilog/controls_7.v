@@ -30,9 +30,9 @@ module controls_7 (
   
   always @* begin
     M_direction_d = M_direction_q;
-    M_z_d = M_z_q;
-    M_y_d = M_y_q;
     M_x_d = M_x_q;
+    M_y_d = M_y_q;
+    M_z_d = M_z_q;
     
     
     case (M_direction_q)

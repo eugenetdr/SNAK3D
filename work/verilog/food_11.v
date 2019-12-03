@@ -16,10 +16,34 @@ module food_11 (
   reg [3:0] M_pos_x_d, M_pos_x_q = 1'h0;
   reg [3:0] M_pos_y_d, M_pos_y_q = 1'h0;
   reg [3:0] M_pos_z_d, M_pos_z_q = 1'h0;
+  reg [3:0] M_rnd_x_d, M_rnd_x_q = 1'h0;
+  reg [3:0] M_rnd_y_d, M_rnd_y_q = 1'h0;
+  reg [3:0] M_rnd_z_d, M_rnd_z_q = 1'h0;
   
   always @* begin
+    M_pos_y_d = M_pos_y_q;
+    M_pos_z_d = M_pos_z_q;
+    M_pos_x_d = M_pos_x_q;
+    M_rnd_x_d = M_rnd_x_q;
+    M_rnd_z_d = M_rnd_z_q;
+    M_rnd_y_d = M_rnd_y_q;
+    
+    M_rnd_x_d = M_rnd_x_q + 1'h1;
+    if (M_rnd_x_q == 3'h4) begin
+      M_rnd_x_d = 1'h0;
+      M_rnd_y_d = M_rnd_y_q + 1'h1;
+      if (M_rnd_y_q == 3'h4) begin
+        M_rnd_y_d = 1'h0;
+        M_rnd_z_d = M_rnd_z_q + 1'h1;
+        if (M_rnd_z_q == 3'h4) begin
+          M_rnd_z_d = 1'h0;
+        end
+      end
+    end
     if (wefood) begin
-      
+      M_pos_x_d = M_rnd_x_q;
+      M_pos_y_d = M_rnd_y_q;
+      M_pos_z_d = M_rnd_z_q;
     end
     food_pos = {M_pos_x_q, M_pos_y_q, M_pos_z_q};
   end
@@ -29,10 +53,16 @@ module food_11 (
       M_pos_x_q <= 1'h0;
       M_pos_y_q <= 1'h0;
       M_pos_z_q <= 1'h0;
+      M_rnd_x_q <= 1'h0;
+      M_rnd_y_q <= 1'h0;
+      M_rnd_z_q <= 1'h0;
     end else begin
       M_pos_x_q <= M_pos_x_d;
       M_pos_y_q <= M_pos_y_d;
       M_pos_z_q <= M_pos_z_d;
+      M_rnd_x_q <= M_rnd_x_d;
+      M_rnd_y_q <= M_rnd_y_d;
+      M_rnd_z_q <= M_rnd_z_d;
     end
   end
   

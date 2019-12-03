@@ -43,6 +43,12 @@ module render_12 (
   
   reg [3:0] tl_z;
   
+  reg [3:0] fd_x;
+  
+  reg [3:0] fd_y;
+  
+  reg [3:0] fd_z;
+  
   wire [1-1:0] M_muxclk_value;
   counter_17 muxclk (
     .clk(clk),
@@ -62,12 +68,12 @@ module render_12 (
   localparam TEMPLATE = 125'h00000000000000000000000000000001;
   
   always @* begin
-    M_food_state_d = M_food_state_q;
-    M_snk_hd_state_d = M_snk_hd_state_q;
-    M_cols_d = M_cols_q;
-    M_count_d = M_count_q;
     M_led_state_d = M_led_state_q;
+    M_snk_hd_state_d = M_snk_hd_state_q;
+    M_food_state_d = M_food_state_q;
+    M_count_d = M_count_q;
     M_rows_d = M_rows_q;
+    M_cols_d = M_cols_q;
     
     hd_x = snk_hd_pos[8+3-:4];
     hd_y = snk_hd_pos[4+3-:4];
@@ -78,12 +84,16 @@ module render_12 (
     tl_x = snk_tl_pos[8+3-:4];
     tl_y = snk_tl_pos[4+3-:4];
     tl_z = snk_tl_pos[0+3-:4];
+    fd_x = food_pos[8+3-:4];
+    fd_y = food_pos[4+3-:4];
+    fd_z = food_pos[0+3-:4];
     if (wernd) begin
       M_count_d = (M_count_q + 1'h1);
-      M_snk_hd_state_d = {dx, dy, dz} << 6'h32;
-      M_food_state_d = 125'h00000000000000000000000000000001 << (food_pos[8+3-:4] + (3'h5 * food_pos[4+3-:4]) + (5'h19 * food_pos[0+3-:4]));
+      M_snk_hd_state_d = 125'h00000000000000000000000000000001 << M_count_q;
+      M_food_state_d = 1'h0;
+      M_food_state_d[(fd_x + (3'h5 * fd_y) + (5'h19 * fd_z))*1+0-:1] = 1'h1;
     end
-    M_led_state_d = (M_snk_hd_state_q | M_snk_bd_state_q | M_snk_tl_state_q);
+    M_led_state_d = (M_snk_hd_state_q);
     M_rows_d = 5'h01;
     if (M_rows_q == 5'h10) begin
       M_cols_d = M_led_state_q[0+24-:25];
@@ -113,6 +123,12 @@ module render_12 (
     led_cols_out = M_cols_q;
   end
   
+  always @(posedge M_muxclk_value) begin
+    M_rows_q <= M_rows_d;
+    M_cols_q <= M_cols_d;
+  end
+  
+  
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       M_snk_hd_state_q <= 1'h0;
@@ -129,12 +145,6 @@ module render_12 (
       M_led_state_q <= M_led_state_d;
       M_count_q <= M_count_d;
     end
-  end
-  
-  
-  always @(posedge M_muxclk_value) begin
-    M_rows_q <= M_rows_d;
-    M_cols_q <= M_cols_d;
   end
   
 endmodule

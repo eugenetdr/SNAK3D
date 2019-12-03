@@ -9,12 +9,36 @@ module food (
       dff pos_x[4];
       dff pos_y[4];
       dff pos_z[4];
+      
+      dff rnd_x[4];
+      dff rnd_y[4];
+      dff rnd_z[4];   
     }
-  }  
-  always {
+  }
   
+  always {
+    rnd_x.d = rnd_x.q + 1;
+    if(rnd_x.q == 4) {
+      rnd_x.d = 0;
+      
+      rnd_y.d = rnd_y.q + 1;
+      if(rnd_y.q == 4) {
+        rnd_y.d = 0;
+        
+        rnd_z.d = rnd_z.q + 1;
+        if(rnd_z.q == 4) {
+          rnd_z.d = 0;
+        }
+    }
+  }
+    
+    
+    
+    
     if(wefood) {
-      //TODO: assign random values to pos_x, pos_y, pos_z
+      pos_x.d = rnd_x.q;
+      pos_y.d = rnd_y.q;
+      pos_z.d = rnd_z.q;
     }    
 
     food_pos = c{pos_x.q, pos_y.q, pos_z.q};

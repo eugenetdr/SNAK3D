@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<document OS="nt" product="ISE" version="14.7">
+<document OS="lin64" product="ISE" version="14.7">
 
   <!--The data in this file is primarily intended for consumption by Xilinx tools.
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="NgdBuild" timeStamp="Wed Nov 27 16:50:02 2019">
+  <application stringID="NgdBuild" timeStamp="Tue Dec  3 14:46:29 2019">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
-          <item stringID="variable" value="Path"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt;C:/Xilinx/14.7/ISE_DS/EDK/bin/nt;C:/Xilinx/14.7/ISE_DS/EDK/lib/nt;C:/Xilinx/14.7/ISE_DS/ISE/bin/nt;C:/Xilinx/14.7/ISE_DS/ISE/lib/nt;C:/Xilinx/14.7/ISE_DS/common/bin/nt;C:/Xilinx/14.7/ISE_DS/common/lib/nt;C:/Xilinx/14.7/ISE_DS/PlanAhead/bin;C:/Xilinx/14.7/ISE_DS/PlanAhead/lib/win32.o;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin/server;C:/Xilinx/14.7/ISE_DS/PlanAhead/tps/win32/jre/bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\Users\eugen\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\eugen\AppData\Local\Programs\Python\Python38-32\;C:\Users\eugen\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Mojo IDE\java\bin"/>
+          <item stringID="variable" value="XILINX_PLANAHEAD"/>
+          <item stringID="value" value="/home/mooselliot/Desktop/14.7/ISE_DS/PlanAhead"/>
         </row>
         <row stringID="row" value="1">
-          <item stringID="variable" value="PATHEXT"/>
-          <item stringID="value" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"/>
+          <item stringID="variable" value="LD_LIBRARY_PATH"/>
+          <item stringID="value" value="/home/mooselliot/Desktop/14.7/ISE_DS/ISE//lib/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/EDK/lib/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/ISE/lib/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/common/lib/lin64:/home/mooselliot/Desktop/mojo-ide-B1.3.6/lib"/>
         </row>
         <row stringID="row" value="2">
-          <item stringID="variable" value="XILINX"/>
-          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\"/>
+          <item stringID="variable" value="XILINX_COMMON_TOOLS"/>
+          <item stringID="value" value="/home/mooselliot/Desktop/14.7/ISE_DS/common"/>
         </row>
         <row stringID="row" value="3">
-          <item stringID="variable" value="XILINX_COMMON_TOOLS"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/common"/>
+          <item stringID="variable" value="XILINX_EDK"/>
+          <item stringID="value" value="/home/mooselliot/Desktop/14.7/ISE_DS/EDK"/>
         </row>
         <row stringID="row" value="4">
-          <item stringID="variable" value="XILINX_DSP"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/ISE"/>
+          <item stringID="variable" value="XILINX"/>
+          <item stringID="value" value="/home/mooselliot/Desktop/14.7/ISE_DS/ISE/"/>
         </row>
         <row stringID="row" value="5">
-          <item stringID="variable" value="XILINX_EDK"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/EDK"/>
+          <item stringID="variable" value="PATH"/>
+          <item stringID="value" value="/home/mooselliot/Desktop/14.7/ISE_DS/ISE//bin/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/EDK/bin/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/ISE/bin/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/common/bin/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/PlanAhead/bin:/home/mooselliot/Desktop/mojo-ide-B1.3.6/java/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"/>
         </row>
         <row stringID="row" value="6">
-          <item stringID="variable" value="XILINX_PLANAHEAD"/>
-          <item stringID="value" value="C:/Xilinx/14.7/ISE_DS/PlanAhead"/>
+          <item stringID="variable" value="XILINX_DSP"/>
+          <item stringID="value" value="/home/mooselliot/Desktop/14.7/ISE_DS/ISE"/>
         </row>
       </table>
       <item stringID="User_EnvOs" value="OS Information">
-        <item stringID="User_EnvOsname" value="Microsoft , 64-bit"/>
-        <item stringID="User_EnvOsrelease" value="major release  (build 9200)"/>
+        <item stringID="User_EnvOsname" value="Ubuntu"/>
+        <item stringID="User_EnvOsrelease" value="Ubuntu 18.04.3 LTS"/>
       </item>
-      <item stringID="User_EnvHost" value="DESKTOP-FQ93436"/>
+      <item stringID="User_EnvHost" value="mooselliot-VirtualBox"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz"/>
-          <item stringID="speed" value="1992 MHz"/>
+          <item stringID="arch" value="Intel(R) Core(TM) i7-4770HQ CPU @ 2.20GHz"/>
+          <item stringID="speed" value="2194.918 MHz"/>
         </row>
       </table>
     </section>
@@ -71,27 +71,27 @@
       </section>
       <section stringID="NGDBUILD_PRE_UNISIM_SUMMARY"/>
       <section stringID="NGDBUILD_POST_UNISIM_SUMMARY">
-        <item dataType="int" stringID="NGDBUILD_NUM_BUFG" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FD" value="17"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FDR" value="60"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FDRE" value="36"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_FDS" value="7"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_BUFG" value="2"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FD" value="34"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDR" value="182"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDRE" value="187"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_FDS" value="6"/>
         <item dataType="int" stringID="NGDBUILD_NUM_GND" value="6"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IBUF" value="15"/>
         <item dataType="int" stringID="NGDBUILD_NUM_IBUFG" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="18"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="11"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="42"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="14"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT5" value="16"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_LUT6" value="29"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="56"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT1" value="34"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT2" value="41"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT3" value="52"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT4" value="22"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT5" value="132"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_LUT6" value="87"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_MUXCY" value="71"/>
         <item dataType="int" stringID="NGDBUILD_NUM_OBUF" value="38"/>
         <item dataType="int" stringID="NGDBUILD_NUM_OBUFT" value="6"/>
         <item dataType="int" stringID="NGDBUILD_NUM_PULLDOWN" value="8"/>
         <item dataType="int" stringID="NGDBUILD_NUM_TS_TIMESPEC" value="1"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_VCC" value="2"/>
-        <item dataType="int" stringID="NGDBUILD_NUM_XORCY" value="59"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_VCC" value="3"/>
+        <item dataType="int" stringID="NGDBUILD_NUM_XORCY" value="75"/>
       </section>
       <section stringID="NGDBUILD_CORE_GENERATION_SUMMARY">
         <section stringID="NGDBUILD_CORE_INSTANCES"/>

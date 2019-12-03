@@ -22,8 +22,8 @@ module timer_10 (
   reg [5:0] M_game_time_counter_d, M_game_time_counter_q = 1'h0;
   
   always @* begin
-    M_game_time_counter_d = M_game_time_counter_q;
     M_clk_counter_d = M_clk_counter_q;
+    M_game_time_counter_d = M_game_time_counter_q;
     
     frame_period = 16'h1fc0;
     M_clk_counter_d = M_clk_counter_q + 1'h1;

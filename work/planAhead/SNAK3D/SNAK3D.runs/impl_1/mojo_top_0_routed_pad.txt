@@ -1,7 +1,7 @@
-Release 14.7 - par P.20131013 (nt)
+Release 14.7 - par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Wed Nov 27 16:50:14 2019
+Tue Dec  3 14:46:46 2019
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -27,21 +27,21 @@ Pinout by Pin Number:
 |P5        |              |IOBS     |IO_L52N_3                 |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
 |P6        |game_button(1)|IOB      |IO_L52P_3                 |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P7        |              |IOBS     |IO_L51N_3                 |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
-|P8        |button[0]     |IOB      |IO_L51P_3                 |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |YES        |NONE            |
+|P8        |button[0]     |IOB      |IO_L51P_3                 |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P9        |              |IOBS     |IO_L50N_3                 |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
-|P10       |button[1]     |IOB      |IO_L50P_3                 |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |YES        |NONE            |
+|P10       |button[1]     |IOB      |IO_L50P_3                 |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P11       |              |IOBS     |IO_L49N_3                 |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
-|P12       |button[2]     |IOB      |IO_L49P_3                 |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |YES        |NONE            |
+|P12       |button[2]     |IOB      |IO_L49P_3                 |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P13       |              |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |
 |P14       |              |IOBS     |IO_L44N_GCLK20_3          |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
-|P15       |button[3]     |IOB      |IO_L44P_GCLK21_3          |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |YES        |NONE            |
+|P15       |button[3]     |IOB      |IO_L44P_GCLK21_3          |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P16       |              |IOBS     |IO_L43N_GCLK22_IRDY2_3    |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
-|P17       |button[4]     |IOB      |IO_L43P_GCLK23_3          |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |YES        |NONE            |
+|P17       |button[4]     |IOB      |IO_L43P_GCLK23_3          |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P18       |              |         |VCCO_3                    |         |           |3             |          |         |           |         |any******|          |           |                |
 |P19       |              |         |VCCINT                    |         |           |              |          |         |           |         |1.2      |          |           |                |
 |P20       |              |         |VCCAUX                    |         |           |              |          |         |           |         |3.3      |          |           |                |
 |P21       |              |IOBS     |IO_L42N_GCLK24_3          |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
-|P22       |button[5]     |IOB      |IO_L42P_GCLK25_TRDY2_3    |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |YES        |NONE            |
+|P22       |button[5]     |IOB      |IO_L42P_GCLK25_TRDY2_3    |INPUT    |LVTTL      |3             |          |         |PULLDOWN   |NONE     |         |LOCATED   |NO         |NONE            |
 |P23       |              |IOBS     |IO_L41N_GCLK26_3          |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
 |P24       |              |IOBM     |IO_L41P_GCLK27_3          |UNUSED   |           |3             |          |         |           |         |         |          |           |                |
 |P25       |              |         |GND                       |         |           |              |          |         |           |         |         |          |           |                |

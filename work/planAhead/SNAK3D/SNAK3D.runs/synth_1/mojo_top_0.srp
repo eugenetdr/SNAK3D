@@ -1,11 +1,13 @@
-Release 14.7 - xst P.20131013 (nt)
+Release 14.7 - xst P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 
+
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.03 secs
  
---> Reading design: mojo_top_0.prj
+--> 
+Reading design: mojo_top_0.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -53,39 +55,39 @@ Netlist Hierarchy                  : rebuilt
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/shift16_16.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/shift16_16.v" into library work
 Parsing module <shift16_16>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/counter_17.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/counter_17.v" into library work
 Parsing module <counter_17>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/compare16_14.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/compare16_14.v" into library work
 Parsing module <compare16_14>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/boolean16_15.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/boolean16_15.v" into library work
 Parsing module <boolean16_15>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/adder16_13.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/adder16_13.v" into library work
 Parsing module <adder16_13>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/timer_10.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/timer_10.v" into library work
 Parsing module <timer_10>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/snake_8.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/snake_8.v" into library work
 Parsing module <snake_8>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/sel4_2.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/sel4_2.v" into library work
 Parsing module <sel4_2>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/score_9.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/score_9.v" into library work
 Parsing module <score_9>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/reset_conditioner_5.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/reset_conditioner_5.v" into library work
 Parsing module <reset_conditioner_5>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/render_12.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/render_12.v" into library work
 Parsing module <render_12>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/gameengine_6.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/gameengine_6.v" into library work
 Parsing module <gameengine_6>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/food_11.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/food_11.v" into library work
 Parsing module <food_11>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/controls_7.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/controls_7.v" into library work
 Parsing module <controls_7>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/controllogic_4.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/controllogic_4.v" into library work
 Parsing module <controllogic_4>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/alu16_1.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/alu16_1.v" into library work
 Parsing module <alu16_1>.
-Analyzing Verilog file "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
 Parsing module <mojo_top_0>.
 
 =========================================================================
@@ -103,9 +105,9 @@ Elaborating module <compare16_14>.
 Elaborating module <boolean16_15>.
 
 Elaborating module <shift16_16>.
-WARNING:HDLCompiler:1127 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 42: Assignment to M_alu_z ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 43: Assignment to M_alu_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 44: Assignment to M_alu_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 42: Assignment to M_alu_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 43: Assignment to M_alu_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 44: Assignment to M_alu_n ignored, since the identifier is never used
 
 Elaborating module <sel4_2>.
 
@@ -120,29 +122,25 @@ Elaborating module <controls_7>.
 Elaborating module <snake_8>.
 
 Elaborating module <score_9>.
-WARNING:HDLCompiler:413 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/score_9.v" Line 22: Result of 16-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/score_9.v" Line 22: Result of 16-bit expression is truncated to fit in 1-bit target.
 
 Elaborating module <timer_10>.
-WARNING:HDLCompiler:1127 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 168: Assignment to M_timer_game_time ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 168: Assignment to M_timer_game_time ignored, since the identifier is never used
 
 Elaborating module <food_11>.
-WARNING:HDLCompiler:634 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/food_11.v" Line 16: Net <M_pos_x_d[3]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/food_11.v" Line 17: Net <M_pos_y_d[3]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/food_11.v" Line 18: Net <M_pos_z_d[3]> does not have a driver.
 
 Elaborating module <render_12>.
 
 Elaborating module <counter_17>.
-WARNING:HDLCompiler:1127 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/render_12.v" Line 64: Assignment to hd_x ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/render_12.v" Line 53: Net <M_snk_bd_state_d[124]> does not have a driver.
-WARNING:HDLCompiler:634 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/render_12.v" Line 54: Net <M_snk_tl_state_d[124]> does not have a driver.
+WARNING:HDLCompiler:1127 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/render_12.v" Line 70: Assignment to hd_x ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/render_12.v" Line 132: Assignment to M_snk_bd_state_q ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <mojo_top_0>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v".
 WARNING:Xst:647 - Input <game_button> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -150,10 +148,10 @@ WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved an
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 37: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 37: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 37: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 164: Output port <game_time> of the instance <timer> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 37: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 37: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 37: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 164: Output port <game_time> of the instance <timer> is unconnected or connected to loadless signal.
     Found 1-bit tristate buffer for signal <spi_miso> created at line 206
     Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 206
     Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 206
@@ -165,14 +163,14 @@ INFO:Xst:3210 - "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/S
 Unit <mojo_top_0> synthesized.
 
 Synthesizing Unit <alu16_1>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/alu16_1.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/alu16_1.v".
     Found 16-bit 4-to-1 multiplexer for signal <alufn[5]_M_compare_out[15]_wide_mux_0_OUT> created at line 90.
     Summary:
 	inferred   2 Multiplexer(s).
 Unit <alu16_1> synthesized.
 
 Synthesizing Unit <adder16_13>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/adder16_13.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/adder16_13.v".
 WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit adder for signal <n0031> created at line 27.
     Found 16-bit adder for signal <a[15]_GND_3_o_add_2_OUT> created at line 27.
@@ -184,7 +182,7 @@ WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved 
 Unit <adder16_13> synthesized.
 
 Synthesizing Unit <compare16_14>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/compare16_14.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/compare16_14.v".
 WARNING:Xst:647 - Input <alufn<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <alufn<5:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit 4-to-1 multiplexer for signal <out> created at line 20.
@@ -193,13 +191,13 @@ WARNING:Xst:647 - Input <alufn<5:3>> is never used. This port will be preserved 
 Unit <compare16_14> synthesized.
 
 Synthesizing Unit <boolean16_15>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/boolean16_15.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/boolean16_15.v".
 WARNING:Xst:647 - Input <alufn<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 Unit <boolean16_15> synthesized.
 
 Synthesizing Unit <shift16_16>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/shift16_16.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/shift16_16.v".
 WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit shifter logical left for signal <a[15]_b[15]_shift_left_0_OUT> created at line 21
     Found 16-bit shifter logical right for signal <a[15]_b[15]_shift_right_1_OUT> created at line 24
@@ -211,27 +209,27 @@ WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved 
 Unit <shift16_16> synthesized.
 
 Synthesizing Unit <sel4_2>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/sel4_2.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/sel4_2.v".
     Found 16-bit 4-to-1 multiplexer for signal <out> created at line 21.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <sel4_2> synthesized.
 
 Synthesizing Unit <controllogic_4>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/controllogic_4.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/controllogic_4.v".
     Summary:
 	no macro.
 Unit <controllogic_4> synthesized.
 
 Synthesizing Unit <reset_conditioner_5>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/reset_conditioner_5.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/reset_conditioner_5.v".
     Found 4-bit register for signal <M_stage_q>.
     Summary:
 	inferred   4 D-type flip-flop(s).
 Unit <reset_conditioner_5> synthesized.
 
 Synthesizing Unit <gameengine_6>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/gameengine_6.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/gameengine_6.v".
     Found 4-bit register for signal <M_gamefsm_q>.
     Found finite state machine <FSM_0> for signal <M_gamefsm_q>.
     -----------------------------------------------------------------------
@@ -252,7 +250,7 @@ Synthesizing Unit <gameengine_6>.
 Unit <gameengine_6> synthesized.
 
 Synthesizing Unit <controls_7>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/controls_7.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/controls_7.v".
     Found 4-bit register for signal <M_x_q>.
     Found 4-bit register for signal <M_y_q>.
     Found 4-bit register for signal <M_z_q>.
@@ -277,7 +275,7 @@ Synthesizing Unit <controls_7>.
 Unit <controls_7> synthesized.
 
 Synthesizing Unit <snake_8>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/snake_8.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/snake_8.v".
     Found 4-bit register for signal <M_hd_y_q>.
     Found 4-bit register for signal <M_hd_z_q>.
     Found 12-bit register for signal <M_hd_pos_q>.
@@ -294,14 +292,14 @@ Synthesizing Unit <snake_8>.
 Unit <snake_8> synthesized.
 
 Synthesizing Unit <score_9>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/score_9.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/score_9.v".
     Found 16-bit register for signal <M_score_q>.
     Summary:
 	inferred  16 D-type flip-flop(s).
 Unit <score_9> synthesized.
 
 Synthesizing Unit <timer_10>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/timer_10.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/timer_10.v".
     Found 6-bit register for signal <M_game_time_counter_q>.
     Found 27-bit register for signal <M_clk_counter_q>.
     Found 6-bit subtractor for signal <game_time> created at line 35.
@@ -314,30 +312,36 @@ Synthesizing Unit <timer_10>.
 Unit <timer_10> synthesized.
 
 Synthesizing Unit <food_11>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/food_11.v".
-WARNING:Xst:647 - Input <wefood> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <M_pos_x_d> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <M_pos_y_d> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <M_pos_z_d> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-    WARNING:Xst:2404 -  FFs/Latches <M_pos_x_q<3:0>> (without init value) have a constant value of 0 in block <food_11>.
-    WARNING:Xst:2404 -  FFs/Latches <M_pos_y_q<3:0>> (without init value) have a constant value of 0 in block <food_11>.
-    WARNING:Xst:2404 -  FFs/Latches <M_pos_z_q<3:0>> (without init value) have a constant value of 0 in block <food_11>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/food_11.v".
+    Found 4-bit register for signal <M_pos_y_q>.
+    Found 4-bit register for signal <M_pos_z_q>.
+    Found 4-bit register for signal <M_rnd_x_q>.
+    Found 4-bit register for signal <M_rnd_y_q>.
+    Found 4-bit register for signal <M_rnd_z_q>.
+    Found 4-bit register for signal <M_pos_x_q>.
+    Found 4-bit adder for signal <M_rnd_x_q[3]_GND_18_o_add_0_OUT> created at line 31.
+    Found 4-bit adder for signal <M_rnd_y_q[3]_GND_18_o_add_2_OUT> created at line 34.
+    Found 4-bit adder for signal <M_rnd_z_q[3]_GND_18_o_add_4_OUT> created at line 37.
     Summary:
-	no macro.
+	inferred   3 Adder/Subtractor(s).
+	inferred  24 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
 Unit <food_11> synthesized.
 
 Synthesizing Unit <render_12>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/render_12.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/render_12.v".
 WARNING:Xst:647 - Input <snk_hd_pos> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <snk_bd_pos> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <snk_tl_pos> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <food_pos> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <M_snk_bd_state_d> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <M_snk_tl_state_d> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-    Found 125-bit register for signal <M_led_state_q>.
-    Found 5-bit register for signal <M_rows_q>.
+WARNING:Xst:647 - Input <dx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <dy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <dz> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 25-bit register for signal <M_cols_q>.
-    Found 125-bit register for signal <M_led_state_d>.
+    Found 125-bit register for signal <M_snk_hd_state_q>.
+    Found 125-bit register for signal <M_led_state_q>.
+    Found 16-bit register for signal <M_count_q>.
+    Found 5-bit register for signal <M_rows_q>.
     Found finite state machine <FSM_2> for signal <M_rows_q>.
     -----------------------------------------------------------------------
     | States             | 6                                              |
@@ -349,16 +353,18 @@ WARNING:Xst:653 - Signal <M_snk_tl_state_d> is used but never assigned. This sou
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    WARNING:Xst:2404 -  FFs/Latches <M_snk_bd_state_q<124:0>> (without init value) have a constant value of 0 in block <render_12>.
-    WARNING:Xst:2404 -  FFs/Latches <M_snk_tl_state_q<124:0>> (without init value) have a constant value of 0 in block <render_12>.
+    Found 16-bit adder for signal <M_count_q[15]_GND_19_o_add_0_OUT> created at line 91.
+    Found 125-bit shifter logical left for signal <GND_19_o_M_count_q[15]_shift_left_1_OUT> created at line 92
     Summary:
-	inferred 275 D-type flip-flop(s).
-	inferred   5 Multiplexer(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred 291 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
 	inferred   1 Finite State Machine(s).
 Unit <render_12> synthesized.
 
 Synthesizing Unit <counter_17>.
-    Related source file is "C:/Users/eugen/Desktop/Comp Struct/Mojo/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/counter_17.v".
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/counter_17.v".
     Found 16-bit register for signal <M_ctr_q>.
     Found 16-bit adder for signal <M_ctr_d> created at line 35.
     Summary:
@@ -372,27 +378,29 @@ HDL Synthesis Report
 Macro Statistics
 # Multipliers                                          : 1
  16x16-bit multiplier                                  : 1
-# Adders/Subtractors                                   : 9
- 16-bit adder                                          : 3
+# Adders/Subtractors                                   : 13
+ 16-bit adder                                          : 4
  27-bit adder                                          : 1
- 4-bit adder                                           : 3
+ 4-bit adder                                           : 6
  6-bit adder                                           : 1
  6-bit subtractor                                      : 1
-# Registers                                            : 15
- 12-bit register                                       : 4
+# Registers                                            : 20
+ 12-bit register                                       : 5
  125-bit register                                      : 2
- 16-bit register                                       : 2
+ 16-bit register                                       : 3
  25-bit register                                       : 1
  27-bit register                                       : 1
- 4-bit register                                        : 4
+ 4-bit register                                        : 7
  6-bit register                                        : 1
-# Multiplexers                                         : 22
+# Multiplexers                                         : 26
+ 125-bit 2-to-1 multiplexer                            : 1
  16-bit 2-to-1 multiplexer                             : 5
  16-bit 4-to-1 multiplexer                             : 5
  25-bit 2-to-1 multiplexer                             : 5
  27-bit 2-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 6
-# Logic shifters                                       : 3
+ 4-bit 2-to-1 multiplexer                              : 9
+# Logic shifters                                       : 4
+ 125-bit shifter logical left                          : 1
  16-bit shifter arithmetic right                       : 1
  16-bit shifter logical left                           : 1
  16-bit shifter logical right                          : 1
@@ -413,6 +421,16 @@ Macro Statistics
 Synthesizing (advanced) Unit <counter_17>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
 Unit <counter_17> synthesized (advanced).
+
+Synthesizing (advanced) Unit <food_11>.
+The following registers are absorbed into counter <M_rnd_x_q>: 1 register on signal <M_rnd_x_q>.
+The following registers are absorbed into counter <M_rnd_z_q>: 1 register on signal <M_rnd_z_q>.
+The following registers are absorbed into counter <M_rnd_y_q>: 1 register on signal <M_rnd_y_q>.
+Unit <food_11> synthesized (advanced).
+
+Synthesizing (advanced) Unit <render_12>.
+The following registers are absorbed into counter <M_count_q>: 1 register on signal <M_count_q>.
+Unit <render_12> synthesized (advanced).
 
 Synthesizing (advanced) Unit <timer_10>.
 The following registers are absorbed into counter <M_clk_counter_q>: 1 register on signal <M_clk_counter_q>.
@@ -444,19 +462,22 @@ Macro Statistics
  16-bit adder carry in                                 : 1
  4-bit adder                                           : 3
  6-bit subtractor                                      : 1
-# Counters                                             : 3
- 16-bit up counter                                     : 1
+# Counters                                             : 7
+ 16-bit up counter                                     : 2
  27-bit up counter                                     : 1
+ 4-bit up counter                                      : 3
  6-bit up counter                                      : 1
-# Registers                                            : 340
- Flip-Flops                                            : 340
-# Multiplexers                                         : 45
+# Registers                                            : 352
+ Flip-Flops                                            : 352
+# Multiplexers                                         : 46
  1-bit 2-to-1 multiplexer                              : 25
+ 125-bit 2-to-1 multiplexer                            : 1
  16-bit 2-to-1 multiplexer                             : 5
  16-bit 4-to-1 multiplexer                             : 5
  25-bit 2-to-1 multiplexer                             : 4
  4-bit 2-to-1 multiplexer                              : 6
-# Logic shifters                                       : 3
+# Logic shifters                                       : 4
+ 125-bit shifter logical left                          : 1
  16-bit shifter arithmetic right                       : 1
  16-bit shifter logical left                           : 1
  16-bit shifter logical right                          : 1
@@ -470,242 +491,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1293 - FF/Latch <M_snk_hd_state_q_96> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_95> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_94> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_93> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_92> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_91> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_90> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_89> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_88> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_87> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_86> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_85> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_84> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_83> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_82> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_81> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_80> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_79> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_78> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_77> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_76> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_75> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_74> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_73> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_72> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_71> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_70> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_69> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_124> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_123> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_122> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_121> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_120> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_119> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_118> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_117> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_116> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_115> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_114> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_113> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_112> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_111> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_110> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_109> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_108> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_107> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_106> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_105> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_104> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_103> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_102> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_101> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_100> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_99> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_98> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_97> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_27> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_26> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_25> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_24> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_23> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_22> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_21> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_20> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_19> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_18> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_17> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_16> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_15> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_14> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_13> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_12> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_11> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_10> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_9> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_8> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_7> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_6> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_5> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_4> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_3> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_2> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_1> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_0> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_68> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_67> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_66> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_65> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_64> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_63> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_62> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_49> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_48> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_47> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_46> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_45> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_44> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_43> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_28> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_29> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_30> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_31> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_32> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_33> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_34> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_35> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_36> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_37> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_38> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_39> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_40> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_41> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_snk_hd_state_q_42> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_83> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_84> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_85> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_86> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_87> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_88> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_89> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_90> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_91> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_92> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_93> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_94> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_95> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_96> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_82> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_81> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_80> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_79> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_78> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_77> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_76> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_75> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_74> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_73> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_72> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_71> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_70> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_69> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_124> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_123> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_122> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_121> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_120> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_119> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_118> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_117> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_116> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_115> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_114> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_113> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_112> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_111> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_110> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_109> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_108> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_107> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_106> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_105> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_104> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_103> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_102> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_101> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_100> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_99> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_98> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_97> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_27> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_26> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_25> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_24> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_23> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_22> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_21> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_20> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_19> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_18> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_17> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_16> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_15> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_14> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_13> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_12> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_11> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_10> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_9> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_8> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_7> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_6> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_5> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_4> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_3> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_2> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_1> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_0> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_68> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_67> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_66> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_65> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_64> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_63> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_62> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_49> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_48> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_47> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_46> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_45> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_44> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_43> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_42> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_41> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_40> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_39> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_38> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_37> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_36> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_35> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_34> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_33> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_32> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_31> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_30> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_29> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_28> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <M_snk_hd_state_q_54> in Unit <render_12> is equivalent to the following FF/Latch, which will be removed : <M_snk_hd_state_q_58> 
-INFO:Xst:2261 - The FF/Latch <M_snk_hd_state_q_55> in Unit <render_12> is equivalent to the following FF/Latch, which will be removed : <M_snk_hd_state_q_59> 
-INFO:Xst:2261 - The FF/Latch <M_snk_hd_state_q_52> in Unit <render_12> is equivalent to the following 3 FFs/Latches, which will be removed : <M_snk_hd_state_q_53> <M_snk_hd_state_q_60> <M_snk_hd_state_q_61> 
-WARNING:Xst:1293 - FF/Latch <M_snk_hd_state_q_52> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_52> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_53> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_60> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <M_led_state_q_61> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <M_led_state_q_55> in Unit <render_12> is equivalent to the following FF/Latch, which will be removed : <M_led_state_q_59> 
-INFO:Xst:2261 - The FF/Latch <M_led_state_q_54> in Unit <render_12> is equivalent to the following FF/Latch, which will be removed : <M_led_state_q_58> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <FSM_0> on signal <M_gamefsm_q[1:9]> with one-hot encoding.
 --------------------
@@ -745,23 +530,6 @@ Optimizing FSM <render/FSM_2> on signal <M_rows_q[1:6]> with one-hot encoding.
  01000 | 010000
  10000 | 100000
 -------------------
-WARNING:Xst:1293 - FF/Latch <M_cols_q_24> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_23> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_22> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_21> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_20> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_19> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_18> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_17> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_16> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_15> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_14> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_13> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_12> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_11> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_10> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_3> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <M_cols_q_2> has a constant value of 0 in block <render_12>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1426 - The value init of the FF/Latch M_rows_q_FSM_FFd6 hinder the constant cleaning in the block render_12.
    You should achieve better results by setting this init to 0.
 INFO:Xst:2261 - The FF/Latch <M_x_q_1> in Unit <controls_7> is equivalent to the following 2 FFs/Latches, which will be removed : <M_x_q_2> <M_x_q_3> 
@@ -774,6 +542,8 @@ WARNING:Xst:2677 - Node <alu/adder/Mmult_n0025> of sequential type is unconnecte
 Optimizing unit <controls_7> ...
 
 Optimizing unit <snake_8> ...
+
+Optimizing unit <food_11> ...
 
 Optimizing unit <render_12> ...
 WARNING:Xst:2677 - Node <snake/M_tl_pos_q_11> of sequential type is unconnected in block <mojo_top_0>.
@@ -800,13 +570,19 @@ WARNING:Xst:2677 - Node <snake/M_bd_pos_q_3> of sequential type is unconnected i
 WARNING:Xst:2677 - Node <snake/M_bd_pos_q_2> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <snake/M_bd_pos_q_1> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <snake/M_bd_pos_q_0> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:1293 - FF/Latch <food/M_rnd_x_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <food/M_rnd_y_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <food/M_rnd_z_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <food/M_pos_x_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <food/M_pos_y_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <food/M_pos_z_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 3.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 11.
 FlipFlop game/M_gamefsm_q_FSM_FFd4 has been replicated 1 time(s)
-FlipFlop game/M_gamefsm_q_FSM_FFd7 has been replicated 2 time(s)
-FlipFlop game/M_gamefsm_q_FSM_FFd9 has been replicated 2 time(s)
+FlipFlop game/M_gamefsm_q_FSM_FFd7 has been replicated 3 time(s)
+FlipFlop game/M_gamefsm_q_FSM_FFd9 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -818,8 +594,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 120
- Flip-Flops                                            : 120
+# Registers                                            : 409
+ Flip-Flops                                            : 409
 
 =========================================================================
 
@@ -842,24 +618,25 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 253
+# BELS                             : 523
 #      GND                         : 6
-#      INV                         : 3
-#      LUT1                        : 15
-#      LUT2                        : 11
-#      LUT3                        : 42
-#      LUT4                        : 14
-#      LUT5                        : 16
-#      LUT6                        : 29
-#      MUXCY                       : 56
-#      VCC                         : 2
-#      XORCY                       : 59
-# FlipFlops/Latches                : 120
-#      FD                          : 17
-#      FDR                         : 60
-#      FDRE                        : 36
-#      FDS                         : 7
-# Clock Buffers                    : 1
+#      INV                         : 4
+#      LUT1                        : 30
+#      LUT2                        : 41
+#      LUT3                        : 52
+#      LUT4                        : 22
+#      LUT5                        : 132
+#      LUT6                        : 87
+#      MUXCY                       : 71
+#      VCC                         : 3
+#      XORCY                       : 75
+# FlipFlops/Latches                : 409
+#      FD                          : 34
+#      FDR                         : 182
+#      FDRE                        : 187
+#      FDS                         : 6
+# Clock Buffers                    : 2
+#      BUFG                        : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 51
 #      IBUF                        : 7
@@ -873,23 +650,23 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             120  out of  11440     1%  
- Number of Slice LUTs:                  130  out of   5720     2%  
-    Number used as Logic:               130  out of   5720     2%  
+ Number of Slice Registers:             409  out of  11440     3%  
+ Number of Slice LUTs:                  368  out of   5720     6%  
+    Number used as Logic:               368  out of   5720     6%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    172
-   Number with an unused Flip Flop:      52  out of    172    30%  
-   Number with an unused LUT:            42  out of    172    24%  
-   Number of fully used LUT-FF pairs:    78  out of    172    45%  
-   Number of unique control sets:        13
+ Number of LUT Flip Flop pairs used:    533
+   Number with an unused Flip Flop:     124  out of    533    23%  
+   Number with an unused LUT:           165  out of    533    30%  
+   Number of fully used LUT-FF pairs:   244  out of    533    45%  
+   Number of unique control sets:        17
 
 IO Utilization: 
  Number of IOs:                          60
  Number of bonded IOBs:                  52  out of    102    50%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -909,13 +686,12 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+-------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)         | Load  |
------------------------------------+-------------------------------+-------+
-clk                                | BUFGP                         | 106   |
-render/muxclk/M_ctr_q_15           | NONE(render/M_rows_q_FSM_FFd1)| 14    |
------------------------------------+-------------------------------+-------+
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 378   |
+render/muxclk/M_ctr_q_15           | BUFG                   | 31    |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -925,9 +701,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 5.995ns (Maximum Frequency: 166.799MHz)
-   Minimum input arrival time before clock: 3.955ns
-   Maximum output required time after clock: 4.444ns
+   Minimum period: 5.873ns (Maximum Frequency: 170.285MHz)
+   Minimum input arrival time before clock: 3.917ns
+   Maximum output required time after clock: 4.872ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -936,64 +712,77 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.995ns (frequency: 166.799MHz)
-  Total number of paths / destination ports: 10490 / 234
+  Clock period: 5.873ns (frequency: 170.285MHz)
+  Total number of paths / destination ports: 12738 / 935
 -------------------------------------------------------------------------
-Delay:               5.995ns (Levels of Logic = 9)
-  Source:            game/M_gamefsm_q_FSM_FFd7_1 (FF)
-  Destination:       score/M_score_q_0 (FF)
+Delay:               5.873ns (Levels of Logic = 16)
+  Source:            score/M_score_q_0 (FF)
+  Destination:       game/M_gamefsm_q_FSM_FFd5 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: game/M_gamefsm_q_FSM_FFd7_1 to score/M_score_q_0
+  Data Path: score/M_score_q_0 to game/M_gamefsm_q_FSM_FFd5
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              7   0.525   0.910  M_gamefsm_q_FSM_FFd7_1 (M_gamefsm_q_FSM_FFd7_1)
-     end scope: 'game:M_gamefsm_q_FSM_FFd7_1'
-     LUT2:I1->O            1   0.254   0.681  M_game_opcode<10>1 (M_clogic_alufn<4>)
-     begin scope: 'alu:alufn<4>'
-     begin scope: 'alu/adder:M_game_opcode<10>'
-     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<0> (Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<0>)
-     XORCY:CI->O           3   0.206   1.196  Madd_a[15]_GND_3_o_add_2_OUT_Madd_xor<1> (Mmux_out91)
-     end scope: 'alu/adder:Mmux_out91'
-     LUT5:I0->O            1   0.254   0.682  Mmux_out211_SW1 (N45)
-     LUT6:I5->O            1   0.254   0.682  Mmux_out213_SW3 (N41)
-     end scope: 'alu:N41'
-     begin scope: 'score:N41'
-     LUT6:I5->O            1   0.254   0.000  M_score_q_0_rstpot (M_score_q_0_rstpot)
-     FDR:D                     0.074          M_score_q_0
+     FDRE:C->Q             1   0.525   0.958  M_score_q_0 (M_score_q_0)
+     end scope: 'score:out'
+     begin scope: 'aselector:c<0>'
+     LUT4:I0->O            1   0.254   0.682  Mmux_out14 (out<0>)
+     end scope: 'aselector:out<0>'
+     begin scope: 'alu:a<0>'
+     begin scope: 'alu/adder:a<0>'
+     LUT6:I5->O            1   0.254   0.000  Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut<0> (Madd_a[15]_GND_3_o_add_2_OUT_Madd_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<0> (Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<1> (Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<2> (Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<3> (Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<4> (Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<5> (Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<6> (Madd_a[15]_GND_3_o_add_2_OUT_Madd_cy<6>)
+     XORCY:CI->O           1   0.206   1.112  Madd_a[15]_GND_3_o_add_2_OUT_Madd_xor<7> (a[15]_GND_3_o_add_2_OUT<7>)
+     end scope: 'alu/adder:a[15]_GND_3_o_add_2_OUT<7>'
+     end scope: 'alu:a[15]_GND_3_o_add_2_OUT<7>'
+     begin scope: 'game:a[15]_GND_3_o_add_2_OUT<7>'
+     LUT5:I0->O            5   0.254   0.949  aluout[15]_GND_13_o_equal_5_o<15>32 (aluout[15]_GND_13_o_equal_5_o<15>32)
+     end scope: 'game:aluout[15]_GND_13_o_equal_5_o<15>32'
+     begin scope: 'alu:aluout[15]_GND_13_o_equal_5_o<15>32'
+     LUT6:I4->O            1   0.250   0.000  Mmux_out21 (out<0>)
+     end scope: 'alu:out<0>'
+     begin scope: 'score:aluout<0>'
+     FDRE:D                    0.074          M_score_q_0
     ----------------------------------------
-    Total                      5.995ns (1.844ns logic, 4.151ns route)
-                                       (30.8% logic, 69.2% route)
+    Total                      5.873ns (2.172ns logic, 3.701ns route)
+                                       (37.0% logic, 63.0% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'render/muxclk/M_ctr_q_15'
-  Clock period: 2.137ns (frequency: 467.946MHz)
-  Total number of paths / destination ports: 30 / 13
+  Clock period: 3.784ns (frequency: 264.240MHz)
+  Total number of paths / destination ports: 181 / 30
 -------------------------------------------------------------------------
-Delay:               2.137ns (Levels of Logic = 1)
-  Source:            render/M_rows_q_FSM_FFd4 (FF)
-  Destination:       render/M_cols_q_9 (FF)
+Delay:               3.784ns (Levels of Logic = 2)
+  Source:            render/M_rows_q_FSM_FFd3 (FF)
+  Destination:       render/M_cols_q_24 (FF)
   Source Clock:      render/muxclk/M_ctr_q_15 rising
   Destination Clock: render/muxclk/M_ctr_q_15 rising
 
-  Data Path: render/M_rows_q_FSM_FFd4 to render/M_cols_q_9
+  Data Path: render/M_rows_q_FSM_FFd3 to render/M_cols_q_24
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              10   0.525   1.284  M_rows_q_FSM_FFd4 (M_rows_q_FSM_FFd4)
-     LUT4:I0->O            1   0.254   0.000  M_rows_q_M_cols_d<9>1 (M_cols_d<9>)
-     FD:D                      0.074          M_cols_q_9
+     FD:C->Q              27   0.525   1.891  M_rows_q_FSM_FFd3 (M_rows_q_FSM_FFd3)
+     LUT6:I0->O            1   0.254   0.790  M_rows_q_M_cols_d<15>1 (M_rows_q_M_cols_d<15>)
+     LUT2:I0->O            1   0.250   0.000  M_rows_q_M_cols_d<15>3 (M_cols_d<15>)
+     FD:D                      0.074          M_cols_q_15
     ----------------------------------------
-    Total                      2.137ns (0.853ns logic, 1.284ns route)
-                                       (39.9% logic, 60.1% route)
+    Total                      3.784ns (1.103ns logic, 2.681ns route)
+                                       (29.1% logic, 70.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 28 / 13
+  Total number of paths / destination ports: 22 / 7
 -------------------------------------------------------------------------
-Offset:              3.955ns (Levels of Logic = 4)
+Offset:              3.917ns (Levels of Logic = 4)
   Source:            button<4> (PAD)
   Destination:       control/M_direction_q_FSM_FFd3 (FF)
   Destination Clock: clk rising
@@ -1002,34 +791,34 @@ Offset:              3.955ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   1.328   0.912  button_4_IBUF (button_4_IBUF)
+     IBUF:I->O             3   1.328   0.874  button_4_IBUF (button_4_IBUF)
      begin scope: 'control:buttons<4>'
-     LUT2:I0->O            1   0.250   1.137  M_direction_q_FSM_FFd3-In_SW0 (N5)
+     LUT2:I0->O            1   0.250   1.137  M_direction_q_FSM_FFd3-In_SW0 (N4)
      LUT6:I0->O            1   0.254   0.000  M_direction_q_FSM_FFd3-In (M_direction_q_FSM_FFd3-In)
      FDR:D                     0.074          M_direction_q_FSM_FFd3
     ----------------------------------------
-    Total                      3.955ns (1.906ns logic, 2.049ns route)
-                                       (48.2% logic, 51.8% route)
+    Total                      3.917ns (1.906ns logic, 2.011ns route)
+                                       (48.7% logic, 51.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'render/muxclk/M_ctr_q_15'
-  Total number of paths / destination ports: 13 / 13
+  Total number of paths / destination ports: 30 / 30
 -------------------------------------------------------------------------
-Offset:              4.444ns (Levels of Logic = 2)
-  Source:            render/M_rows_q_FSM_FFd4 (FF)
-  Destination:       layer_gnd<1> (PAD)
+Offset:              4.872ns (Levels of Logic = 2)
+  Source:            render/M_rows_q_FSM_FFd1 (FF)
+  Destination:       layer_gnd<4> (PAD)
   Source Clock:      render/muxclk/M_ctr_q_15 rising
 
-  Data Path: render/M_rows_q_FSM_FFd4 to layer_gnd<1>
+  Data Path: render/M_rows_q_FSM_FFd1 to layer_gnd<4>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q              10   0.525   1.007  M_rows_q_FSM_FFd4 (M_rows_q_FSM_FFd4)
-     end scope: 'render:led_rows_out<1>'
-     OBUF:I->O                 2.912          layer_gnd_1_OBUF (layer_gnd<1>)
+     FD:C->Q              27   0.525   1.435  M_rows_q_FSM_FFd1 (M_rows_q_FSM_FFd1)
+     end scope: 'render:led_rows_out<4>'
+     OBUF:I->O                 2.912          layer_gnd_4_OBUF (layer_gnd<4>)
     ----------------------------------------
-    Total                      4.444ns (3.437ns logic, 1.007ns route)
-                                       (77.3% logic, 22.7% route)
+    Total                      4.872ns (3.437ns logic, 1.435ns route)
+                                       (70.5% logic, 29.5% route)
 
 =========================================================================
 
@@ -1041,7 +830,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    5.995|         |         |         |
+clk            |    5.873|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock render/muxclk/M_ctr_q_15
@@ -1049,21 +838,22 @@ Clock to Setup on destination clock render/muxclk/M_ctr_q_15
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
-clk                     |    1.788|         |         |         |
-render/muxclk/M_ctr_q_15|    2.137|         |         |         |
+clk                     |    3.005|         |         |         |
+render/muxclk/M_ctr_q_15|    3.784|         |         |         |
 ------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.17 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.94 secs
  
 --> 
 
-Total memory usage is 235296 kilobytes
+
+Total memory usage is 401096 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  327 (   0 filtered)
-Number of infos    :   14 (   0 filtered)
+Number of warnings :   73 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
 
