@@ -29,17 +29,19 @@ module food (
         if(rnd_z.q == 4) {
           rnd_z.d = 0;
         }
-    }
+    } 
   }
-    
-    
-    
     
     if(wefood) {
       pos_x.d = rnd_x.q;
       pos_y.d = rnd_y.q;
       pos_z.d = rnd_z.q;
     }    
+
+    //testing 
+    pod_x.d = 4;
+    pod_y.d = 0;
+    pod_z.d = 0;
 
     food_pos = c{pos_x.q, pos_y.q, pos_z.q};
   }

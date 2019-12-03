@@ -1,10 +1,81 @@
 module sevenseg (
     input clk,  // clock
     input rst,  // reset_conditioner
-    output out
+    input d[16], //a 16 bit number to display (will be truncated)
+    output q[14] //14 channel out into the actual seg
   ) {
 
+  sig tens[4]; //0X - 9X
+  sig ones[4]; //0 - 9
+  sig tens_out[7];
+  sig ones_out[7];
+
   always {
-    out = 0;
+    
+    ones = d[3:0];
+
+    if(d[3:0] > 10) {
+      ones = d[3:0] - 10;
+    }
+    else {
+      ones = d[3:0];
+    }
+
+    tens = (d/10)[3:0];
+
+    if((d/10)[3:0] > 10) {
+      tens = (d/10)[3:0] - 10;
+    }
+    else {
+      tens = (d/10)[3:0];
+    }        
+
+    case (ones) {
+        1: 
+          ones_out = 7'b0110000;
+        2: 
+          ones_out = 7'b1101101;
+        3: 
+          ones_out = 7'b1111001;
+        4: 
+          ones_out = 7'b0110011;
+        5: 
+          ones_out = 7'b1011011;
+        6: 
+          ones_out = 7'b1011111;
+        7: 
+          ones_out = 7'b1110000;
+        8: 
+          ones_out = 7'b1111111;
+        9: 
+          ones_out = 7'b1110011;      
+        default: 
+          ones_out = 7'b1111110; 
+    }
+    case (tens) {
+        1: 
+          tens_out = 7'b0110000;
+        2: 
+          tens_out = 7'b1101101;
+        3: 
+          tens_out = 7'b1111001;
+        4: 
+          tens_out = 7'b0110011;
+        5: 
+          tens_out = 7'b1011011;
+        6: 
+          tens_out = 7'b1011111;
+        7: 
+          tens_out = 7'b1110000;
+        8: 
+          tens_out = 7'b1111111;
+        9: 
+          tens_out = 7'b1110011;         
+        default: 
+          tens_out = 7'b1111110; 
+    }
+
+
+    q = c{tens_out, ones_out};
   }
 }

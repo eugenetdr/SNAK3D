@@ -3,7 +3,7 @@ module score (
     input rst,  // reset
     input wescr,
     input aluout[16],
-    output out
+    output out[16]
   ) {
 
   .clk(clk) {
