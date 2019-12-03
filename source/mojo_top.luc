@@ -11,18 +11,12 @@ module mojo_top (
     input avr_tx,           // AVR TX (FPGA RX)
     output avr_rx,          // AVR RX (FPGA TX)
     input avr_rx_busy,      // AVR RX buffer full
-    //input button[6],
-    //input y_button[2],
-    //input z_button[2],
-    //input game_button[2],
-    //output col_led[25],
-    //output layer_gnd[5],
-    
-    output io_led [3][8],   // LEDs on IO Shield
-    output io_seg [8],      // 7-segment LEDs on IO Shield
-    output io_sel [4],      // Digit select on IO Shield
-    input io_button [5],    // 5 buttons on IO Shield
-    input io_dip [3][8]     // DIP switches on IO Shield
+    input button[6]
+    // output io_led [3][8],   // LEDs on IO Shield
+    // output io_seg [8],      // 7-segment LEDs on IO Shield
+    // output io_sel [4],      // Digit select on IO Shield
+    // input io_button [5],    // 5 buttons on IO Shield
+    // input io_dip [3][8]     // DIP switches on IO Shield
     //output score_display[14],
     // output time_display[14],
   ) {
@@ -81,9 +75,7 @@ module mojo_top (
     clogic.opcode = game.opcode;
     aselector.sel = clogic.asel;
     bselector.sel = clogic.bsel;
-    //control.buttons[5:0] = button[5:0];
-    //control.buttons[3:2] = y_button[1:0];
-    //control.buttons[5:4] = z_button[1:0];
+    control.buttons[5:0] = button[5:0];    
     
 
     //==========module inputs==========
@@ -105,19 +97,13 @@ module mojo_top (
     //render circuits
     render.snk_hd_pos = snake.snk_hd_pos;
     render.snk_bd_pos = snake.snk_bd_pos;
-    render.snk_tl_pos = snake.snk_tl_pos;
-    //render.dx = button[1:0];
-    //render.dy = button[3:0];
-    //render.dz = button[5:4];
-    render.dx = 0;
-    render.dy = 0;
-    render.dz = 0;
+    render.snk_tl_pos = snake.snk_tl_pos;        
     
     
     render.food_pos = food.food_pos;
     render.wernd = clogic.wernd;
-    //layer_gnd[4:0] = render.led_rows_out[4:0];
-    //col_led[24:0] = render.led_cols_out[24:0];
+    layer_gnd[4:0] = render.led_rows_out[4:0];
+    col_led[24:0] = render.led_cols_out[24:0];
 
     //==========module outputs==========        
     //snake
@@ -146,15 +132,15 @@ module mojo_top (
     //io_led[0][7:4] = snake.snk_hd_pos[7:4]; 
     //io_led[0][3:0] = snake.snk_hd_pos[3:0]; 
 
-    io_led = 3x{{8h00}};    // turn LEDs off
-    io_seg = 8b11111111;          // turn segments off
-    io_sel = 4b1011;           // select no digits
+    // io_led = 3x{{8h00}};    // turn LEDs off
+    // io_seg = 8b11111111;          // turn segments off
+    // io_sel = 4b1011;           // select no digits
     //io_led[2][7:4] = control.dx;
     //io_led[2][3:0] = control.dy;
     //io_led[1][7:4] = control.dz;
     
     //io_led[0] = score.out;
     
-    control.buttons = c{1b0,io_button[4:0]};
+    // control.buttons = c{1b0,io_button[4:0]};
   }
 }
