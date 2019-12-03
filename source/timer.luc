@@ -44,7 +44,7 @@ module timer (
     game_time = 60 - game_time_counter.q;
 
     //if the game has run out of time
-    if(game_time_counter.q > 200) {
+    if(game_time_counter.q > 60) {
       time_out = 1;
     }
     else
