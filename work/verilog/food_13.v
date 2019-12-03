@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module food_11 (
+module food_13 (
     input clk,
     input rst,
     input wefood,
@@ -45,6 +45,9 @@ module food_11 (
       M_pos_y_d = M_rnd_y_q;
       M_pos_z_d = M_rnd_z_q;
     end
+    M_pos_x_d = 3'h4;
+    M_pos_y_d = 1'h0;
+    M_pos_z_d = 1'h0;
     food_pos = {M_pos_x_q, M_pos_y_q, M_pos_z_q};
   end
   

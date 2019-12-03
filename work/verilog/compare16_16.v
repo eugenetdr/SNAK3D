@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module compare16_14 (
+module compare16_16 (
     input z,
     input v,
     input n,

@@ -4,32 +4,33 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module score_9 (
+/*
+   Parameters:
+     STAGES = 4
+*/
+module reset_conditioner_7 (
     input clk,
-    input rst,
-    input wescr,
-    input [15:0] aluout,
+    input in,
     output reg out
   );
   
+  localparam STAGES = 3'h4;
   
   
-  reg [15:0] M_score_d, M_score_q = 1'h0;
+  reg [3:0] M_stage_d, M_stage_q = 4'hf;
   
   always @* begin
-    M_score_d = M_score_q;
+    M_stage_d = M_stage_q;
     
-    out = M_score_q;
-    if (wescr) begin
-      M_score_d = aluout;
-    end
+    M_stage_d = {M_stage_q[0+2-:3], 1'h0};
+    out = M_stage_q[3+0-:1];
   end
   
   always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_score_q <= 1'h0;
+    if (in == 1'b1) begin
+      M_stage_q <= 4'hf;
     end else begin
-      M_score_q <= M_score_d;
+      M_stage_q <= M_stage_d;
     end
   end
   

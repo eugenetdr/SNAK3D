@@ -23,7 +23,7 @@ module alu16_1 (
   reg [16-1:0] M_adder_a;
   reg [16-1:0] M_adder_b;
   reg [6-1:0] M_adder_alufn;
-  adder16_13 adder (
+  adder16_15 adder (
     .a(M_adder_a),
     .b(M_adder_b),
     .alufn(M_adder_alufn),
@@ -38,7 +38,7 @@ module alu16_1 (
   reg [1-1:0] M_compare_v;
   reg [1-1:0] M_compare_n;
   reg [6-1:0] M_compare_alufn;
-  compare16_14 compare (
+  compare16_16 compare (
     .z(M_compare_z),
     .v(M_compare_v),
     .n(M_compare_n),
@@ -50,7 +50,7 @@ module alu16_1 (
   reg [16-1:0] M_boole_a;
   reg [16-1:0] M_boole_b;
   reg [6-1:0] M_boole_alufn;
-  boolean16_15 boole (
+  boolean16_17 boole (
     .a(M_boole_a),
     .b(M_boole_b),
     .alufn(M_boole_alufn),
@@ -61,7 +61,7 @@ module alu16_1 (
   reg [16-1:0] M_shift_a;
   reg [16-1:0] M_shift_b;
   reg [6-1:0] M_shift_alufn;
-  shift16_16 shift (
+  shift16_18 shift (
     .a(M_shift_a),
     .b(M_shift_b),
     .alufn(M_shift_alufn),

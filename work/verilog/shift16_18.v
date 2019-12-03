@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module shift16_16 (
+module shift16_18 (
     input [15:0] a,
     input [15:0] b,
     input [5:0] alufn,

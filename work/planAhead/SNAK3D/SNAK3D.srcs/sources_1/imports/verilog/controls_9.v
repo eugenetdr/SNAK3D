@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module controls_7 (
+module controls_9 (
     input clk,
     input rst,
     input [5:0] buttons,
@@ -15,14 +15,14 @@ module controls_7 (
   
   
   
-  localparam Z_POS_direction = 3'd0;
-  localparam X_POS_direction = 3'd1;
-  localparam X_NEG_direction = 3'd2;
-  localparam Y_POS_direction = 3'd3;
-  localparam Y_NEG_direction = 3'd4;
-  localparam Z_NEG_direction = 3'd5;
+  localparam X_POS_direction = 3'd0;
+  localparam X_NEG_direction = 3'd1;
+  localparam Y_POS_direction = 3'd2;
+  localparam Y_NEG_direction = 3'd3;
+  localparam Z_NEG_direction = 3'd4;
+  localparam Z_POS_direction = 3'd5;
   
-  reg [2:0] M_direction_d, M_direction_q = Z_POS_direction;
+  reg [2:0] M_direction_d, M_direction_q = X_POS_direction;
   
   reg [3:0] M_x_d, M_x_q = 1'h0;
   reg [3:0] M_y_d, M_y_q = 1'h0;

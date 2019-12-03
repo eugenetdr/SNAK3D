@@ -17,10 +17,11 @@ module mojo_top_0 (
     input avr_tx,
     output reg avr_rx,
     input avr_rx_busy,
-    input [5:0] button,
-    input [1:0] game_button,
-    output reg [24:0] col_led,
-    output reg [4:0] layer_gnd
+    output reg [23:0] io_led,
+    output reg [7:0] io_seg,
+    output reg [3:0] io_sel,
+    input [4:0] io_button,
+    input [23:0] io_dip
   );
   
   
@@ -74,6 +75,20 @@ module mojo_top_0 (
     .out(M_bselector_out)
   );
   
+  wire [14-1:0] M_scoreseg_q;
+  reg [16-1:0] M_scoreseg_d;
+  sevenseg_4 scoreseg (
+    .d(M_scoreseg_d),
+    .q(M_scoreseg_q)
+  );
+  
+  wire [14-1:0] M_timerseg_q;
+  reg [16-1:0] M_timerseg_d;
+  sevenseg_4 timerseg (
+    .d(M_timerseg_d),
+    .q(M_timerseg_q)
+  );
+  
   wire [2-1:0] M_clogic_asel;
   wire [2-1:0] M_clogic_bsel;
   wire [6-1:0] M_clogic_alufn;
@@ -84,7 +99,7 @@ module mojo_top_0 (
   wire [1-1:0] M_clogic_wernd;
   wire [1-1:0] M_clogic_wetmr;
   reg [16-1:0] M_clogic_opcode;
-  controllogic_4 clogic (
+  controllogic_6 clogic (
     .opcode(M_clogic_opcode),
     .asel(M_clogic_asel),
     .bsel(M_clogic_bsel),
@@ -99,7 +114,7 @@ module mojo_top_0 (
   
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
-  reset_conditioner_5 reset_cond (
+  reset_conditioner_7 reset_cond (
     .clk(clk),
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
@@ -107,7 +122,7 @@ module mojo_top_0 (
   wire [16-1:0] M_game_opcode;
   reg [1-1:0] M_game_time_out;
   reg [16-1:0] M_game_aluout;
-  gameengine_6 game (
+  gameengine_8 game (
     .clk(clk),
     .rst(rst),
     .time_out(M_game_time_out),
@@ -118,7 +133,7 @@ module mojo_top_0 (
   wire [4-1:0] M_control_dy;
   wire [4-1:0] M_control_dz;
   reg [6-1:0] M_control_buttons;
-  controls_7 control (
+  controls_9 control (
     .clk(clk),
     .rst(rst),
     .buttons(M_control_buttons),
@@ -134,7 +149,7 @@ module mojo_top_0 (
   reg [4-1:0] M_snake_dz;
   reg [1-1:0] M_snake_wesnkhd;
   reg [1-1:0] M_snake_wesnkpos;
-  snake_8 snake (
+  snake_10 snake (
     .clk(clk),
     .rst(rst),
     .dx(M_snake_dx),
@@ -146,10 +161,10 @@ module mojo_top_0 (
     .snk_bd_pos(M_snake_snk_bd_pos),
     .snk_tl_pos(M_snake_snk_tl_pos)
   );
-  wire [1-1:0] M_score_out;
+  wire [16-1:0] M_score_out;
   reg [1-1:0] M_score_wescr;
   reg [16-1:0] M_score_aluout;
-  score_9 score (
+  score_11 score (
     .clk(clk),
     .rst(rst),
     .wescr(M_score_wescr),
@@ -161,7 +176,7 @@ module mojo_top_0 (
   wire [16-1:0] M_timer_clk_count;
   wire [16-1:0] M_timer_frame_period;
   reg [1-1:0] M_timer_wetmr;
-  timer_10 timer (
+  timer_12 timer (
     .clk(clk),
     .rst(rst),
     .wetmr(M_timer_wetmr),
@@ -172,7 +187,7 @@ module mojo_top_0 (
   );
   wire [12-1:0] M_food_food_pos;
   reg [1-1:0] M_food_wefood;
-  food_11 food (
+  food_13 food (
     .clk(clk),
     .rst(rst),
     .wefood(M_food_wefood),
@@ -188,7 +203,7 @@ module mojo_top_0 (
   reg [4-1:0] M_render_dx;
   reg [4-1:0] M_render_dy;
   reg [4-1:0] M_render_dz;
-  render_12 render (
+  render_14 render (
     .clk(clk),
     .rst(rst),
     .snk_hd_pos(M_render_snk_hd_pos),
@@ -218,7 +233,6 @@ module mojo_top_0 (
     M_clogic_opcode = M_game_opcode;
     M_aselector_sel = M_clogic_asel;
     M_bselector_sel = M_clogic_bsel;
-    M_control_buttons[0+5-:6] = button[0+5-:6];
     M_snake_dx = M_control_dx;
     M_snake_dy = M_control_dy;
     M_snake_dz = M_control_dz;
@@ -231,13 +245,11 @@ module mojo_top_0 (
     M_render_snk_hd_pos = M_snake_snk_hd_pos;
     M_render_snk_bd_pos = M_snake_snk_bd_pos;
     M_render_snk_tl_pos = M_snake_snk_tl_pos;
-    M_render_dx = button[0+1-:2];
-    M_render_dy = button[0+3-:4];
-    M_render_dz = button[4+1-:2];
+    M_render_dx = 1'h0;
+    M_render_dy = 1'h0;
+    M_render_dz = 1'h0;
     M_render_food_pos = M_food_food_pos;
     M_render_wernd = M_clogic_wernd;
-    layer_gnd[0+4-:5] = M_render_led_rows_out[0+4-:5];
-    col_led[0+24-:25] = M_render_led_cols_out[0+24-:25];
     M_aselector_b = M_snake_snk_hd_pos;
     M_aselector_c = M_score_out;
     M_bselector_c = 1'h1;
@@ -246,5 +258,11 @@ module mojo_top_0 (
     M_bselector_a = M_timer_clk_count;
     M_aselector_d = 1'h0;
     M_bselector_b = M_food_food_pos;
+    M_scoreseg_d = M_score_out;
+    M_timerseg_d = {10'h000, M_timer_game_time};
+    io_led = 24'h000000;
+    io_seg = 8'hff;
+    io_sel = 4'hb;
+    M_control_buttons = {1'h0, io_button[0+4-:5]};
   end
 endmodule

@@ -10,7 +10,7 @@ module controls (
 
   .clk(clk){
     .rst(rst){
-        fsm direction = {Z_POS, X_POS, X_NEG, Y_POS, Y_NEG, Z_NEG};
+        fsm direction = {X_POS, X_NEG, Y_POS, Y_NEG, Z_NEG, Z_POS};
         //counter delay(#SIZE(1), #DIV(23));
     }
 

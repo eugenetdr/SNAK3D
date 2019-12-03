@@ -39,9 +39,9 @@ module food (
     }    
 
     //testing 
-    pod_x.d = 4;
-    pod_y.d = 0;
-    pod_z.d = 0;
+    //pos_x.d = 4;
+    //pos_y.d = 0;
+    //pos_z.d = 0;
 
     food_pos = c{pos_x.q, pos_y.q, pos_z.q};
   }

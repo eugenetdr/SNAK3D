@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module render_12 (
+module render_14 (
     input clk,
     input rst,
     input [11:0] snk_hd_pos,
@@ -50,7 +50,7 @@ module render_12 (
   reg [3:0] fd_z;
   
   wire [1-1:0] M_muxclk_value;
-  counter_17 muxclk (
+  counter_19 muxclk (
     .clk(clk),
     .rst(rst),
     .value(M_muxclk_value)
@@ -69,7 +69,6 @@ module render_12 (
   
   always @* begin
     M_led_state_d = M_led_state_q;
-    M_snk_hd_state_d = M_snk_hd_state_q;
     M_food_state_d = M_food_state_q;
     M_count_d = M_count_q;
     M_rows_d = M_rows_q;
@@ -89,7 +88,6 @@ module render_12 (
     fd_z = food_pos[0+3-:4];
     if (wernd) begin
       M_count_d = (M_count_q + 1'h1);
-      M_snk_hd_state_d = 125'h00000000000000000000000000000001 << M_count_q;
       M_food_state_d = 1'h0;
       M_food_state_d[(fd_x + (3'h5 * fd_y) + (5'h19 * fd_z))*1+0-:1] = 1'h1;
     end
@@ -123,12 +121,6 @@ module render_12 (
     led_cols_out = M_cols_q;
   end
   
-  always @(posedge M_muxclk_value) begin
-    M_rows_q <= M_rows_d;
-    M_cols_q <= M_cols_d;
-  end
-  
-  
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       M_snk_hd_state_q <= 1'h0;
@@ -145,6 +137,12 @@ module render_12 (
       M_led_state_q <= M_led_state_d;
       M_count_q <= M_count_d;
     end
+  end
+  
+  
+  always @(posedge M_muxclk_value) begin
+    M_rows_q <= M_rows_d;
+    M_cols_q <= M_cols_d;
   end
   
 endmodule

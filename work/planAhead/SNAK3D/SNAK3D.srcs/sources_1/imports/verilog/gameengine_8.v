@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module gameengine_6 (
+module gameengine_8 (
     input clk,
     input rst,
     input time_out,
@@ -26,7 +26,7 @@ module gameengine_6 (
   
   localparam OPC_SPAWN_FOOD = 16'h0008;
   
-  localparam OPC_RENDER = 16'h000b;
+  localparam OPC_RENDER = 16'h0003;
   
   localparam WAIT_FRAME_gamefsm = 4'd0;
   localparam CHECK_TIME_gamefsm = 4'd1;
@@ -85,7 +85,7 @@ module gameengine_6 (
         M_gamefsm_d = RENDER_gamefsm;
       end
       RENDER_gamefsm: begin
-        opcode = 16'h000b;
+        opcode = 16'h0003;
         M_gamefsm_d = WAIT_FRAME_gamefsm;
       end
       GAME_OVER_gamefsm: begin

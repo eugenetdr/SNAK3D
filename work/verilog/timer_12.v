@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module timer_10 (
+module timer_12 (
     input clk,
     input rst,
     input wetmr,
