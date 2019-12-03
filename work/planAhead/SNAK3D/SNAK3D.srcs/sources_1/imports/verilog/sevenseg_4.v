@@ -32,12 +32,12 @@ module sevenseg_4 (
     end
     tens = (d / 4'ha);
     if (tens > 4'ha) begin
-      tens_mod = tens - 4'ha;
+      tens_mod = tens[0+3-:4] - 4'ha;
     end else begin
       tens_mod = tens;
     end
     
-    case (ones)
+    case (ones_mod)
       1'h1: begin
         ones_out = 7'h30;
       end
@@ -70,7 +70,7 @@ module sevenseg_4 (
       end
     endcase
     
-    case (tens)
+    case (tens_mod)
       1'h1: begin
         tens_out = 7'h30;
       end

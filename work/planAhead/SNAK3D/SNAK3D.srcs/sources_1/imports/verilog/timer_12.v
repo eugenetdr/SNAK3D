@@ -33,7 +33,7 @@ module timer_12 (
       M_clk_counter_d = 1'h0;
     end
     game_time = 6'h3c - M_game_time_counter_q;
-    if (M_game_time_counter_q > 8'hc8) begin
+    if (M_game_time_counter_q > 6'h3c) begin
       time_out = 1'h1;
     end else begin
       time_out = 1'h0;

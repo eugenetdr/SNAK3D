@@ -13,10 +13,7 @@ module render_14 (
     input [11:0] food_pos,
     input wernd,
     output reg [4:0] led_rows_out,
-    output reg [24:0] led_cols_out,
-    input [3:0] dx,
-    input [3:0] dy,
-    input [3:0] dz
+    output reg [24:0] led_cols_out
   );
   
   
@@ -68,7 +65,10 @@ module render_14 (
   localparam TEMPLATE = 125'h00000000000000000000000000000001;
   
   always @* begin
+    M_snk_bd_state_d = M_snk_bd_state_q;
+    M_snk_tl_state_d = M_snk_tl_state_q;
     M_led_state_d = M_led_state_q;
+    M_snk_hd_state_d = M_snk_hd_state_q;
     M_food_state_d = M_food_state_q;
     M_count_d = M_count_q;
     M_rows_d = M_rows_q;
@@ -88,10 +88,16 @@ module render_14 (
     fd_z = food_pos[0+3-:4];
     if (wernd) begin
       M_count_d = (M_count_q + 1'h1);
+      M_snk_hd_state_d = 1'h0;
+      M_snk_hd_state_d[(hd_x + (3'h5 * hd_y) + (5'h19 * hd_z))*1+0-:1] = 1'h1;
+      M_snk_bd_state_d = 1'h0;
+      M_snk_bd_state_d[(bd_x + (bd_y * 3'h5) + (bd_z * 5'h19))*1+0-:1] = 1'h1;
+      M_snk_tl_state_d = 1'h0;
+      M_snk_tl_state_d[(tl_x + (tl_y * 3'h5) + (tl_z * 5'h19))*1+0-:1] = 1'h1;
       M_food_state_d = 1'h0;
       M_food_state_d[(fd_x + (3'h5 * fd_y) + (5'h19 * fd_z))*1+0-:1] = 1'h1;
     end
-    M_led_state_d = (M_snk_hd_state_q);
+    M_led_state_d = (M_snk_hd_state_q | M_snk_bd_state_q | M_snk_tl_state_q | M_food_state_q);
     M_rows_d = 5'h01;
     if (M_rows_q == 5'h10) begin
       M_cols_d = M_led_state_q[0+24-:25];

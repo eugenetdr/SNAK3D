@@ -24,13 +24,13 @@ module sevenseg (
     tens = (d/10);
 
     if(tens > 10) {
-      tens_mod = tens - 10;
+      tens_mod = tens[3:0] - 10;
     }
     else {
       tens_mod = tens;
     }        
 
-    case (ones) {
+    case (ones_mod) {
         1: 
           ones_out = 7b0110000;
         2: 
@@ -52,7 +52,7 @@ module sevenseg (
         default: 
           ones_out = 7b1111110; 
     }
-    case (tens) {
+    case (tens_mod) {
         1: 
           tens_out = 7b0110000;
         2: 
