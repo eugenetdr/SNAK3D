@@ -8,6 +8,7 @@ module timer_10 (
     input clk,
     input rst,
     input wetmr,
+    input halt,
     output reg [5:0] game_time,
     output reg time_out,
     output reg [15:0] clk_count,
@@ -36,7 +37,7 @@ module timer_10 (
     if (wetmr) begin
       M_clk_counter_d = 1'h0;
     end
-    if (M_game_clk_counter_q > 26'h2faf080) begin
+    if (M_game_clk_counter_q > 26'h2faf080 && (~halt)) begin
       M_game_time_counter_d = M_game_time_counter_q + 1'h1;
       M_game_clk_counter_d = 1'h0;
     end

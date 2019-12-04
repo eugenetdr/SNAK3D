@@ -84,8 +84,9 @@ module mojo_top_0 (
   wire [1-1:0] M_clogic_wescr;
   wire [1-1:0] M_clogic_wernd;
   wire [1-1:0] M_clogic_wetmr;
+  wire [1-1:0] M_clogic_halt;
   wire [1-1:0] M_clogic_reset;
-  reg [17-1:0] M_clogic_opcode;
+  reg [18-1:0] M_clogic_opcode;
   controllogic_4 clogic (
     .opcode(M_clogic_opcode),
     .asel(M_clogic_asel),
@@ -97,6 +98,7 @@ module mojo_top_0 (
     .wescr(M_clogic_wescr),
     .wernd(M_clogic_wernd),
     .wetmr(M_clogic_wetmr),
+    .halt(M_clogic_halt),
     .reset(M_clogic_reset)
   );
   
@@ -107,7 +109,7 @@ module mojo_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  wire [17-1:0] M_game_opcode;
+  wire [18-1:0] M_game_opcode;
   reg [1-1:0] M_game_time_out;
   reg [16-1:0] M_game_aluout;
   reg [1-1:0] M_game_game_start;
@@ -168,10 +170,12 @@ module mojo_top_0 (
   wire [16-1:0] M_timer_clk_count;
   wire [16-1:0] M_timer_frame_period;
   reg [1-1:0] M_timer_wetmr;
+  reg [1-1:0] M_timer_halt;
   timer_10 timer (
     .clk(clk),
     .rst(M_clogic_reset),
     .wetmr(M_timer_wetmr),
+    .halt(M_timer_halt),
     .game_time(M_timer_game_time),
     .time_out(M_timer_time_out),
     .clk_count(M_timer_clk_count),
@@ -246,6 +250,7 @@ module mojo_top_0 (
     M_score_aluout = M_alu_out;
     M_score_wescr = M_clogic_wescr;
     M_timer_wetmr = M_clogic_wetmr;
+    M_timer_halt = M_clogic_halt;
     M_food_wefood = M_clogic_wefood;
     M_render_snk_hd_pos = M_snake_snk_hd_pos;
     M_render_snk_bd_pos = M_snake_snk_bd_pos;
@@ -264,6 +269,6 @@ module mojo_top_0 (
     M_bselector_b = M_food_food_pos;
     M_scoreseg_d = M_score_out;
     M_timerseg_d = {10'h000, M_timer_game_time};
-    time_display = M_scoreseg_q;
+    time_display = M_timerseg_q;
   end
 endmodule

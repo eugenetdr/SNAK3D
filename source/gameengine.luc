@@ -5,17 +5,19 @@ module gameengine (
     input aluout[16],
     input game_start,
     input game_end,
-    output opcode[17]
+    output opcode[18]
   ) {
   
-  const OPC_CMP_TIME_FRAME = 17b11010100000000000;
-  const OPC_CMP_FOOD = 17b11001101010000000;
-  const OPC_INCREMENT_SCORE = 17b00000010100001000;
-  const OPC_MOVE_SNK_HD  = 17b00000000001000000;
-  const OPC_UPDATE_SNK_POS = 17b00000000000100000;
-  const OPC_SPAWN_FOOD = 17b00000000000010000;
-  const OPC_RENDER = 17b00000000000000110; //reset clock counter AND writes render state to output led state
-  const OPC_RESET = 17b00000000000000001; //reset everything
+  const OPC_CMP_TIME_FRAME = 18b110101000000000000;
+  const OPC_CMP_FOOD = 18b110011010100000000;
+  const OPC_INCREMENT_SCORE = 18b000000101000010000;
+  const OPC_MOVE_SNK_HD  = 18b000000000010000000;
+  const OPC_UPDATE_SNK_POS = 18b000000000001000000;
+  const OPC_SPAWN_FOOD = 18b000000000000100000;
+  const OPC_RENDER = 18b000000000000001100; //reset clock counter AND writes render state to output led state
+  const OPC_HALT = 18b000000000000000010;
+  const OPC_RESET = 18b000000000000000001; //reset everything
+  
   
   .clk(clk)
   {
@@ -80,6 +82,7 @@ module gameengine (
             gamefsm.d = gamefsm.GAME_START;
           }
           else {
+            opcode = OPC_HALT;
             gamefsm.d = gamefsm.GAME_OVER;
           }
 

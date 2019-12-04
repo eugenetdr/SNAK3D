@@ -2,6 +2,7 @@ module timer (
     input clk,  //50MHz clock
     input rst,  // reset
     input wetmr,
+    input halt,
     output game_time[6],
     output time_out,
     output clk_count[16],
@@ -43,7 +44,7 @@ module timer (
       clk_counter.d = 0;
     }
     
-    if(game_clk_counter.q > FIFTY_MILION) {
+    if(game_clk_counter.q > FIFTY_MILION && (~halt)) {
       game_time_counter.d = game_time_counter.q + 1;
       game_clk_counter.d = 0;
     }

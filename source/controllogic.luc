@@ -1,5 +1,5 @@
 module controllogic (
-    input opcode[17],
+    input opcode[18],
     output asel[2],
     output bsel[2],
     output alufn[6],
@@ -9,19 +9,21 @@ module controllogic (
     output wescr,
     output wernd,    
     output wetmr,
+    output halt,
     output reset
   ) {
 
   always {    
-    alufn = opcode[16:11];
-    asel = opcode[10:9];
-    bsel = opcode[8:7];
-    wesnkhd = opcode[6];
-    wesnkpos = opcode[5];
-    wefood = opcode[4];
-    wescr = opcode[3];
-    wernd = opcode[2];
-    wetmr = opcode[1];
+    alufn = opcode[17:12];
+    asel = opcode[11:10];
+    bsel = opcode[9:8];
+    wesnkhd = opcode[7];
+    wesnkpos = opcode[6];
+    wefood = opcode[5];
+    wescr = opcode[4];
+    wernd = opcode[3];
+    wetmr = opcode[2];
+    halt = opcode[1];
     reset = opcode[0];
   }
 }

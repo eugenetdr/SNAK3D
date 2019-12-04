@@ -11,26 +11,28 @@ module gameengine_6 (
     input [15:0] aluout,
     input game_start,
     input game_end,
-    output reg [16:0] opcode
+    output reg [17:0] opcode
   );
   
   
   
-  localparam OPC_CMP_TIME_FRAME = 17'h1a800;
+  localparam OPC_CMP_TIME_FRAME = 18'h35000;
   
-  localparam OPC_CMP_FOOD = 17'h19a80;
+  localparam OPC_CMP_FOOD = 18'h33500;
   
-  localparam OPC_INCREMENT_SCORE = 17'h00508;
+  localparam OPC_INCREMENT_SCORE = 18'h00a10;
   
-  localparam OPC_MOVE_SNK_HD = 17'h00040;
+  localparam OPC_MOVE_SNK_HD = 18'h00080;
   
-  localparam OPC_UPDATE_SNK_POS = 17'h00020;
+  localparam OPC_UPDATE_SNK_POS = 18'h00040;
   
-  localparam OPC_SPAWN_FOOD = 17'h00010;
+  localparam OPC_SPAWN_FOOD = 18'h00020;
   
-  localparam OPC_RENDER = 17'h00006;
+  localparam OPC_RENDER = 18'h0000c;
   
-  localparam OPC_RESET = 17'h00001;
+  localparam OPC_HALT = 18'h00002;
+  
+  localparam OPC_RESET = 18'h00001;
   
   localparam WAIT_FRAME_gamefsm = 4'd0;
   localparam CHECK_TIME_gamefsm = 4'd1;
@@ -53,7 +55,7 @@ module gameengine_6 (
     
     case (M_gamefsm_q)
       WAIT_FRAME_gamefsm: begin
-        opcode = 17'h1a800;
+        opcode = 18'h35000;
         if (aluout == 1'h1) begin
           M_gamefsm_d = CHECK_TIME_gamefsm;
         end
@@ -66,7 +68,7 @@ module gameengine_6 (
         end
       end
       CHECK_EAT_gamefsm: begin
-        opcode = 17'h19a80;
+        opcode = 18'h33500;
         if (aluout == 1'h1) begin
           M_gamefsm_d = INCREMENT_SCORE_gamefsm;
         end else begin
@@ -74,34 +76,35 @@ module gameengine_6 (
         end
       end
       INCREMENT_SCORE_gamefsm: begin
-        opcode = 17'h00508;
+        opcode = 18'h00a10;
         M_gamefsm_d = SPAWN_FOOD_gamefsm;
       end
       SPAWN_FOOD_gamefsm: begin
-        opcode = 17'h00010;
+        opcode = 18'h00020;
         M_gamefsm_d = MOVE_SNK_HD_gamefsm;
       end
       MOVE_SNK_HD_gamefsm: begin
-        opcode = 17'h00040;
+        opcode = 18'h00080;
         M_gamefsm_d = UPDATE_SNAKE_POS_gamefsm;
       end
       UPDATE_SNAKE_POS_gamefsm: begin
-        opcode = 17'h00020;
+        opcode = 18'h00040;
         M_gamefsm_d = RENDER_gamefsm;
       end
       RENDER_gamefsm: begin
-        opcode = 17'h00006;
+        opcode = 18'h0000c;
         M_gamefsm_d = WAIT_FRAME_gamefsm;
       end
       GAME_OVER_gamefsm: begin
         if (game_start) begin
           M_gamefsm_d = GAME_START_gamefsm;
         end else begin
+          opcode = 18'h00002;
           M_gamefsm_d = GAME_OVER_gamefsm;
         end
       end
       GAME_START_gamefsm: begin
-        opcode = 17'h00001;
+        opcode = 18'h00001;
         M_gamefsm_d = CHECK_TIME_gamefsm;
       end
     endcase

@@ -98,6 +98,7 @@ module mojo_top (
     score.wescr = clogic.wescr;        
     //timer    
     timer.wetmr = clogic.wetmr;
+    timer.halt = clogic.halt;
     //food
     food.wefood = clogic.wefood;
     
@@ -131,7 +132,7 @@ module mojo_top (
 
     //7 segment displays
     //time_display = 14x{1b1};
-    time_display = scoreseg.q;
+    time_display = timerseg.q;
     // score_display = scoreseg.q;
 
     //testing
