@@ -4,40 +4,44 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module sevenseg_4 (
+module sevenseg_13 (
+    input clk,
+    input rst,
     input [15:0] d,
     output reg [13:0] q
   );
   
   
   
-  reg [3:0] tens;
-  
-  reg [3:0] ones;
-  
-  reg [3:0] tens_mod;
-  
-  reg [3:0] ones_mod;
-  
   reg [6:0] tens_out;
   
   reg [6:0] ones_out;
   
+  reg [15:0] M_ones_d, M_ones_q = 1'h0;
+  reg [15:0] M_tens_d, M_tens_q = 1'h0;
+  reg [3:0] M_ones_mod_d, M_ones_mod_q = 1'h0;
+  reg [3:0] M_tens_mod_d, M_tens_mod_q = 1'h0;
+  
   always @* begin
-    ones = d[0+3-:4];
-    if (ones > 4'ha) begin
-      ones_mod = ones - 4'ha;
+    M_tens_d = M_tens_q;
+    M_ones_d = M_ones_q;
+    M_ones_mod_d = M_ones_mod_q;
+    M_tens_mod_d = M_tens_mod_q;
+    
+    if (M_ones_q > 4'ha) begin
+      M_ones_d = M_ones_q - 4'ha;
     end else begin
-      ones_mod = ones;
+      M_ones_mod_d = M_ones_q[0+3-:4];
+      M_ones_d = d;
     end
-    tens = (d / 4'ha);
-    if (tens > 4'ha) begin
-      tens_mod = tens[0+3-:4] - 4'ha;
+    if (M_tens_q > 4'ha) begin
+      M_tens_d = M_tens_q - 4'ha;
     end else begin
-      tens_mod = tens;
+      M_tens_mod_d = M_tens_q[0+3-:4];
+      M_tens_d = d / 4'ha;
     end
     
-    case (ones_mod)
+    case (M_ones_mod_q)
       1'h1: begin
         ones_out = 7'h30;
       end
@@ -70,7 +74,7 @@ module sevenseg_4 (
       end
     endcase
     
-    case (tens_mod)
+    case (M_tens_mod_q)
       1'h1: begin
         tens_out = 7'h30;
       end
@@ -104,4 +108,19 @@ module sevenseg_4 (
     endcase
     q = {tens_out, ones_out};
   end
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_ones_q <= 1'h0;
+      M_tens_q <= 1'h0;
+      M_ones_mod_q <= 1'h0;
+      M_tens_mod_q <= 1'h0;
+    end else begin
+      M_ones_q <= M_ones_d;
+      M_tens_q <= M_tens_d;
+      M_ones_mod_q <= M_ones_mod_d;
+      M_tens_mod_q <= M_tens_mod_d;
+    end
+  end
+  
 endmodule

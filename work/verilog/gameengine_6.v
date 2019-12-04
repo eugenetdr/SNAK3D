@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module gameengine_8 (
+module gameengine_6 (
     input clk,
     input rst,
     input time_out,

@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module timer_12 (
+module timer_10 (
     input clk,
     input rst,
     input wetmr,
@@ -18,21 +18,27 @@ module timer_12 (
   
   localparam FRAME_PERIOD = 16'h1fc0;
   
-  localparam FIFTY_MILION = 16'h5f80;
+  localparam FIFTY_MILION = 26'h2faf080;
   
   reg [26:0] M_clk_counter_d, M_clk_counter_q = 1'h0;
   reg [5:0] M_game_time_counter_d, M_game_time_counter_q = 1'h0;
+  reg [26:0] M_game_clk_counter_d, M_game_clk_counter_q = 1'h0;
   
   always @* begin
     M_clk_counter_d = M_clk_counter_q;
     M_game_time_counter_d = M_game_time_counter_q;
+    M_game_clk_counter_d = M_game_clk_counter_q;
     
     frame_period = 16'h1fc0;
     M_clk_counter_d = M_clk_counter_q + 1'h1;
+    M_game_clk_counter_d = M_game_clk_counter_q + 1'h1;
     clk_count = M_clk_counter_q[11+15-:16];
-    if (M_clk_counter_q > 16'h5f80) begin
-      M_game_time_counter_d = M_game_time_counter_q + 1'h1;
+    if (wetmr) begin
       M_clk_counter_d = 1'h0;
+    end
+    if (M_game_clk_counter_q > 26'h2faf080) begin
+      M_game_time_counter_d = M_game_time_counter_q + 1'h1;
+      M_game_clk_counter_d = 1'h0;
     end
     game_time = 6'h3c - M_game_time_counter_q;
     if (M_game_time_counter_q > 6'h3c) begin
@@ -46,9 +52,11 @@ module timer_12 (
     if (rst == 1'b1) begin
       M_clk_counter_q <= 1'h0;
       M_game_time_counter_q <= 1'h0;
+      M_game_clk_counter_q <= 1'h0;
     end else begin
       M_clk_counter_q <= M_clk_counter_d;
       M_game_time_counter_q <= M_game_time_counter_d;
+      M_game_clk_counter_q <= M_game_clk_counter_d;
     end
   end
   

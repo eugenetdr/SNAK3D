@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module render_14 (
+module render_12 (
     input clk,
     input rst,
     input [11:0] snk_hd_pos,

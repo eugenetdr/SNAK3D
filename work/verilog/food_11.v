@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module food_13 (
+module food_11 (
     input clk,
     input rst,
     input wefood,
@@ -13,12 +13,12 @@ module food_13 (
   
   
   
-  reg [3:0] M_pos_x_d, M_pos_x_q = 1'h0;
-  reg [3:0] M_pos_y_d, M_pos_y_q = 1'h0;
-  reg [3:0] M_pos_z_d, M_pos_z_q = 1'h0;
-  reg [3:0] M_rnd_x_d, M_rnd_x_q = 1'h0;
-  reg [3:0] M_rnd_y_d, M_rnd_y_q = 1'h0;
-  reg [3:0] M_rnd_z_d, M_rnd_z_q = 1'h0;
+  reg [3:0] M_pos_x_d, M_pos_x_q = 3'h4;
+  reg [3:0] M_pos_y_d, M_pos_y_q = 3'h4;
+  reg [3:0] M_pos_z_d, M_pos_z_q = 3'h4;
+  reg [3:0] M_rnd_x_d, M_rnd_x_q = 3'h4;
+  reg [3:0] M_rnd_y_d, M_rnd_y_q = 3'h4;
+  reg [3:0] M_rnd_z_d, M_rnd_z_q = 3'h4;
   
   always @* begin
     M_pos_y_d = M_pos_y_q;
@@ -45,17 +45,18 @@ module food_13 (
       M_pos_y_d = M_rnd_y_q;
       M_pos_z_d = M_rnd_z_q;
     end
+    food_pos = 7'h7d;
     food_pos = {M_pos_x_q, M_pos_y_q, M_pos_z_q};
   end
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_pos_x_q <= 1'h0;
-      M_pos_y_q <= 1'h0;
-      M_pos_z_q <= 1'h0;
-      M_rnd_x_q <= 1'h0;
-      M_rnd_y_q <= 1'h0;
-      M_rnd_z_q <= 1'h0;
+      M_pos_x_q <= 3'h4;
+      M_pos_y_q <= 3'h4;
+      M_pos_z_q <= 3'h4;
+      M_rnd_x_q <= 3'h4;
+      M_rnd_y_q <= 3'h4;
+      M_rnd_z_q <= 3'h4;
     end else begin
       M_pos_x_q <= M_pos_x_d;
       M_pos_y_q <= M_pos_y_d;

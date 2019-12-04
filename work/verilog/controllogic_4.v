@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module controllogic_6 (
+module controllogic_4 (
     input [16:0] opcode,
     output reg [1:0] asel,
     output reg [1:0] bsel,

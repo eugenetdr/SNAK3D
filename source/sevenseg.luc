@@ -1,36 +1,42 @@
 module sevenseg (
+    input clk,
+    input rst,
     input d[16], //a 16 bit number to display (will be truncated)
     output q[14] //14 channel out into the actual seg
   ) {
 
-  sig tens[4]; //0X - 9X
-  sig ones[4]; //0 - 9
-  sig tens_mod[4];
-  sig ones_mod[4];
   sig tens_out[7];
   sig ones_out[7];
+  
+  .clk(clk) {
+    .rst(rst) {
+      dff ones[16];
+      dff tens[16];
+      dff ones_mod[4];
+      dff tens_mod[4];
+    }
+  }
 
   always {
+   
+    if(ones.q > 10) {
+      ones.d = ones.q - 10;
+    }
+    else {
+      ones_mod.d = ones.q[3:0];
+      ones.d = d;
+    }   
     
-    ones = d[3:0];
-
-    if(ones > 10) {
-      ones_mod = ones - 10;
+    if(tens.q > 10) {
+      tens.d = tens.q - 10;
     }
     else {
-      ones_mod = ones;
+      tens_mod.d = tens.q[3:0];
+      tens.d = d/10;
     }
+        
 
-    tens = (d/10);
-
-    if(tens > 10) {
-      tens_mod = tens[3:0] - 10;
-    }
-    else {
-      tens_mod = tens;
-    }        
-
-    case (ones_mod) {
+    case (ones_mod.q) {
         1: 
           ones_out = 7b0110000;
         2: 
@@ -52,7 +58,7 @@ module sevenseg (
         default: 
           ones_out = 7b1111110; 
     }
-    case (tens_mod) {
+    case (tens_mod.q) {
         1: 
           tens_out = 7b0110000;
         2: 

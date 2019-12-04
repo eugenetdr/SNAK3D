@@ -20,7 +20,8 @@ module mojo_top_0 (
     input [1:0] game_button,
     output reg [24:0] col_led,
     output reg [4:0] layer_gnd,
-    input [5:0] button
+    input [5:0] button,
+    output reg [13:0] time_display
   );
   
   
@@ -74,20 +75,6 @@ module mojo_top_0 (
     .out(M_bselector_out)
   );
   
-  wire [14-1:0] M_scoreseg_q;
-  reg [16-1:0] M_scoreseg_d;
-  sevenseg_4 scoreseg (
-    .d(M_scoreseg_d),
-    .q(M_scoreseg_q)
-  );
-  
-  wire [14-1:0] M_timerseg_q;
-  reg [16-1:0] M_timerseg_d;
-  sevenseg_4 timerseg (
-    .d(M_timerseg_d),
-    .q(M_timerseg_q)
-  );
-  
   wire [2-1:0] M_clogic_asel;
   wire [2-1:0] M_clogic_bsel;
   wire [6-1:0] M_clogic_alufn;
@@ -99,7 +86,7 @@ module mojo_top_0 (
   wire [1-1:0] M_clogic_wetmr;
   wire [1-1:0] M_clogic_reset;
   reg [17-1:0] M_clogic_opcode;
-  controllogic_6 clogic (
+  controllogic_4 clogic (
     .opcode(M_clogic_opcode),
     .asel(M_clogic_asel),
     .bsel(M_clogic_bsel),
@@ -115,7 +102,7 @@ module mojo_top_0 (
   
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
-  reset_conditioner_7 reset_cond (
+  reset_conditioner_5 reset_cond (
     .clk(clk),
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
@@ -125,7 +112,7 @@ module mojo_top_0 (
   reg [16-1:0] M_game_aluout;
   reg [1-1:0] M_game_game_start;
   reg [1-1:0] M_game_game_end;
-  gameengine_8 game (
+  gameengine_6 game (
     .clk(clk),
     .rst(M_clogic_reset),
     .time_out(M_game_time_out),
@@ -138,7 +125,7 @@ module mojo_top_0 (
   wire [4-1:0] M_control_dy;
   wire [4-1:0] M_control_dz;
   reg [6-1:0] M_control_buttons;
-  controls_9 control (
+  controls_7 control (
     .clk(clk),
     .rst(M_clogic_reset),
     .buttons(M_control_buttons),
@@ -154,7 +141,7 @@ module mojo_top_0 (
   reg [4-1:0] M_snake_dz;
   reg [1-1:0] M_snake_wesnkhd;
   reg [1-1:0] M_snake_wesnkpos;
-  snake_10 snake (
+  snake_8 snake (
     .clk(clk),
     .rst(M_clogic_reset),
     .dx(M_snake_dx),
@@ -169,7 +156,7 @@ module mojo_top_0 (
   wire [16-1:0] M_score_out;
   reg [1-1:0] M_score_wescr;
   reg [16-1:0] M_score_aluout;
-  score_11 score (
+  score_9 score (
     .clk(clk),
     .rst(M_clogic_reset),
     .wescr(M_score_wescr),
@@ -181,7 +168,7 @@ module mojo_top_0 (
   wire [16-1:0] M_timer_clk_count;
   wire [16-1:0] M_timer_frame_period;
   reg [1-1:0] M_timer_wetmr;
-  timer_12 timer (
+  timer_10 timer (
     .clk(clk),
     .rst(M_clogic_reset),
     .wetmr(M_timer_wetmr),
@@ -192,7 +179,7 @@ module mojo_top_0 (
   );
   wire [12-1:0] M_food_food_pos;
   reg [1-1:0] M_food_wefood;
-  food_13 food (
+  food_11 food (
     .clk(clk),
     .rst(M_clogic_reset),
     .wefood(M_food_wefood),
@@ -205,7 +192,7 @@ module mojo_top_0 (
   reg [12-1:0] M_render_snk_tl_pos;
   reg [12-1:0] M_render_food_pos;
   reg [1-1:0] M_render_wernd;
-  render_14 render (
+  render_12 render (
     .clk(clk),
     .rst(M_clogic_reset),
     .snk_hd_pos(M_render_snk_hd_pos),
@@ -215,6 +202,22 @@ module mojo_top_0 (
     .wernd(M_render_wernd),
     .led_rows_out(M_render_led_rows_out),
     .led_cols_out(M_render_led_cols_out)
+  );
+  wire [14-1:0] M_scoreseg_q;
+  reg [16-1:0] M_scoreseg_d;
+  sevenseg_13 scoreseg (
+    .clk(clk),
+    .rst(M_clogic_reset),
+    .d(M_scoreseg_d),
+    .q(M_scoreseg_q)
+  );
+  wire [14-1:0] M_timerseg_q;
+  reg [16-1:0] M_timerseg_d;
+  sevenseg_13 timerseg (
+    .clk(clk),
+    .rst(M_clogic_reset),
+    .d(M_timerseg_d),
+    .q(M_timerseg_q)
   );
   
   always @* begin
@@ -233,8 +236,8 @@ module mojo_top_0 (
     M_aselector_sel = M_clogic_asel;
     M_bselector_sel = M_clogic_bsel;
     M_control_buttons[0+5-:6] = button[0+5-:6];
-    M_game_game_start = game_button[1+0-:1];
-    M_game_game_end = game_button[0+0-:1];
+    M_game_game_start = game_button[0+0-:1];
+    M_game_game_end = game_button[1+0-:1];
     M_snake_dx = M_control_dx;
     M_snake_dy = M_control_dy;
     M_snake_dz = M_control_dz;
@@ -261,5 +264,6 @@ module mojo_top_0 (
     M_bselector_b = M_food_food_pos;
     M_scoreseg_d = M_score_out;
     M_timerseg_d = {10'h000, M_timer_game_time};
+    time_display = M_scoreseg_q;
   end
 endmodule

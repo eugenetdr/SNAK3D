@@ -1,9 +1,13 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Dec 04 19:13:41 2019
+// Written by: Map P.20131013 on Wed Dec 04 21:00:45 2019
 //! **************************************************************************
 
 SCHEMATIC START;
 CONFIG VCCAUX = "3.3";
+COMP "time_display[10]" LOCATE = SITE "P32" LEVEL 1;
+COMP "time_display[11]" LOCATE = SITE "P29" LEVEL 1;
+COMP "time_display[12]" LOCATE = SITE "P26" LEVEL 1;
+COMP "time_display[13]" LOCATE = SITE "P23" LEVEL 1;
 COMP "clk" LOCATE = SITE "P56" LEVEL 1;
 COMP "col_led[10]" LOCATE = SITE "P92" LEVEL 1;
 COMP "col_led[11]" LOCATE = SITE "P87" LEVEL 1;
@@ -35,6 +39,16 @@ COMP "layer_gnd[2]" LOCATE = SITE "P85" LEVEL 1;
 COMP "layer_gnd[3]" LOCATE = SITE "P83" LEVEL 1;
 COMP "layer_gnd[4]" LOCATE = SITE "P81" LEVEL 1;
 COMP "avr_rx_busy" LOCATE = SITE "P39" LEVEL 1;
+COMP "time_display[0]" LOCATE = SITE "P51" LEVEL 1;
+COMP "time_display[1]" LOCATE = SITE "P41" LEVEL 1;
+COMP "time_display[2]" LOCATE = SITE "P35" LEVEL 1;
+COMP "time_display[3]" LOCATE = SITE "P33" LEVEL 1;
+COMP "time_display[4]" LOCATE = SITE "P30" LEVEL 1;
+COMP "time_display[5]" LOCATE = SITE "P27" LEVEL 1;
+COMP "time_display[6]" LOCATE = SITE "P24" LEVEL 1;
+COMP "time_display[7]" LOCATE = SITE "P50" LEVEL 1;
+COMP "time_display[8]" LOCATE = SITE "P40" LEVEL 1;
+COMP "time_display[9]" LOCATE = SITE "P34" LEVEL 1;
 COMP "col_led[0]" LOCATE = SITE "P120" LEVEL 1;
 COMP "col_led[1]" LOCATE = SITE "P118" LEVEL 1;
 COMP "col_led[2]" LOCATE = SITE "P116" LEVEL 1;
@@ -58,105 +72,146 @@ COMP "spi_ss" LOCATE = SITE "P48" LEVEL 1;
 COMP "spi_mosi" LOCATE = SITE "P44" LEVEL 1;
 COMP "game_button[0]" LOCATE = SITE "P2" LEVEL 1;
 COMP "game_button[1]" LOCATE = SITE "P6" LEVEL 1;
-TIMEGRP clk = BEL "M_pos_z_q_0" BEL "M_pos_z_q_1" BEL "M_pos_z_q_2" BEL
-        "M_pos_y_q_0" BEL "M_pos_y_q_1" BEL "M_pos_y_q_2" BEL "M_pos_x_q_0"
-        BEL "M_pos_x_q_1" BEL "M_pos_x_q_2" BEL "M_hd_z_q_0" BEL "M_hd_z_q_1"
-        BEL "M_hd_z_q_2" BEL "M_hd_z_q_3" BEL "M_hd_y_q_0" BEL "M_hd_y_q_1"
-        BEL "M_hd_y_q_2" BEL "M_hd_y_q_3" BEL "M_hd_x_q_0" BEL "M_hd_x_q_1"
-        BEL "M_hd_x_q_2" BEL "M_hd_x_q_3" BEL "snake/M_hd_pos_q_0" BEL
-        "snake/M_hd_pos_q_1" BEL "snake/M_hd_pos_q_2" BEL "snake/M_hd_pos_q_3"
-        BEL "snake/M_hd_pos_q_4" BEL "snake/M_hd_pos_q_5" BEL
-        "snake/M_hd_pos_q_6" BEL "snake/M_hd_pos_q_7" BEL "snake/M_hd_pos_q_8"
-        BEL "snake/M_hd_pos_q_9" BEL "snake/M_hd_pos_q_10" BEL
-        "snake/M_hd_pos_q_11" BEL "snake/M_bd_pos_q_0" BEL
-        "snake/M_bd_pos_q_1" BEL "snake/M_bd_pos_q_2" BEL "snake/M_bd_pos_q_3"
-        BEL "snake/M_bd_pos_q_4" BEL "snake/M_bd_pos_q_5" BEL
-        "snake/M_bd_pos_q_6" BEL "snake/M_bd_pos_q_7" BEL "snake/M_bd_pos_q_8"
-        BEL "snake/M_bd_pos_q_9" BEL "snake/M_bd_pos_q_10" BEL
-        "snake/M_bd_pos_q_11" BEL "snake/M_tl_pos_q_0" BEL
-        "snake/M_tl_pos_q_1" BEL "snake/M_tl_pos_q_2" BEL "snake/M_tl_pos_q_3"
-        BEL "snake/M_tl_pos_q_4" BEL "snake/M_tl_pos_q_5" BEL
-        "snake/M_tl_pos_q_6" BEL "snake/M_tl_pos_q_7" BEL
-        "control/M_direction_q_FSM_FFd2" BEL "control/M_direction_q_FSM_FFd3"
-        BEL "control/M_direction_q_FSM_FFd1" BEL "control/M_z_q_1" BEL
-        "control/M_z_q_0" BEL "control/M_y_q_1" BEL "control/M_y_q_0" BEL
-        "control/M_x_q_1" BEL "control/M_x_q_0" BEL "timer/M_clk_counter_q_0"
-        BEL "timer/M_clk_counter_q_1" BEL "timer/M_clk_counter_q_2" BEL
+TIMEGRP clk = BEL "M_hd_z_q_0" BEL "M_hd_z_q_1" BEL "M_hd_z_q_2" BEL
+        "M_hd_z_q_3" BEL "M_hd_y_q_0" BEL "M_hd_y_q_1" BEL "M_hd_y_q_2" BEL
+        "M_hd_y_q_3" BEL "M_hd_x_q_0" BEL "M_hd_x_q_1" BEL "M_hd_x_q_2" BEL
+        "M_hd_x_q_3" BEL "score/M_score_q_15" BEL "score/M_score_q_14" BEL
+        "score/M_score_q_13" BEL "score/M_score_q_12" BEL "score/M_score_q_11"
+        BEL "score/M_score_q_10" BEL "score/M_score_q_9" BEL
+        "score/M_score_q_8" BEL "score/M_score_q_7" BEL "score/M_score_q_6"
+        BEL "score/M_score_q_5" BEL "score/M_score_q_4" BEL
+        "score/M_score_q_3" BEL "score/M_score_q_2" BEL "score/M_score_q_1"
+        BEL "score/M_score_q_0" BEL "score/M_score_q_8_1" BEL
+        "score/M_score_q_9_1" BEL "clk_BUFGP/BUFG" BEL "snake/M_hd_pos_q_0"
+        BEL "snake/M_hd_pos_q_1" BEL "snake/M_hd_pos_q_2" BEL
+        "snake/M_hd_pos_q_3" BEL "snake/M_hd_pos_q_4" BEL "snake/M_hd_pos_q_5"
+        BEL "snake/M_hd_pos_q_6" BEL "snake/M_hd_pos_q_7" BEL
+        "snake/M_hd_pos_q_8" BEL "snake/M_hd_pos_q_9" BEL
+        "snake/M_hd_pos_q_10" BEL "snake/M_hd_pos_q_11" BEL
+        "snake/M_bd_pos_q_0" BEL "snake/M_bd_pos_q_1" BEL "snake/M_bd_pos_q_2"
+        BEL "snake/M_bd_pos_q_3" BEL "snake/M_bd_pos_q_4" BEL
+        "snake/M_bd_pos_q_5" BEL "snake/M_bd_pos_q_6" BEL "snake/M_bd_pos_q_7"
+        BEL "snake/M_bd_pos_q_8" BEL "snake/M_bd_pos_q_9" BEL
+        "snake/M_bd_pos_q_10" BEL "snake/M_bd_pos_q_11" BEL
+        "snake/M_tl_pos_q_0" BEL "snake/M_tl_pos_q_1" BEL "snake/M_tl_pos_q_2"
+        BEL "snake/M_tl_pos_q_3" BEL "snake/M_tl_pos_q_4" BEL
+        "snake/M_tl_pos_q_5" BEL "snake/M_tl_pos_q_6" BEL "snake/M_tl_pos_q_7"
+        BEL "control/M_direction_q_FSM_FFd2" BEL
+        "control/M_direction_q_FSM_FFd3" BEL "control/M_direction_q_FSM_FFd1"
+        BEL "control/M_z_q_1" BEL "control/M_z_q_0" BEL "control/M_y_q_1" BEL
+        "control/M_y_q_0" BEL "control/M_x_q_1" BEL "control/M_x_q_0" BEL
+        "timer/M_game_clk_counter_q_0" BEL "timer/M_game_clk_counter_q_1" BEL
+        "timer/M_game_clk_counter_q_2" BEL "timer/M_game_clk_counter_q_3" BEL
+        "timer/M_game_clk_counter_q_4" BEL "timer/M_game_clk_counter_q_5" BEL
+        "timer/M_game_clk_counter_q_6" BEL "timer/M_game_clk_counter_q_7" BEL
+        "timer/M_game_clk_counter_q_8" BEL "timer/M_game_clk_counter_q_9" BEL
+        "timer/M_game_clk_counter_q_10" BEL "timer/M_game_clk_counter_q_11"
+        BEL "timer/M_game_clk_counter_q_12" BEL
+        "timer/M_game_clk_counter_q_13" BEL "timer/M_game_clk_counter_q_14"
+        BEL "timer/M_game_clk_counter_q_15" BEL
+        "timer/M_game_clk_counter_q_16" BEL "timer/M_game_clk_counter_q_17"
+        BEL "timer/M_game_clk_counter_q_18" BEL
+        "timer/M_game_clk_counter_q_19" BEL "timer/M_game_clk_counter_q_20"
+        BEL "timer/M_game_clk_counter_q_21" BEL
+        "timer/M_game_clk_counter_q_22" BEL "timer/M_game_clk_counter_q_23"
+        BEL "timer/M_game_clk_counter_q_24" BEL
+        "timer/M_game_clk_counter_q_25" BEL "timer/M_clk_counter_q_0" BEL
+        "timer/M_clk_counter_q_1" BEL "timer/M_clk_counter_q_2" BEL
         "timer/M_clk_counter_q_3" BEL "timer/M_clk_counter_q_4" BEL
         "timer/M_clk_counter_q_5" BEL "timer/M_clk_counter_q_6" BEL
         "timer/M_clk_counter_q_7" BEL "timer/M_clk_counter_q_8" BEL
         "timer/M_clk_counter_q_9" BEL "timer/M_clk_counter_q_10" BEL
         "timer/M_clk_counter_q_11" BEL "timer/M_clk_counter_q_12" BEL
         "timer/M_clk_counter_q_13" BEL "timer/M_clk_counter_q_14" BEL
+        "timer/M_clk_counter_q_15" BEL "timer/M_clk_counter_q_16" BEL
+        "timer/M_clk_counter_q_17" BEL "timer/M_clk_counter_q_18" BEL
+        "timer/M_clk_counter_q_19" BEL "timer/M_clk_counter_q_20" BEL
+        "timer/M_clk_counter_q_21" BEL "timer/M_clk_counter_q_22" BEL
+        "timer/M_clk_counter_q_23" BEL "timer/M_clk_counter_q_24" BEL
+        "timer/M_clk_counter_q_25" BEL "timer/M_clk_counter_q_26" BEL
         "timer/M_game_time_counter_q_0" BEL "timer/M_game_time_counter_q_1"
         BEL "timer/M_game_time_counter_q_2" BEL
         "timer/M_game_time_counter_q_3" BEL "timer/M_game_time_counter_q_4"
         BEL "timer/M_game_time_counter_q_5" BEL "game/M_gamefsm_q_FSM_FFd6"
         BEL "game/M_gamefsm_q_FSM_FFd10" BEL "game/M_gamefsm_q_FSM_FFd9" BEL
         "game/M_gamefsm_q_FSM_FFd8" BEL "game/M_gamefsm_q_FSM_FFd7" BEL
-        "game/M_gamefsm_q_FSM_FFd5" BEL "game/M_gamefsm_q_FSM_FFd4" BEL
-        "game/M_gamefsm_q_FSM_FFd3" BEL "game/M_gamefsm_q_FSM_FFd2" BEL
-        "game/M_gamefsm_q_FSM_FFd1" BEL "game/M_gamefsm_q_FSM_FFd4_1" BEL
-        "game/M_gamefsm_q_FSM_FFd7_1" BEL "game/M_gamefsm_q_FSM_FFd6_1" BEL
-        "game/M_gamefsm_q_FSM_FFd1_1" BEL "score/M_score_q_15" BEL
-        "score/M_score_q_14" BEL "score/M_score_q_13" BEL "score/M_score_q_12"
-        BEL "score/M_score_q_11" BEL "score/M_score_q_10" BEL
-        "score/M_score_q_9" BEL "score/M_score_q_8" BEL "score/M_score_q_7"
-        BEL "score/M_score_q_6" BEL "score/M_score_q_5" BEL
-        "score/M_score_q_4" BEL "score/M_score_q_3" BEL "score/M_score_q_2"
-        BEL "score/M_score_q_1" BEL "score/M_score_q_0" BEL "food/M_rnd_y_q_0"
-        BEL "food/M_rnd_y_q_1" BEL "food/M_rnd_y_q_2" BEL "food/M_rnd_z_q_0"
-        BEL "food/M_rnd_z_q_1" BEL "food/M_rnd_z_q_2" BEL "food/M_rnd_x_q_0"
-        BEL "food/M_rnd_x_q_1" BEL "food/M_rnd_x_q_2" BEL
-        "render/M_snk_bd_state_q_100" BEL "render/M_snk_bd_state_q_101" BEL
-        "render/M_snk_bd_state_q_102" BEL "render/M_snk_bd_state_q_103" BEL
-        "render/M_snk_bd_state_q_104" BEL "render/M_snk_bd_state_q_105" BEL
-        "render/M_snk_bd_state_q_110" BEL "render/M_snk_bd_state_q_106" BEL
-        "render/M_snk_bd_state_q_111" BEL "render/M_snk_bd_state_q_107" BEL
-        "render/M_snk_bd_state_q_112" BEL "render/M_snk_bd_state_q_108" BEL
-        "render/M_snk_bd_state_q_113" BEL "render/M_snk_bd_state_q_109" BEL
-        "render/M_snk_bd_state_q_114" BEL "render/M_snk_bd_state_q_115" BEL
-        "render/M_snk_bd_state_q_120" BEL "render/M_snk_bd_state_q_116" BEL
-        "render/M_snk_bd_state_q_121" BEL "render/M_snk_bd_state_q_117" BEL
-        "render/M_snk_bd_state_q_122" BEL "render/M_snk_bd_state_q_118" BEL
-        "render/M_snk_bd_state_q_123" BEL "render/M_snk_bd_state_q_119" BEL
-        "render/M_snk_bd_state_q_124" BEL "render/M_snk_hd_state_q_0" BEL
-        "render/M_snk_hd_state_q_1" BEL "render/M_snk_hd_state_q_2" BEL
-        "render/M_snk_hd_state_q_3" BEL "render/M_snk_hd_state_q_4" BEL
-        "render/M_snk_hd_state_q_5" BEL "render/M_snk_hd_state_q_6" BEL
-        "render/M_snk_hd_state_q_7" BEL "render/M_snk_hd_state_q_8" BEL
-        "render/M_snk_hd_state_q_9" BEL "render/M_led_state_q_100" BEL
-        "render/M_led_state_q_101" BEL "render/M_led_state_q_102" BEL
-        "render/M_led_state_q_103" BEL "render/M_led_state_q_104" BEL
-        "render/M_led_state_q_110" BEL "render/M_led_state_q_105" BEL
-        "render/M_led_state_q_111" BEL "render/M_led_state_q_106" BEL
-        "render/M_led_state_q_112" BEL "render/M_led_state_q_107" BEL
-        "render/M_led_state_q_113" BEL "render/M_led_state_q_108" BEL
-        "render/M_led_state_q_114" BEL "render/M_led_state_q_109" BEL
-        "render/M_led_state_q_120" BEL "render/M_led_state_q_115" BEL
-        "render/M_led_state_q_121" BEL "render/M_led_state_q_116" BEL
-        "render/M_led_state_q_122" BEL "render/M_led_state_q_117" BEL
-        "render/M_led_state_q_123" BEL "render/M_led_state_q_118" BEL
-        "render/M_led_state_q_124" BEL "render/M_led_state_q_119" BEL
-        "render/Maddsub_snk_tl_pos[7]_PWR_20_o_MuLt_11_OUT1_1" BEL
-        "render/Maddsub_snk_tl_pos[7]_PWR_20_o_MuLt_11_OUT1_2" BEL
-        "render/Maddsub_snk_tl_pos[7]_PWR_20_o_MuLt_11_OUT1_3" BEL
-        "render/Maddsub_snk_tl_pos[7]_PWR_20_o_MuLt_11_OUT1_4" BEL
-        "render/M_led_state_q_0" BEL "render/M_led_state_q_1" BEL
-        "render/M_led_state_q_2" BEL "render/M_led_state_q_3" BEL
-        "render/M_led_state_q_4" BEL "render/M_led_state_q_5" BEL
-        "render/M_led_state_q_6" BEL "render/M_led_state_q_7" BEL
-        "render/M_led_state_q_8" BEL "render/M_led_state_q_9" BEL
-        "render/M_food_state_q_0" BEL "render/M_food_state_q_1" BEL
-        "render/M_food_state_q_2" BEL "render/M_food_state_q_3" BEL
-        "render/M_food_state_q_4" BEL "render/M_food_state_q_5" BEL
-        "render/M_food_state_q_6" BEL "render/M_food_state_q_7" BEL
-        "render/M_food_state_q_8" BEL "render/M_food_state_q_9" BEL
-        "render/M_snk_bd_state_q_0" BEL "render/M_snk_bd_state_q_1" BEL
-        "render/M_snk_bd_state_q_2" BEL "render/M_snk_bd_state_q_3" BEL
-        "render/M_snk_bd_state_q_4" BEL "render/M_snk_bd_state_q_5" BEL
-        "render/M_snk_bd_state_q_6" BEL "render/M_snk_bd_state_q_7" BEL
-        "render/M_snk_bd_state_q_8" BEL "render/M_snk_bd_state_q_9" BEL
+        "game/M_gamefsm_q_FSM_FFd5" BEL "game/M_gamefsm_q_FSM_FFd2" BEL
+        "game/M_gamefsm_q_FSM_FFd4" BEL "game/M_gamefsm_q_FSM_FFd3" BEL
+        "game/M_gamefsm_q_FSM_FFd1" BEL "food/M_rnd_y_q_1" BEL
+        "food/M_rnd_y_q_0" BEL "food/M_rnd_z_q_1" BEL "food/M_rnd_z_q_0" BEL
+        "food/M_rnd_x_q_1" BEL "food/M_rnd_x_q_0" BEL "food/M_pos_x_q_2" BEL
+        "food/M_pos_x_q_1" BEL "food/M_pos_x_q_0" BEL "food/M_pos_y_q_2" BEL
+        "food/M_pos_y_q_1" BEL "food/M_pos_y_q_0" BEL "food/M_pos_z_q_2" BEL
+        "food/M_pos_z_q_1" BEL "food/M_pos_z_q_0" BEL "food/M_rnd_y_q_2" BEL
+        "food/M_rnd_z_q_2" BEL "food/M_rnd_x_q_2" BEL
+        "scoreseg/M_tens_mod_q_3" BEL "scoreseg/M_tens_mod_q_2" BEL
+        "scoreseg/M_tens_mod_q_1" BEL "scoreseg/M_tens_mod_q_0" BEL
+        "scoreseg/M_ones_mod_q_3" BEL "scoreseg/M_ones_mod_q_2" BEL
+        "scoreseg/M_ones_mod_q_1" BEL "scoreseg/M_ones_mod_q_0" BEL
+        "scoreseg/M_tens_q_12" BEL "scoreseg/M_tens_q_11" BEL
+        "scoreseg/M_tens_q_10" BEL "scoreseg/M_tens_q_9" BEL
+        "scoreseg/M_tens_q_8" BEL "scoreseg/M_tens_q_7" BEL
+        "scoreseg/M_tens_q_6" BEL "scoreseg/M_tens_q_5" BEL
+        "scoreseg/M_tens_q_4" BEL "scoreseg/M_tens_q_3" BEL
+        "scoreseg/M_tens_q_2" BEL "scoreseg/M_tens_q_1" BEL
+        "scoreseg/M_tens_q_0" BEL "scoreseg/M_ones_q_15" BEL
+        "scoreseg/M_ones_q_14" BEL "scoreseg/M_ones_q_13" BEL
+        "scoreseg/M_ones_q_12" BEL "scoreseg/M_ones_q_11" BEL
+        "scoreseg/M_ones_q_10" BEL "scoreseg/M_ones_q_9" BEL
+        "scoreseg/M_ones_q_8" BEL "scoreseg/M_ones_q_7" BEL
+        "scoreseg/M_ones_q_6" BEL "scoreseg/M_ones_q_5" BEL
+        "scoreseg/M_ones_q_4" BEL "scoreseg/M_ones_q_3" BEL
+        "scoreseg/M_ones_q_2" BEL "scoreseg/M_ones_q_1" BEL
+        "scoreseg/M_ones_q_0" BEL "render/M_snk_bd_state_q_100" BEL
+        "render/M_snk_bd_state_q_101" BEL "render/M_snk_bd_state_q_102" BEL
+        "render/M_snk_bd_state_q_103" BEL "render/M_snk_bd_state_q_104" BEL
+        "render/M_snk_bd_state_q_105" BEL "render/M_snk_bd_state_q_110" BEL
+        "render/M_snk_bd_state_q_106" BEL "render/M_snk_bd_state_q_111" BEL
+        "render/M_snk_bd_state_q_107" BEL "render/M_snk_bd_state_q_112" BEL
+        "render/M_snk_bd_state_q_108" BEL "render/M_snk_bd_state_q_113" BEL
+        "render/M_snk_bd_state_q_109" BEL "render/M_snk_bd_state_q_114" BEL
+        "render/M_snk_bd_state_q_115" BEL "render/M_snk_bd_state_q_120" BEL
+        "render/M_snk_bd_state_q_116" BEL "render/M_snk_bd_state_q_121" BEL
+        "render/M_snk_bd_state_q_117" BEL "render/M_snk_bd_state_q_122" BEL
+        "render/M_snk_bd_state_q_118" BEL "render/M_snk_bd_state_q_123" BEL
+        "render/M_snk_bd_state_q_119" BEL "render/M_snk_bd_state_q_124" BEL
+        "render/M_snk_hd_state_q_0" BEL "render/M_snk_hd_state_q_1" BEL
+        "render/M_snk_hd_state_q_2" BEL "render/M_snk_hd_state_q_3" BEL
+        "render/M_snk_hd_state_q_4" BEL "render/M_snk_hd_state_q_5" BEL
+        "render/M_snk_hd_state_q_6" BEL "render/M_snk_hd_state_q_7" BEL
+        "render/M_snk_hd_state_q_8" BEL "render/M_snk_hd_state_q_9" BEL
+        "render/M_led_state_q_100" BEL "render/M_led_state_q_101" BEL
+        "render/M_led_state_q_102" BEL "render/M_led_state_q_103" BEL
+        "render/M_led_state_q_104" BEL "render/M_led_state_q_110" BEL
+        "render/M_led_state_q_105" BEL "render/M_led_state_q_111" BEL
+        "render/M_led_state_q_106" BEL "render/M_led_state_q_112" BEL
+        "render/M_led_state_q_107" BEL "render/M_led_state_q_113" BEL
+        "render/M_led_state_q_108" BEL "render/M_led_state_q_114" BEL
+        "render/M_led_state_q_109" BEL "render/M_led_state_q_120" BEL
+        "render/M_led_state_q_115" BEL "render/M_led_state_q_121" BEL
+        "render/M_led_state_q_116" BEL "render/M_led_state_q_122" BEL
+        "render/M_led_state_q_117" BEL "render/M_led_state_q_123" BEL
+        "render/M_led_state_q_118" BEL "render/M_led_state_q_124" BEL
+        "render/M_led_state_q_119" BEL "render/M_led_state_q_0" BEL
+        "render/M_led_state_q_1" BEL "render/M_led_state_q_2" BEL
+        "render/M_led_state_q_3" BEL "render/M_led_state_q_4" BEL
+        "render/M_led_state_q_5" BEL "render/M_led_state_q_6" BEL
+        "render/M_led_state_q_7" BEL "render/M_led_state_q_8" BEL
+        "render/M_led_state_q_9" BEL "render/M_food_state_q_0" BEL
+        "render/M_food_state_q_1" BEL "render/M_food_state_q_2" BEL
+        "render/M_food_state_q_3" BEL "render/M_food_state_q_4" BEL
+        "render/M_food_state_q_5" BEL "render/M_food_state_q_6" BEL
+        "render/M_food_state_q_7" BEL "render/M_food_state_q_8" BEL
+        "render/M_food_state_q_9" BEL "render/M_snk_bd_state_q_0" BEL
+        "render/M_snk_bd_state_q_1" BEL "render/M_snk_bd_state_q_2" BEL
+        "render/M_snk_bd_state_q_3" BEL "render/M_snk_bd_state_q_4" BEL
+        "render/M_snk_bd_state_q_5" BEL "render/M_snk_bd_state_q_6" BEL
+        "render/M_snk_bd_state_q_7" BEL "render/M_snk_bd_state_q_8" BEL
+        "render/M_snk_bd_state_q_9" BEL
+        "render/Maddsub_snk_tl_pos[7]_PWR_17_o_MuLt_11_OUT1_1" BEL
+        "render/Maddsub_snk_tl_pos[7]_PWR_17_o_MuLt_11_OUT1_2" BEL
+        "render/Maddsub_snk_tl_pos[7]_PWR_17_o_MuLt_11_OUT1_3" BEL
+        "render/Maddsub_snk_tl_pos[7]_PWR_17_o_MuLt_11_OUT1_4" BEL
         "render/M_food_state_q_100" BEL "render/M_food_state_q_101" BEL
         "render/M_food_state_q_102" BEL "render/M_food_state_q_103" BEL
         "render/M_food_state_q_104" BEL "render/M_food_state_q_110" BEL
@@ -431,8 +486,7 @@ TIMEGRP clk = BEL "M_pos_z_q_0" BEL "M_pos_z_q_1" BEL "M_pos_z_q_2" BEL
         "render/M_food_state_q_88" BEL "render/M_food_state_q_94" BEL
         "render/M_food_state_q_89" BEL "render/M_food_state_q_95" BEL
         "render/M_food_state_q_96" BEL "render/M_food_state_q_97" BEL
-        "render/M_food_state_q_98" BEL "render/M_food_state_q_99" BEL
-        "clk_BUFGP/BUFG";
+        "render/M_food_state_q_98" BEL "render/M_food_state_q_99";
 TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 

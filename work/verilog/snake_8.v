@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module snake_10 (
+module snake_8 (
     input clk,
     input rst,
     input [3:0] dx,
