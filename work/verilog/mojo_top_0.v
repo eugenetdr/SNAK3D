@@ -21,6 +21,7 @@ module mojo_top_0 (
     output reg [24:0] col_led,
     output reg [4:0] layer_gnd,
     input [5:0] button,
+    output reg [13:0] score_display,
     output reg [13:0] time_display
   );
   
@@ -270,5 +271,6 @@ module mojo_top_0 (
     M_scoreseg_d = M_score_out;
     M_timerseg_d = {10'h000, M_timer_game_time};
     time_display = M_timerseg_q;
+    score_display = M_scoreseg_q;
   end
 endmodule
