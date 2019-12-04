@@ -9,35 +9,40 @@ module gameengine_8 (
     input rst,
     input time_out,
     input [15:0] aluout,
-    output reg [15:0] opcode
+    input game_start,
+    input game_end,
+    output reg [16:0] opcode
   );
   
   
   
-  localparam OPC_CMP_TIME_FRAME = 16'hd400;
+  localparam OPC_CMP_TIME_FRAME = 17'h1a800;
   
-  localparam OPC_CMP_FOOD = 16'hcd40;
+  localparam OPC_CMP_FOOD = 17'h19a80;
   
-  localparam OPC_INCREMENT_SCORE = 16'h0284;
+  localparam OPC_INCREMENT_SCORE = 17'h00508;
   
-  localparam OPC_MOVE_SNK_HD = 16'h0020;
+  localparam OPC_MOVE_SNK_HD = 17'h00040;
   
-  localparam OPC_UPDATE_SNK_POS = 16'h0010;
+  localparam OPC_UPDATE_SNK_POS = 17'h00020;
   
-  localparam OPC_SPAWN_FOOD = 16'h0008;
+  localparam OPC_SPAWN_FOOD = 17'h00010;
   
-  localparam OPC_RENDER = 16'h0003;
+  localparam OPC_RENDER = 17'h00006;
+  
+  localparam OPC_RESET = 17'h00001;
   
   localparam WAIT_FRAME_gamefsm = 4'd0;
   localparam CHECK_TIME_gamefsm = 4'd1;
   localparam GAME_OVER_gamefsm = 4'd2;
-  localparam CHECK_EAT_gamefsm = 4'd3;
-  localparam INCREMENT_SCORE_gamefsm = 4'd4;
-  localparam SPAWN_FOOD_gamefsm = 4'd5;
-  localparam MOVE_SNK_HD_gamefsm = 4'd6;
-  localparam UPDATE_SNAKE_POS_gamefsm = 4'd7;
-  localparam CHECK_WRAP_gamefsm = 4'd8;
-  localparam RENDER_gamefsm = 4'd9;
+  localparam GAME_START_gamefsm = 4'd3;
+  localparam CHECK_EAT_gamefsm = 4'd4;
+  localparam INCREMENT_SCORE_gamefsm = 4'd5;
+  localparam SPAWN_FOOD_gamefsm = 4'd6;
+  localparam MOVE_SNK_HD_gamefsm = 4'd7;
+  localparam UPDATE_SNAKE_POS_gamefsm = 4'd8;
+  localparam CHECK_WRAP_gamefsm = 4'd9;
+  localparam RENDER_gamefsm = 4'd10;
   
   reg [3:0] M_gamefsm_d, M_gamefsm_q = WAIT_FRAME_gamefsm;
   
@@ -48,7 +53,7 @@ module gameengine_8 (
     
     case (M_gamefsm_q)
       WAIT_FRAME_gamefsm: begin
-        opcode = 16'hd400;
+        opcode = 17'h1a800;
         if (aluout == 1'h1) begin
           M_gamefsm_d = CHECK_TIME_gamefsm;
         end
@@ -61,7 +66,7 @@ module gameengine_8 (
         end
       end
       CHECK_EAT_gamefsm: begin
-        opcode = 16'hcd40;
+        opcode = 17'h19a80;
         if (aluout == 1'h1) begin
           M_gamefsm_d = INCREMENT_SCORE_gamefsm;
         end else begin
@@ -69,29 +74,40 @@ module gameengine_8 (
         end
       end
       INCREMENT_SCORE_gamefsm: begin
-        opcode = 16'h0284;
+        opcode = 17'h00508;
         M_gamefsm_d = SPAWN_FOOD_gamefsm;
       end
       SPAWN_FOOD_gamefsm: begin
-        opcode = 16'h0008;
+        opcode = 17'h00010;
         M_gamefsm_d = MOVE_SNK_HD_gamefsm;
       end
       MOVE_SNK_HD_gamefsm: begin
-        opcode = 16'h0020;
+        opcode = 17'h00040;
         M_gamefsm_d = UPDATE_SNAKE_POS_gamefsm;
       end
       UPDATE_SNAKE_POS_gamefsm: begin
-        opcode = 16'h0010;
+        opcode = 17'h00020;
         M_gamefsm_d = RENDER_gamefsm;
       end
       RENDER_gamefsm: begin
-        opcode = 16'h0003;
+        opcode = 17'h00006;
         M_gamefsm_d = WAIT_FRAME_gamefsm;
       end
       GAME_OVER_gamefsm: begin
-        M_gamefsm_d = GAME_OVER_gamefsm;
+        if (game_start) begin
+          M_gamefsm_d = GAME_START_gamefsm;
+        end else begin
+          M_gamefsm_d = GAME_OVER_gamefsm;
+        end
+      end
+      GAME_START_gamefsm: begin
+        opcode = 17'h00001;
+        M_gamefsm_d = CHECK_TIME_gamefsm;
       end
     endcase
+    if (game_end) begin
+      M_gamefsm_d = GAME_OVER_gamefsm;
+    end
   end
   
   always @(posedge clk) begin

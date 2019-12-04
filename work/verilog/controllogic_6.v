@@ -5,7 +5,7 @@
 */
 
 module controllogic_6 (
-    input [15:0] opcode,
+    input [16:0] opcode,
     output reg [1:0] asel,
     output reg [1:0] bsel,
     output reg [5:0] alufn,
@@ -14,20 +14,22 @@ module controllogic_6 (
     output reg wefood,
     output reg wescr,
     output reg wernd,
-    output reg wetmr
+    output reg wetmr,
+    output reg reset
   );
   
   
   
   always @* begin
-    alufn = opcode[10+5-:6];
-    asel = opcode[8+1-:2];
-    bsel = opcode[6+1-:2];
-    wesnkhd = opcode[5+0-:1];
-    wesnkpos = opcode[4+0-:1];
-    wefood = opcode[3+0-:1];
-    wescr = opcode[2+0-:1];
-    wernd = opcode[1+0-:1];
-    wetmr = opcode[0+0-:1];
+    alufn = opcode[11+5-:6];
+    asel = opcode[9+1-:2];
+    bsel = opcode[7+1-:2];
+    wesnkhd = opcode[6+0-:1];
+    wesnkpos = opcode[5+0-:1];
+    wefood = opcode[4+0-:1];
+    wescr = opcode[3+0-:1];
+    wernd = opcode[2+0-:1];
+    wetmr = opcode[1+0-:1];
+    reset = opcode[0+0-:1];
   end
 endmodule

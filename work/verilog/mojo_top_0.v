@@ -97,7 +97,8 @@ module mojo_top_0 (
   wire [1-1:0] M_clogic_wescr;
   wire [1-1:0] M_clogic_wernd;
   wire [1-1:0] M_clogic_wetmr;
-  reg [16-1:0] M_clogic_opcode;
+  wire [1-1:0] M_clogic_reset;
+  reg [17-1:0] M_clogic_opcode;
   controllogic_6 clogic (
     .opcode(M_clogic_opcode),
     .asel(M_clogic_asel),
@@ -108,7 +109,8 @@ module mojo_top_0 (
     .wefood(M_clogic_wefood),
     .wescr(M_clogic_wescr),
     .wernd(M_clogic_wernd),
-    .wetmr(M_clogic_wetmr)
+    .wetmr(M_clogic_wetmr),
+    .reset(M_clogic_reset)
   );
   
   wire [1-1:0] M_reset_cond_out;
@@ -118,14 +120,18 @@ module mojo_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  wire [16-1:0] M_game_opcode;
+  wire [17-1:0] M_game_opcode;
   reg [1-1:0] M_game_time_out;
   reg [16-1:0] M_game_aluout;
+  reg [1-1:0] M_game_game_start;
+  reg [1-1:0] M_game_game_end;
   gameengine_8 game (
     .clk(clk),
-    .rst(rst),
+    .rst(M_clogic_reset),
     .time_out(M_game_time_out),
     .aluout(M_game_aluout),
+    .game_start(M_game_game_start),
+    .game_end(M_game_game_end),
     .opcode(M_game_opcode)
   );
   wire [4-1:0] M_control_dx;
@@ -134,7 +140,7 @@ module mojo_top_0 (
   reg [6-1:0] M_control_buttons;
   controls_9 control (
     .clk(clk),
-    .rst(rst),
+    .rst(M_clogic_reset),
     .buttons(M_control_buttons),
     .dx(M_control_dx),
     .dy(M_control_dy),
@@ -150,7 +156,7 @@ module mojo_top_0 (
   reg [1-1:0] M_snake_wesnkpos;
   snake_10 snake (
     .clk(clk),
-    .rst(rst),
+    .rst(M_clogic_reset),
     .dx(M_snake_dx),
     .dy(M_snake_dy),
     .dz(M_snake_dz),
@@ -165,7 +171,7 @@ module mojo_top_0 (
   reg [16-1:0] M_score_aluout;
   score_11 score (
     .clk(clk),
-    .rst(rst),
+    .rst(M_clogic_reset),
     .wescr(M_score_wescr),
     .aluout(M_score_aluout),
     .out(M_score_out)
@@ -177,7 +183,7 @@ module mojo_top_0 (
   reg [1-1:0] M_timer_wetmr;
   timer_12 timer (
     .clk(clk),
-    .rst(rst),
+    .rst(M_clogic_reset),
     .wetmr(M_timer_wetmr),
     .game_time(M_timer_game_time),
     .time_out(M_timer_time_out),
@@ -188,7 +194,7 @@ module mojo_top_0 (
   reg [1-1:0] M_food_wefood;
   food_13 food (
     .clk(clk),
-    .rst(rst),
+    .rst(M_clogic_reset),
     .wefood(M_food_wefood),
     .food_pos(M_food_food_pos)
   );
@@ -201,7 +207,7 @@ module mojo_top_0 (
   reg [1-1:0] M_render_wernd;
   render_14 render (
     .clk(clk),
-    .rst(rst),
+    .rst(M_clogic_reset),
     .snk_hd_pos(M_render_snk_hd_pos),
     .snk_bd_pos(M_render_snk_bd_pos),
     .snk_tl_pos(M_render_snk_tl_pos),
@@ -227,6 +233,8 @@ module mojo_top_0 (
     M_aselector_sel = M_clogic_asel;
     M_bselector_sel = M_clogic_bsel;
     M_control_buttons[0+5-:6] = button[0+5-:6];
+    M_game_game_start = game_button[1+0-:1];
+    M_game_game_end = game_button[0+0-:1];
     M_snake_dx = M_control_dx;
     M_snake_dy = M_control_dy;
     M_snake_dz = M_control_dz;

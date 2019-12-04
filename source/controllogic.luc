@@ -22,6 +22,6 @@ module controllogic (
     wescr = opcode[3];
     wernd = opcode[2];
     wetmr = opcode[1];
-    RESET = opcode[0];
+    reset = opcode[0];
   }
 }
