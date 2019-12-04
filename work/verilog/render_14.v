@@ -65,14 +65,14 @@ module render_14 (
   localparam TEMPLATE = 125'h00000000000000000000000000000001;
   
   always @* begin
+    M_food_state_d = M_food_state_q;
+    M_snk_hd_state_d = M_snk_hd_state_q;
+    M_cols_d = M_cols_q;
+    M_count_d = M_count_q;
+    M_led_state_d = M_led_state_q;
     M_snk_bd_state_d = M_snk_bd_state_q;
     M_snk_tl_state_d = M_snk_tl_state_q;
-    M_led_state_d = M_led_state_q;
-    M_snk_hd_state_d = M_snk_hd_state_q;
-    M_food_state_d = M_food_state_q;
-    M_count_d = M_count_q;
     M_rows_d = M_rows_q;
-    M_cols_d = M_cols_q;
     
     hd_x = snk_hd_pos[8+3-:4];
     hd_y = snk_hd_pos[4+3-:4];
@@ -127,6 +127,12 @@ module render_14 (
     led_cols_out = M_cols_q;
   end
   
+  always @(posedge M_muxclk_value) begin
+    M_rows_q <= M_rows_d;
+    M_cols_q <= M_cols_d;
+  end
+  
+  
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       M_snk_hd_state_q <= 1'h0;
@@ -143,12 +149,6 @@ module render_14 (
       M_led_state_q <= M_led_state_d;
       M_count_q <= M_count_d;
     end
-  end
-  
-  
-  always @(posedge M_muxclk_value) begin
-    M_rows_q <= M_rows_d;
-    M_cols_q <= M_cols_d;
   end
   
 endmodule
