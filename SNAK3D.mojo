@@ -21,7 +21,6 @@
     <src>sevenseg.luc</src>
     <ucf lib="true">mojo.ucf</ucf>
     <ucf>controls.ucf</ucf>
-    <ucf>io_shield.ucf</ucf>
     <component>counter.luc</component>
     <component>reset_conditioner.luc</component>
   </files>

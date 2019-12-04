@@ -1,0 +1,2485 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/home/mooselliot/Desktop/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise
+-o mojo_top_0.twr -v 30 -l 30 mojo_top_0_routed.ncd mojo_top_0.pcf
+
+Design file:              mojo_top_0_routed.ncd
+Physical constraint file: mojo_top_0.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report, limited to 30 items per constraint
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 345772652 paths analyzed, 5499 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  19.356ns.
+--------------------------------------------------------------------------------
+Slack:                  0.644ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_13 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.296ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_13 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.DQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_13
+    SLICE_X7Y54.B2       net (fanout=16)       0.806   M_score_out[13]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X4Y55.B1       net (fanout=3)        0.965   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X4Y55.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N387
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0
+    SLICE_X2Y53.A4       net (fanout=18)       1.178   scoreseg/N37
+    SLICE_X2Y53.A        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N45
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o121
+    SLICE_X10Y61.D2      net (fanout=32)       2.808   scoreseg/d[15]_PWR_20_o_div_6/a[11]_a[15]_MUX_724_o
+    SLICE_X10Y61.CMUX    Topdc                 0.402   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1
+    SLICE_X10Y61.A2      net (fanout=1)        0.725   scoreseg/d[15]_PWR_20_o_div_6/N274
+    SLICE_X10Y61.A       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_767_o141
+    SLICE_X3Y57.A2       net (fanout=10)       1.886   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+    SLICE_X3Y57.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N399
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW5
+    SLICE_X4Y61.A6       net (fanout=1)        0.803   scoreseg/d[15]_PWR_20_o_div_6/N159
+    SLICE_X4Y61.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW2
+    SLICE_X6Y57.C1       net (fanout=1)        1.204   scoreseg/d[15]_PWR_20_o_div_6/N381
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.296ns (4.109ns logic, 15.187ns route)
+                                                       (21.3% logic, 78.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.660ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_14 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.280ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_14 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.CQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_14
+    SLICE_X8Y53.A2       net (fanout=16)       1.035   M_score_out[14]
+    SLICE_X8Y53.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_671_o141
+    SLICE_X6Y53.D3       net (fanout=12)       0.850   scoreseg/a[13]_a[15]_MUX_658_o
+    SLICE_X6Y53.D        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y54.C2       net (fanout=14)       1.227   scoreseg/d[15]_PWR_20_o_div_6/o<7>11
+    SLICE_X3Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o1151
+    SLICE_X9Y54.C2       net (fanout=7)        1.878   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_21_OUT_lut[9]
+    SLICE_X9Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1151
+    SLICE_X8Y57.A2       net (fanout=10)       0.983   scoreseg/d[15]_PWR_20_o_div_6/a[9]_a[15]_MUX_726_o
+    SLICE_X8Y57.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy<11>1
+    SLICE_X8Y57.B4       net (fanout=15)       0.494   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy[11]
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.C3       net (fanout=4)        0.801   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.280ns (4.439ns logic, 14.841ns route)
+                                                       (23.0% logic, 77.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.660ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_11 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.280ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_11 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.AQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_11
+    SLICE_X7Y54.B1       net (fanout=19)       0.790   M_score_out[11]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X4Y55.B1       net (fanout=3)        0.965   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X4Y55.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N387
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0
+    SLICE_X2Y53.A4       net (fanout=18)       1.178   scoreseg/N37
+    SLICE_X2Y53.A        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N45
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o121
+    SLICE_X10Y61.D2      net (fanout=32)       2.808   scoreseg/d[15]_PWR_20_o_div_6/a[11]_a[15]_MUX_724_o
+    SLICE_X10Y61.CMUX    Topdc                 0.402   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1
+    SLICE_X10Y61.A2      net (fanout=1)        0.725   scoreseg/d[15]_PWR_20_o_div_6/N274
+    SLICE_X10Y61.A       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_767_o141
+    SLICE_X3Y57.A2       net (fanout=10)       1.886   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+    SLICE_X3Y57.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N399
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW5
+    SLICE_X4Y61.A6       net (fanout=1)        0.803   scoreseg/d[15]_PWR_20_o_div_6/N159
+    SLICE_X4Y61.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW2
+    SLICE_X6Y57.C1       net (fanout=1)        1.204   scoreseg/d[15]_PWR_20_o_div_6/N381
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.280ns (4.109ns logic, 15.171ns route)
+                                                       (21.3% logic, 78.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.687ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_13 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.253ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_13 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.DQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_13
+    SLICE_X7Y54.B2       net (fanout=16)       0.806   M_score_out[13]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X3Y55.D2       net (fanout=14)       1.618   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y55.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o161
+    SLICE_X3Y55.C4       net (fanout=2)        0.535   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+    SLICE_X3Y55.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>13
+    SLICE_X2Y55.B2       net (fanout=10)       0.777   scoreseg/d[15]_PWR_20_o_div_6/o<5>13
+    SLICE_X2Y55.B        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N104
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>14_SW4
+    SLICE_X8Y57.B2       net (fanout=2)        1.630   scoreseg/d[15]_PWR_20_o_div_6/N104
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.C3       net (fanout=4)        0.801   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.253ns (4.444ns logic, 14.809ns route)
+                                                       (23.1% logic, 76.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.703ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_11 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.237ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_11 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.AQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_11
+    SLICE_X7Y54.B1       net (fanout=19)       0.790   M_score_out[11]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X3Y55.D2       net (fanout=14)       1.618   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y55.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o161
+    SLICE_X3Y55.C4       net (fanout=2)        0.535   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+    SLICE_X3Y55.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>13
+    SLICE_X2Y55.B2       net (fanout=10)       0.777   scoreseg/d[15]_PWR_20_o_div_6/o<5>13
+    SLICE_X2Y55.B        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N104
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>14_SW4
+    SLICE_X8Y57.B2       net (fanout=2)        1.630   scoreseg/d[15]_PWR_20_o_div_6/N104
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.C3       net (fanout=4)        0.801   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.237ns (4.444ns logic, 14.793ns route)
+                                                       (23.1% logic, 76.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.710ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_13 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.230ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_13 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.DQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_13
+    SLICE_X7Y54.B2       net (fanout=16)       0.806   M_score_out[13]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X4Y55.B1       net (fanout=3)        0.965   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X4Y55.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N387
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0
+    SLICE_X2Y53.A4       net (fanout=18)       1.178   scoreseg/N37
+    SLICE_X2Y53.A        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N45
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o121
+    SLICE_X10Y61.D2      net (fanout=32)       2.808   scoreseg/d[15]_PWR_20_o_div_6/a[11]_a[15]_MUX_724_o
+    SLICE_X10Y61.CMUX    Topdc                 0.402   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1
+    SLICE_X10Y61.A2      net (fanout=1)        0.725   scoreseg/d[15]_PWR_20_o_div_6/N274
+    SLICE_X10Y61.A       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_767_o141
+    SLICE_X9Y57.C3       net (fanout=10)       1.140   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+    SLICE_X9Y57.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[14]_a[15]_MUX_753_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_1
+    SLICE_X4Y57.C1       net (fanout=4)        1.076   scoreseg/d[15]_PWR_20_o_div_6/o<2>1114
+    SLICE_X4Y57.COUT     Topcyc                0.328   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[6]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n07591211
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy<6>
+    SLICE_X4Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[6]
+    SLICE_X4Y58.AMUX     Tcina                 0.220   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy<10>
+    SLICE_X6Y58.B4       net (fanout=5)        1.287   scoreseg/d[15]_PWR_20_o_div_6/a[15]_GND_26_o_add_29_OUT[15:0][7]
+    SLICE_X6Y58.DMUX     Topbd                 0.644   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_lut<7>
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.230ns (4.433ns logic, 14.797ns route)
+                                                       (23.1% logic, 76.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.726ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_11 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.214ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_11 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.AQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_11
+    SLICE_X7Y54.B1       net (fanout=19)       0.790   M_score_out[11]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X4Y55.B1       net (fanout=3)        0.965   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X4Y55.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N387
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0
+    SLICE_X2Y53.A4       net (fanout=18)       1.178   scoreseg/N37
+    SLICE_X2Y53.A        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N45
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o121
+    SLICE_X10Y61.D2      net (fanout=32)       2.808   scoreseg/d[15]_PWR_20_o_div_6/a[11]_a[15]_MUX_724_o
+    SLICE_X10Y61.CMUX    Topdc                 0.402   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1
+    SLICE_X10Y61.A2      net (fanout=1)        0.725   scoreseg/d[15]_PWR_20_o_div_6/N274
+    SLICE_X10Y61.A       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_767_o141
+    SLICE_X9Y57.C3       net (fanout=10)       1.140   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+    SLICE_X9Y57.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[14]_a[15]_MUX_753_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_1
+    SLICE_X4Y57.C1       net (fanout=4)        1.076   scoreseg/d[15]_PWR_20_o_div_6/o<2>1114
+    SLICE_X4Y57.COUT     Topcyc                0.328   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[6]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n07591211
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy<6>
+    SLICE_X4Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[6]
+    SLICE_X4Y58.AMUX     Tcina                 0.220   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy<10>
+    SLICE_X6Y58.B4       net (fanout=5)        1.287   scoreseg/d[15]_PWR_20_o_div_6/a[15]_GND_26_o_add_29_OUT[15:0][7]
+    SLICE_X6Y58.DMUX     Topbd                 0.644   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_lut<7>
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.214ns (4.433ns logic, 14.781ns route)
+                                                       (23.1% logic, 76.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.728ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_13 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.212ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_13 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.DQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_13
+    SLICE_X7Y54.B2       net (fanout=16)       0.806   M_score_out[13]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X7Y55.B4       net (fanout=3)        0.785   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X7Y55.B        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N254
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_2
+    SLICE_X7Y55.A2       net (fanout=3)        1.013   scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW01
+    SLICE_X7Y55.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N254
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+    SLICE_X9Y54.A2       net (fanout=11)       1.212   scoreseg/d[15]_PWR_20_o_div_6/o<5>1
+    SLICE_X9Y54.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o111
+    SLICE_X2Y57.C3       net (fanout=28)       1.364   scoreseg/d[15]_PWR_20_o_div_6/a[10]_a[15]_MUX_741_o
+    SLICE_X2Y57.CMUX     Tilo                  0.403   scoreseg/d[15]_PWR_20_o_div_6/N321
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW4_SW0_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW4_SW0
+    SLICE_X2Y57.A1       net (fanout=1)        0.761   scoreseg/d[15]_PWR_20_o_div_6/N320
+    SLICE_X2Y57.A        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N321
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1113
+    SLICE_X9Y57.C2       net (fanout=7)        1.374   scoreseg/d[15]_PWR_20_o_div_6/o<2>1113
+    SLICE_X9Y57.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[14]_a[15]_MUX_753_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_1
+    SLICE_X4Y57.C1       net (fanout=4)        1.076   scoreseg/d[15]_PWR_20_o_div_6/o<2>1114
+    SLICE_X4Y57.COUT     Topcyc                0.328   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[6]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n07591211
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy<6>
+    SLICE_X4Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[6]
+    SLICE_X4Y58.AMUX     Tcina                 0.220   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy<10>
+    SLICE_X6Y58.B4       net (fanout=5)        1.287   scoreseg/d[15]_PWR_20_o_div_6/a[15]_GND_26_o_add_29_OUT[15:0][7]
+    SLICE_X6Y58.DMUX     Topbd                 0.644   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_lut<7>
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.212ns (4.722ns logic, 14.490ns route)
+                                                       (24.6% logic, 75.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.740ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_14 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.200ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_14 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.CQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_14
+    SLICE_X8Y53.A2       net (fanout=16)       1.035   M_score_out[14]
+    SLICE_X8Y53.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_671_o141
+    SLICE_X6Y53.D3       net (fanout=12)       0.850   scoreseg/a[13]_a[15]_MUX_658_o
+    SLICE_X6Y53.D        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y54.C2       net (fanout=14)       1.227   scoreseg/d[15]_PWR_20_o_div_6/o<7>11
+    SLICE_X3Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o1151
+    SLICE_X9Y54.C2       net (fanout=7)        1.878   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_21_OUT_lut[9]
+    SLICE_X9Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1151
+    SLICE_X8Y57.A2       net (fanout=10)       0.983   scoreseg/d[15]_PWR_20_o_div_6/a[9]_a[15]_MUX_726_o
+    SLICE_X8Y57.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy<11>1
+    SLICE_X10Y57.C6      net (fanout=15)       0.370   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy[11]
+    SLICE_X10Y57.C       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N275
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131_1
+    SLICE_X5Y58.A2       net (fanout=2)        1.308   scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X5Y58.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N124
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11
+    SLICE_X6Y54.D3       net (fanout=13)       1.084   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy[12]
+    SLICE_X6Y54.COUT     Topcyd                0.290   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[7]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_lut<7>
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy<7>
+    SLICE_X6Y55.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[7]
+    SLICE_X6Y55.COUT     Tbyp                  0.091   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[11]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy<11>
+    SLICE_X6Y56.CIN      net (fanout=1)        0.082   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[11]
+    SLICE_X6Y56.BMUX     Tcinb                 0.277   scoreseg/a[15]_GND_26_o_add_27_OUT[15:0][15]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_xor<15>
+    SLICE_X4Y61.D2       net (fanout=10)       1.569   scoreseg/d[15]_PWR_20_o_div_6/a[15]_GND_26_o_add_27_OUT[15:0][13]
+    SLICE_X4Y61.CMUX     Topdc                 0.456   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.200ns (4.591ns logic, 14.609ns route)
+                                                       (23.9% logic, 76.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.744ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_11 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.196ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_11 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.AQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_11
+    SLICE_X7Y54.B1       net (fanout=19)       0.790   M_score_out[11]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X7Y55.B4       net (fanout=3)        0.785   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X7Y55.B        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N254
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_2
+    SLICE_X7Y55.A2       net (fanout=3)        1.013   scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW01
+    SLICE_X7Y55.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N254
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+    SLICE_X9Y54.A2       net (fanout=11)       1.212   scoreseg/d[15]_PWR_20_o_div_6/o<5>1
+    SLICE_X9Y54.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o111
+    SLICE_X2Y57.C3       net (fanout=28)       1.364   scoreseg/d[15]_PWR_20_o_div_6/a[10]_a[15]_MUX_741_o
+    SLICE_X2Y57.CMUX     Tilo                  0.403   scoreseg/d[15]_PWR_20_o_div_6/N321
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW4_SW0_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW4_SW0
+    SLICE_X2Y57.A1       net (fanout=1)        0.761   scoreseg/d[15]_PWR_20_o_div_6/N320
+    SLICE_X2Y57.A        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N321
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1113
+    SLICE_X9Y57.C2       net (fanout=7)        1.374   scoreseg/d[15]_PWR_20_o_div_6/o<2>1113
+    SLICE_X9Y57.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[14]_a[15]_MUX_753_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_1
+    SLICE_X4Y57.C1       net (fanout=4)        1.076   scoreseg/d[15]_PWR_20_o_div_6/o<2>1114
+    SLICE_X4Y57.COUT     Topcyc                0.328   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[6]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n07591211
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy<6>
+    SLICE_X4Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[6]
+    SLICE_X4Y58.AMUX     Tcina                 0.220   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy<10>
+    SLICE_X6Y58.B4       net (fanout=5)        1.287   scoreseg/d[15]_PWR_20_o_div_6/a[15]_GND_26_o_add_29_OUT[15:0][7]
+    SLICE_X6Y58.DMUX     Topbd                 0.644   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_lut<7>
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.196ns (4.722ns logic, 14.474ns route)
+                                                       (24.6% logic, 75.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.765ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_13 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.175ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_13 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.DQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_13
+    SLICE_X7Y54.B2       net (fanout=16)       0.806   M_score_out[13]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X3Y54.C5       net (fanout=14)       1.108   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o1151
+    SLICE_X9Y54.C2       net (fanout=7)        1.878   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_21_OUT_lut[9]
+    SLICE_X9Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1151
+    SLICE_X8Y57.A2       net (fanout=10)       0.983   scoreseg/d[15]_PWR_20_o_div_6/a[9]_a[15]_MUX_726_o
+    SLICE_X8Y57.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy<11>1
+    SLICE_X8Y57.B4       net (fanout=15)       0.494   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy[11]
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.C3       net (fanout=4)        0.801   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.175ns (4.463ns logic, 14.712ns route)
+                                                       (23.3% logic, 76.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.781ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_11 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.159ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_11 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.AQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_11
+    SLICE_X7Y54.B1       net (fanout=19)       0.790   M_score_out[11]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X3Y54.C5       net (fanout=14)       1.108   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o1151
+    SLICE_X9Y54.C2       net (fanout=7)        1.878   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_21_OUT_lut[9]
+    SLICE_X9Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1151
+    SLICE_X8Y57.A2       net (fanout=10)       0.983   scoreseg/d[15]_PWR_20_o_div_6/a[9]_a[15]_MUX_726_o
+    SLICE_X8Y57.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy<11>1
+    SLICE_X8Y57.B4       net (fanout=15)       0.494   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy[11]
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.C3       net (fanout=4)        0.801   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.159ns (4.463ns logic, 14.696ns route)
+                                                       (23.3% logic, 76.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.791ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_13 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.149ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_13 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.DQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_13
+    SLICE_X7Y54.B2       net (fanout=16)       0.806   M_score_out[13]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X4Y54.B4       net (fanout=3)        0.919   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X4Y54.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N49
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_1
+    SLICE_X4Y54.A4       net (fanout=1)        0.514   scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0
+    SLICE_X4Y54.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N49
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o143
+    SLICE_X10Y57.A5      net (fanout=16)       1.157   scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o143
+    SLICE_X10Y57.A       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N275
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1411
+    SLICE_X8Y57.B1       net (fanout=28)       0.931   scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o141
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.C3       net (fanout=4)        0.801   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.149ns (4.669ns logic, 14.480ns route)
+                                                       (24.4% logic, 75.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.791ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_11 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.149ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_11 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.AQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_11
+    SLICE_X8Y53.A3       net (fanout=19)       0.904   M_score_out[11]
+    SLICE_X8Y53.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_671_o141
+    SLICE_X6Y53.D3       net (fanout=12)       0.850   scoreseg/a[13]_a[15]_MUX_658_o
+    SLICE_X6Y53.D        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y54.C2       net (fanout=14)       1.227   scoreseg/d[15]_PWR_20_o_div_6/o<7>11
+    SLICE_X3Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o1151
+    SLICE_X9Y54.C2       net (fanout=7)        1.878   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_21_OUT_lut[9]
+    SLICE_X9Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1151
+    SLICE_X8Y57.A2       net (fanout=10)       0.983   scoreseg/d[15]_PWR_20_o_div_6/a[9]_a[15]_MUX_726_o
+    SLICE_X8Y57.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy<11>1
+    SLICE_X8Y57.B4       net (fanout=15)       0.494   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy[11]
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.C3       net (fanout=4)        0.801   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.149ns (4.439ns logic, 14.710ns route)
+                                                       (23.2% logic, 76.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.806ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_12 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.134ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_12 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.BQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_12
+    SLICE_X3Y53.D1       net (fanout=14)       1.627   M_score_out[12]
+    SLICE_X3Y53.D        Tilo                  0.259   M_score_q_9_1
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>11_SW4
+    SLICE_X6Y53.C3       net (fanout=3)        1.050   scoreseg/d[15]_PWR_20_o_div_6/N120
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X4Y55.B1       net (fanout=3)        0.965   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X4Y55.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N387
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0
+    SLICE_X2Y53.A4       net (fanout=18)       1.178   scoreseg/N37
+    SLICE_X2Y53.A        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N45
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o121
+    SLICE_X10Y61.D2      net (fanout=32)       2.808   scoreseg/d[15]_PWR_20_o_div_6/a[11]_a[15]_MUX_724_o
+    SLICE_X10Y61.CMUX    Topdc                 0.402   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1
+    SLICE_X10Y61.A2      net (fanout=1)        0.725   scoreseg/d[15]_PWR_20_o_div_6/N274
+    SLICE_X10Y61.A       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_767_o141
+    SLICE_X3Y57.A2       net (fanout=10)       1.886   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+    SLICE_X3Y57.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N399
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW5
+    SLICE_X4Y61.A6       net (fanout=1)        0.803   scoreseg/d[15]_PWR_20_o_div_6/N159
+    SLICE_X4Y61.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW2
+    SLICE_X6Y57.C1       net (fanout=1)        1.204   scoreseg/d[15]_PWR_20_o_div_6/N381
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.134ns (3.855ns logic, 15.279ns route)
+                                                       (20.1% logic, 79.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.807ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_11 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.133ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_11 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.AQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_11
+    SLICE_X7Y54.B1       net (fanout=19)       0.790   M_score_out[11]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X4Y54.B4       net (fanout=3)        0.919   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X4Y54.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N49
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_1
+    SLICE_X4Y54.A4       net (fanout=1)        0.514   scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0
+    SLICE_X4Y54.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N49
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o143
+    SLICE_X10Y57.A5      net (fanout=16)       1.157   scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o143
+    SLICE_X10Y57.A       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N275
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1411
+    SLICE_X8Y57.B1       net (fanout=28)       0.931   scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o141
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.C3       net (fanout=4)        0.801   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.133ns (4.669ns logic, 14.464ns route)
+                                                       (24.4% logic, 75.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.808ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_14 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.132ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_14 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.CQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_14
+    SLICE_X8Y53.A2       net (fanout=16)       1.035   M_score_out[14]
+    SLICE_X8Y53.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_671_o141
+    SLICE_X5Y52.D1       net (fanout=12)       1.242   scoreseg/a[13]_a[15]_MUX_658_o
+    SLICE_X5Y52.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[11]_a[15]_MUX_692_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_703_o121
+    SLICE_X3Y55.D1       net (fanout=8)        1.095   scoreseg/d[15]_PWR_20_o_div_6/a[11]_a[15]_MUX_692_o
+    SLICE_X3Y55.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o161
+    SLICE_X3Y55.C4       net (fanout=2)        0.535   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+    SLICE_X3Y55.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>13
+    SLICE_X2Y55.B2       net (fanout=10)       0.777   scoreseg/d[15]_PWR_20_o_div_6/o<5>13
+    SLICE_X2Y55.B        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N104
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>14_SW4
+    SLICE_X8Y57.B2       net (fanout=2)        1.630   scoreseg/d[15]_PWR_20_o_div_6/N104
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.C3       net (fanout=4)        0.801   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.132ns (4.444ns logic, 14.688ns route)
+                                                       (23.2% logic, 76.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.810ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_13 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.130ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_13 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.DQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_13
+    SLICE_X7Y54.B2       net (fanout=16)       0.806   M_score_out[13]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X4Y55.B1       net (fanout=3)        0.965   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X4Y55.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N387
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0
+    SLICE_X2Y53.A4       net (fanout=18)       1.178   scoreseg/N37
+    SLICE_X2Y53.A        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N45
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o121
+    SLICE_X10Y61.D2      net (fanout=32)       2.808   scoreseg/d[15]_PWR_20_o_div_6/a[11]_a[15]_MUX_724_o
+    SLICE_X10Y61.CMUX    Topdc                 0.402   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1
+    SLICE_X10Y61.A2      net (fanout=1)        0.725   scoreseg/d[15]_PWR_20_o_div_6/N274
+    SLICE_X10Y61.A       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_767_o141
+    SLICE_X5Y60.A4       net (fanout=10)       1.129   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+    SLICE_X5Y60.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N41
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114
+    SLICE_X4Y61.C1       net (fanout=21)       1.235   scoreseg/d[15]_PWR_20_o_div_6/o<2>111
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.130ns (4.285ns logic, 14.845ns route)
+                                                       (22.4% logic, 77.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.824ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_14 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.116ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_14 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.CQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_14
+    SLICE_X8Y53.A2       net (fanout=16)       1.035   M_score_out[14]
+    SLICE_X8Y53.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_671_o141
+    SLICE_X6Y53.D3       net (fanout=12)       0.850   scoreseg/a[13]_a[15]_MUX_658_o
+    SLICE_X6Y53.D        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y54.C2       net (fanout=14)       1.227   scoreseg/d[15]_PWR_20_o_div_6/o<7>11
+    SLICE_X3Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o1151
+    SLICE_X9Y54.C2       net (fanout=7)        1.878   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_21_OUT_lut[9]
+    SLICE_X9Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1151
+    SLICE_X8Y57.A2       net (fanout=10)       0.983   scoreseg/d[15]_PWR_20_o_div_6/a[9]_a[15]_MUX_726_o
+    SLICE_X8Y57.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy<11>1
+    SLICE_X8Y57.B4       net (fanout=15)       0.494   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy[11]
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.D1       net (fanout=4)        0.611   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Topdc                 0.456   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.116ns (4.465ns logic, 14.651ns route)
+                                                       (23.4% logic, 76.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.826ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_11 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.114ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_11 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.AQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_11
+    SLICE_X7Y54.B1       net (fanout=19)       0.790   M_score_out[11]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X4Y55.B1       net (fanout=3)        0.965   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X4Y55.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N387
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0
+    SLICE_X2Y53.A4       net (fanout=18)       1.178   scoreseg/N37
+    SLICE_X2Y53.A        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N45
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o121
+    SLICE_X10Y61.D2      net (fanout=32)       2.808   scoreseg/d[15]_PWR_20_o_div_6/a[11]_a[15]_MUX_724_o
+    SLICE_X10Y61.CMUX    Topdc                 0.402   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1
+    SLICE_X10Y61.A2      net (fanout=1)        0.725   scoreseg/d[15]_PWR_20_o_div_6/N274
+    SLICE_X10Y61.A       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_767_o141
+    SLICE_X5Y60.A4       net (fanout=10)       1.129   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+    SLICE_X5Y60.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N41
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114
+    SLICE_X4Y61.C1       net (fanout=21)       1.235   scoreseg/d[15]_PWR_20_o_div_6/o<2>111
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.114ns (4.285ns logic, 14.829ns route)
+                                                       (22.4% logic, 77.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.828ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_14 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.112ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_14 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.CQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_14
+    SLICE_X8Y53.A2       net (fanout=16)       1.035   M_score_out[14]
+    SLICE_X8Y53.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_671_o141
+    SLICE_X6Y53.D3       net (fanout=12)       0.850   scoreseg/a[13]_a[15]_MUX_658_o
+    SLICE_X6Y53.D        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y54.C2       net (fanout=14)       1.227   scoreseg/d[15]_PWR_20_o_div_6/o<7>11
+    SLICE_X3Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o1151
+    SLICE_X9Y54.C2       net (fanout=7)        1.878   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_21_OUT_lut[9]
+    SLICE_X9Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1151
+    SLICE_X8Y57.A2       net (fanout=10)       0.983   scoreseg/d[15]_PWR_20_o_div_6/a[9]_a[15]_MUX_726_o
+    SLICE_X8Y57.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy<11>1
+    SLICE_X10Y57.C6      net (fanout=15)       0.370   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy[11]
+    SLICE_X10Y57.C       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N275
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131_1
+    SLICE_X5Y58.A2       net (fanout=2)        1.308   scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X5Y58.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N124
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11
+    SLICE_X6Y54.D3       net (fanout=13)       1.084   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy[12]
+    SLICE_X6Y54.COUT     Topcyd                0.290   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[7]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_lut<7>
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy<7>
+    SLICE_X6Y55.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[7]
+    SLICE_X6Y55.COUT     Tbyp                  0.091   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[11]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy<11>
+    SLICE_X6Y56.CIN      net (fanout=1)        0.082   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[11]
+    SLICE_X6Y56.BMUX     Tcinb                 0.277   scoreseg/a[15]_GND_26_o_add_27_OUT[15:0][15]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_xor<15>
+    SLICE_X4Y61.C2       net (fanout=10)       1.507   scoreseg/d[15]_PWR_20_o_div_6/a[15]_GND_26_o_add_27_OUT[15:0][13]
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.112ns (4.565ns logic, 14.547ns route)
+                                                       (23.9% logic, 76.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.830ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_12 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.110ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_12 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.BQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_12
+    SLICE_X3Y53.D1       net (fanout=14)       1.627   M_score_out[12]
+    SLICE_X3Y53.D        Tilo                  0.259   M_score_q_9_1
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>11_SW4
+    SLICE_X3Y54.B3       net (fanout=3)        0.559   scoreseg/d[15]_PWR_20_o_div_6/N120
+    SLICE_X3Y54.B        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>11
+    SLICE_X3Y54.C1       net (fanout=13)       0.727   scoreseg/d[15]_PWR_20_o_div_6/o<7>1
+    SLICE_X3Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o1151
+    SLICE_X9Y54.C2       net (fanout=7)        1.878   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_21_OUT_lut[9]
+    SLICE_X9Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1151
+    SLICE_X8Y57.A2       net (fanout=10)       0.983   scoreseg/d[15]_PWR_20_o_div_6/a[9]_a[15]_MUX_726_o
+    SLICE_X8Y57.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy<11>1
+    SLICE_X8Y57.B4       net (fanout=15)       0.494   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy[11]
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.C3       net (fanout=4)        0.801   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.110ns (4.468ns logic, 14.642ns route)
+                                                       (23.4% logic, 76.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.835ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_13 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.105ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_13 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.DQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_13
+    SLICE_X7Y54.B2       net (fanout=16)       0.806   M_score_out[13]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X7Y55.B4       net (fanout=3)        0.785   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X7Y55.B        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N254
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_2
+    SLICE_X7Y55.A2       net (fanout=3)        1.013   scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW01
+    SLICE_X7Y55.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N254
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+    SLICE_X9Y54.A2       net (fanout=11)       1.212   scoreseg/d[15]_PWR_20_o_div_6/o<5>1
+    SLICE_X9Y54.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o111
+    SLICE_X2Y57.D4       net (fanout=28)       1.258   scoreseg/d[15]_PWR_20_o_div_6/a[10]_a[15]_MUX_741_o
+    SLICE_X2Y57.CMUX     Topdc                 0.402   scoreseg/d[15]_PWR_20_o_div_6/N321
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW4_SW0_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW4_SW0
+    SLICE_X2Y57.A1       net (fanout=1)        0.761   scoreseg/d[15]_PWR_20_o_div_6/N320
+    SLICE_X2Y57.A        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N321
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1113
+    SLICE_X9Y57.C2       net (fanout=7)        1.374   scoreseg/d[15]_PWR_20_o_div_6/o<2>1113
+    SLICE_X9Y57.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[14]_a[15]_MUX_753_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_1
+    SLICE_X4Y57.C1       net (fanout=4)        1.076   scoreseg/d[15]_PWR_20_o_div_6/o<2>1114
+    SLICE_X4Y57.COUT     Topcyc                0.328   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[6]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n07591211
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy<6>
+    SLICE_X4Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[6]
+    SLICE_X4Y58.AMUX     Tcina                 0.220   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy<10>
+    SLICE_X6Y58.B4       net (fanout=5)        1.287   scoreseg/d[15]_PWR_20_o_div_6/a[15]_GND_26_o_add_29_OUT[15:0][7]
+    SLICE_X6Y58.DMUX     Topbd                 0.644   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_lut<7>
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.105ns (4.721ns logic, 14.384ns route)
+                                                       (24.7% logic, 75.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.845ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_13 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.095ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_13 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.DQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_13
+    SLICE_X7Y54.B2       net (fanout=16)       0.806   M_score_out[13]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X3Y54.C5       net (fanout=14)       1.108   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o1151
+    SLICE_X9Y54.C2       net (fanout=7)        1.878   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_21_OUT_lut[9]
+    SLICE_X9Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1151
+    SLICE_X8Y57.A2       net (fanout=10)       0.983   scoreseg/d[15]_PWR_20_o_div_6/a[9]_a[15]_MUX_726_o
+    SLICE_X8Y57.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy<11>1
+    SLICE_X10Y57.C6      net (fanout=15)       0.370   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy[11]
+    SLICE_X10Y57.C       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N275
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131_1
+    SLICE_X5Y58.A2       net (fanout=2)        1.308   scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X5Y58.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N124
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11
+    SLICE_X6Y54.D3       net (fanout=13)       1.084   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy[12]
+    SLICE_X6Y54.COUT     Topcyd                0.290   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[7]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_lut<7>
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy<7>
+    SLICE_X6Y55.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[7]
+    SLICE_X6Y55.COUT     Tbyp                  0.091   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[11]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy<11>
+    SLICE_X6Y56.CIN      net (fanout=1)        0.082   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[11]
+    SLICE_X6Y56.BMUX     Tcinb                 0.277   scoreseg/a[15]_GND_26_o_add_27_OUT[15:0][15]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_xor<15>
+    SLICE_X4Y61.D2       net (fanout=10)       1.569   scoreseg/d[15]_PWR_20_o_div_6/a[15]_GND_26_o_add_27_OUT[15:0][13]
+    SLICE_X4Y61.CMUX     Topdc                 0.456   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.095ns (4.615ns logic, 14.480ns route)
+                                                       (24.2% logic, 75.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.849ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_15 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.093ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.023ns (0.319 - 0.342)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_15 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y53.DQ       Tcko                  0.430   M_score_out[15]
+                                                       score/M_score_q_15
+    SLICE_X7Y54.B4       net (fanout=16)       0.649   M_score_out[15]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X4Y55.B1       net (fanout=3)        0.965   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X4Y55.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N387
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0
+    SLICE_X2Y53.A4       net (fanout=18)       1.178   scoreseg/N37
+    SLICE_X2Y53.A        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N45
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o121
+    SLICE_X10Y61.D2      net (fanout=32)       2.808   scoreseg/d[15]_PWR_20_o_div_6/a[11]_a[15]_MUX_724_o
+    SLICE_X10Y61.CMUX    Topdc                 0.402   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW1
+    SLICE_X10Y61.A2      net (fanout=1)        0.725   scoreseg/d[15]_PWR_20_o_div_6/N274
+    SLICE_X10Y61.A       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_767_o141
+    SLICE_X3Y57.A2       net (fanout=10)       1.886   scoreseg/d[15]_PWR_20_o_div_6/a[13]_a[15]_MUX_754_o
+    SLICE_X3Y57.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N399
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW5
+    SLICE_X4Y61.A6       net (fanout=1)        0.803   scoreseg/d[15]_PWR_20_o_div_6/N159
+    SLICE_X4Y61.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW2
+    SLICE_X6Y57.C1       net (fanout=1)        1.204   scoreseg/d[15]_PWR_20_o_div_6/N381
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.093ns (4.063ns logic, 15.030ns route)
+                                                       (21.3% logic, 78.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.851ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_11 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.089ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_11 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.AQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_11
+    SLICE_X7Y54.B1       net (fanout=19)       0.790   M_score_out[11]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X6Y53.C4       net (fanout=14)       0.710   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X6Y53.C        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_SW2
+    SLICE_X7Y55.B4       net (fanout=3)        0.785   scoreseg/d[15]_PWR_20_o_div_6/N236
+    SLICE_X7Y55.B        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N254
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW0_2
+    SLICE_X7Y55.A2       net (fanout=3)        1.013   scoreseg/d[15]_PWR_20_o_div_6/o<6>1_SW01
+    SLICE_X7Y55.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N254
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+    SLICE_X9Y54.A2       net (fanout=11)       1.212   scoreseg/d[15]_PWR_20_o_div_6/o<5>1
+    SLICE_X9Y54.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o111
+    SLICE_X2Y57.D4       net (fanout=28)       1.258   scoreseg/d[15]_PWR_20_o_div_6/a[10]_a[15]_MUX_741_o
+    SLICE_X2Y57.CMUX     Topdc                 0.402   scoreseg/d[15]_PWR_20_o_div_6/N321
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW4_SW0_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11_SW4_SW0
+    SLICE_X2Y57.A1       net (fanout=1)        0.761   scoreseg/d[15]_PWR_20_o_div_6/N320
+    SLICE_X2Y57.A        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N321
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1113
+    SLICE_X9Y57.C2       net (fanout=7)        1.374   scoreseg/d[15]_PWR_20_o_div_6/o<2>1113
+    SLICE_X9Y57.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[14]_a[15]_MUX_753_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_1
+    SLICE_X4Y57.C1       net (fanout=4)        1.076   scoreseg/d[15]_PWR_20_o_div_6/o<2>1114
+    SLICE_X4Y57.COUT     Topcyc                0.328   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[6]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n07591211
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy<6>
+    SLICE_X4Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[6]
+    SLICE_X4Y58.AMUX     Tcina                 0.220   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_29_OUT[15:0]_cy<10>
+    SLICE_X6Y58.B4       net (fanout=5)        1.287   scoreseg/d[15]_PWR_20_o_div_6/a[15]_GND_26_o_add_29_OUT[15:0][7]
+    SLICE_X6Y58.DMUX     Topbd                 0.644   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_lut<7>
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.089ns (4.721ns logic, 14.368ns route)
+                                                       (24.7% logic, 75.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.851ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_13 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.089ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_13 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.DQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_13
+    SLICE_X7Y54.B2       net (fanout=16)       0.806   M_score_out[13]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X3Y55.D2       net (fanout=14)       1.618   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y55.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o161
+    SLICE_X3Y55.C4       net (fanout=2)        0.535   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+    SLICE_X3Y55.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>13
+    SLICE_X2Y55.B2       net (fanout=10)       0.777   scoreseg/d[15]_PWR_20_o_div_6/o<5>13
+    SLICE_X2Y55.B        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N104
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>14_SW4
+    SLICE_X8Y57.B2       net (fanout=2)        1.630   scoreseg/d[15]_PWR_20_o_div_6/N104
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.D1       net (fanout=4)        0.611   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Topdc                 0.456   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.089ns (4.470ns logic, 14.619ns route)
+                                                       (23.4% logic, 76.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.859ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_15 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.083ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.023ns (0.319 - 0.342)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_15 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X5Y53.DQ       Tcko                  0.430   M_score_out[15]
+                                                       score/M_score_q_15
+    SLICE_X8Y53.A4       net (fanout=16)       0.884   M_score_out[15]
+    SLICE_X8Y53.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_671_o141
+    SLICE_X6Y53.D3       net (fanout=12)       0.850   scoreseg/a[13]_a[15]_MUX_658_o
+    SLICE_X6Y53.D        Tilo                  0.235   M_score_q_9_2
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y54.C2       net (fanout=14)       1.227   scoreseg/d[15]_PWR_20_o_div_6/o<7>11
+    SLICE_X3Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o1151
+    SLICE_X9Y54.C2       net (fanout=7)        1.878   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_21_OUT_lut[9]
+    SLICE_X9Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1151
+    SLICE_X8Y57.A2       net (fanout=10)       0.983   scoreseg/d[15]_PWR_20_o_div_6/a[9]_a[15]_MUX_726_o
+    SLICE_X8Y57.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy<11>1
+    SLICE_X8Y57.B4       net (fanout=15)       0.494   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy[11]
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.C3       net (fanout=4)        0.801   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Tilo                  0.430   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_G
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.083ns (4.393ns logic, 14.690ns route)
+                                                       (23.0% logic, 77.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.861ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_11 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.079ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_11 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.AQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_11
+    SLICE_X7Y54.B1       net (fanout=19)       0.790   M_score_out[11]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X3Y54.C5       net (fanout=14)       1.108   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<5>11
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o1151
+    SLICE_X9Y54.C2       net (fanout=7)        1.878   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_21_OUT_lut[9]
+    SLICE_X9Y54.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N88
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_735_o1151
+    SLICE_X8Y57.A2       net (fanout=10)       0.983   scoreseg/d[15]_PWR_20_o_div_6/a[9]_a[15]_MUX_726_o
+    SLICE_X8Y57.A        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy<11>1
+    SLICE_X10Y57.C6      net (fanout=15)       0.370   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_23_OUT_cy[11]
+    SLICE_X10Y57.C       Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N275
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131_1
+    SLICE_X5Y58.A2       net (fanout=2)        1.308   scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X5Y58.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N124
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy<12>11
+    SLICE_X6Y54.D3       net (fanout=13)       1.084   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_25_OUT_cy[12]
+    SLICE_X6Y54.COUT     Topcyd                0.290   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[7]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_lut<7>
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy<7>
+    SLICE_X6Y55.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[7]
+    SLICE_X6Y55.COUT     Tbyp                  0.091   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[11]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy<11>
+    SLICE_X6Y56.CIN      net (fanout=1)        0.082   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_cy[11]
+    SLICE_X6Y56.BMUX     Tcinb                 0.277   scoreseg/a[15]_GND_26_o_add_27_OUT[15:0][15]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_27_OUT[15:0]_xor<15>
+    SLICE_X4Y61.D2       net (fanout=10)       1.569   scoreseg/d[15]_PWR_20_o_div_6/a[15]_GND_26_o_add_27_OUT[15:0][13]
+    SLICE_X4Y61.CMUX     Topdc                 0.456   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.079ns (4.615ns logic, 14.464ns route)
+                                                       (24.2% logic, 75.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.867ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               score/M_score_q_11 (FF)
+  Destination:          scoreseg/M_tens_q_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.073ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.025ns (0.319 - 0.344)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: score/M_score_q_11 to scoreseg/M_tens_q_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y52.AQ       Tcko                  0.476   M_score_out[13]
+                                                       score/M_score_q_11
+    SLICE_X7Y54.B1       net (fanout=19)       0.790   M_score_out[11]
+    SLICE_X7Y54.B        Tilo                  0.259   scoreseg/M_tens_q[10]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<10>1
+    SLICE_X8Y53.B2       net (fanout=8)        1.069   scoreseg/d[15]_PWR_20_o_div_6_OUT[10]
+    SLICE_X8Y53.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/N51
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<7>13
+    SLICE_X3Y55.D2       net (fanout=14)       1.618   scoreseg/d[15]_PWR_20_o_div_6/o<7>12
+    SLICE_X3Y55.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_719_o161
+    SLICE_X3Y55.C4       net (fanout=2)        0.535   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+    SLICE_X3Y55.C        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/a[15]_a[15]_MUX_704_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>13
+    SLICE_X2Y55.B2       net (fanout=10)       0.777   scoreseg/d[15]_PWR_20_o_div_6/o<5>13
+    SLICE_X2Y55.B        Tilo                  0.235   scoreseg/d[15]_PWR_20_o_div_6/N104
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<5>14_SW4
+    SLICE_X8Y57.B2       net (fanout=2)        1.630   scoreseg/d[15]_PWR_20_o_div_6/N104
+    SLICE_X8Y57.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_a[0]_a[15]_MUX_751_o131
+    SLICE_X3Y58.D4       net (fanout=21)       1.370   scoreseg/d[15]_PWR_20_o_div_6/a[12]_a[15]_MUX_739_o
+    SLICE_X3Y58.D        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A3       net (fanout=6)        1.021   scoreseg/d[15]_PWR_20_o_div_6/o<2>1111
+    SLICE_X5Y56.A        Tilo                  0.259   scoreseg/d[15]_PWR_20_o_div_6/N75
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>1114_SW0
+    SLICE_X4Y61.B2       net (fanout=1)        0.962   scoreseg/d[15]_PWR_20_o_div_6/N389
+    SLICE_X4Y61.B        Tilo                  0.254   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0759111
+    SLICE_X4Y61.D1       net (fanout=4)        0.611   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+    SLICE_X4Y61.CMUX     Topdc                 0.456   scoreseg/d[15]_PWR_20_o_div_6/n0759[4]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1_F
+                                                       scoreseg/d[15]_PWR_20_o_div_6/o<2>13_SW4_SW1
+    SLICE_X6Y57.C2       net (fanout=1)        1.187   scoreseg/d[15]_PWR_20_o_div_6/N380
+    SLICE_X6Y57.COUT     Topcyc                0.325   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Mmux_n0763111
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<5>
+    SLICE_X6Y58.CIN      net (fanout=1)        0.003   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[5]
+    SLICE_X6Y58.DMUX     Tcind                 0.289   scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy[9]
+                                                       scoreseg/d[15]_PWR_20_o_div_6/Madd_a[15]_GND_26_o_add_31_OUT[15:0]_cy<9>
+    SLICE_X7Y59.D2       net (fanout=1)        1.338   scoreseg/a[15]_GND_26_o_add_31_OUT[15:0][9]
+    SLICE_X7Y59.D        Tilo                  0.259   scoreseg/Mmux_M_tens_d14
+                                                       scoreseg/Mmux_M_tens_d15
+    SLICE_X9Y59.B1       net (fanout=1)        1.692   scoreseg/Mmux_M_tens_d14
+    SLICE_X9Y59.CLK      Tas                   0.373   scoreseg/M_tens_q[2]
+                                                       scoreseg/Mmux_M_tens_d110
+                                                       scoreseg/M_tens_q_0
+    -------------------------------------------------  ---------------------------
+    Total                                     19.073ns (4.470ns logic, 14.603ns route)
+                                                       (23.4% logic, 76.6% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 17.334ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X2Y11.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[3]/CLK
+  Logical resource: render/muxclk/M_ctr_q_0/CK
+  Location pin: SLICE_X12Y31.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[3]/CLK
+  Logical resource: render/muxclk/M_ctr_q_1/CK
+  Location pin: SLICE_X12Y31.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[3]/CLK
+  Logical resource: render/muxclk/M_ctr_q_2/CK
+  Location pin: SLICE_X12Y31.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[3]/CLK
+  Logical resource: render/muxclk/M_ctr_q_3/CK
+  Location pin: SLICE_X12Y31.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[7]/CLK
+  Logical resource: render/muxclk/M_ctr_q_4/CK
+  Location pin: SLICE_X12Y32.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[7]/CLK
+  Logical resource: render/muxclk/M_ctr_q_5/CK
+  Location pin: SLICE_X12Y32.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[7]/CLK
+  Logical resource: render/muxclk/M_ctr_q_6/CK
+  Location pin: SLICE_X12Y32.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[7]/CLK
+  Logical resource: render/muxclk/M_ctr_q_7/CK
+  Location pin: SLICE_X12Y32.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[11]/CLK
+  Logical resource: render/muxclk/M_ctr_q_8/CK
+  Location pin: SLICE_X12Y33.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[11]/CLK
+  Logical resource: render/muxclk/M_ctr_q_9/CK
+  Location pin: SLICE_X12Y33.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[11]/CLK
+  Logical resource: render/muxclk/M_ctr_q_10/CK
+  Location pin: SLICE_X12Y33.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[11]/CLK
+  Logical resource: render/muxclk/M_ctr_q_11/CK
+  Location pin: SLICE_X12Y33.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[15]/CLK
+  Logical resource: render/muxclk/M_ctr_q_12/CK
+  Location pin: SLICE_X12Y34.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[15]/CLK
+  Logical resource: render/muxclk/M_ctr_q_13/CK
+  Location pin: SLICE_X12Y34.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[15]/CLK
+  Logical resource: render/muxclk/M_ctr_q_14/CK
+  Location pin: SLICE_X12Y34.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: render/muxclk/M_ctr_q[15]/CLK
+  Logical resource: render/muxclk/M_ctr_q_15/CK
+  Location pin: SLICE_X12Y34.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_hd_y_q_3/CLK
+  Logical resource: M_hd_y_q_3/CK
+  Location pin: SLICE_X0Y38.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_control_dy[1]/CLK
+  Logical resource: control/M_z_q_0/CK
+  Location pin: SLICE_X0Y40.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.240ns (Trpw)
+  Physical resource: M_control_dy[1]/SR
+  Logical resource: control/M_z_q_0/SR
+  Location pin: SLICE_X0Y40.SR
+  Clock network: M_clogic_reset
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_control_dy[1]/CLK
+  Logical resource: control/M_y_q_0/CK
+  Location pin: SLICE_X0Y40.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_control_dy[1]/CLK
+  Logical resource: control/M_y_q_1/CK
+  Location pin: SLICE_X0Y40.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: control/M_direction_q_FSM_FFd3/CLK
+  Logical resource: control/M_direction_q_FSM_FFd3/CK
+  Location pin: SLICE_X0Y41.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_control_dx[1]/CLK
+  Logical resource: control/M_x_q_0/CK
+  Location pin: SLICE_X0Y42.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_control_dx[1]/CLK
+  Logical resource: control/M_z_q_1/CK
+  Location pin: SLICE_X0Y42.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.240ns (Trpw)
+  Physical resource: M_control_dx[1]/SR
+  Logical resource: control/M_z_q_1/SR
+  Location pin: SLICE_X0Y42.SR
+  Clock network: M_clogic_reset
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_control_dx[1]/CLK
+  Logical resource: control/M_x_q_1/CK
+  Location pin: SLICE_X0Y42.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: control/M_direction_q_FSM_FFd2/CLK
+  Logical resource: control/M_direction_q_FSM_FFd1/CK
+  Location pin: SLICE_X0Y43.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: control/M_direction_q_FSM_FFd2/CLK
+  Logical resource: control/M_direction_q_FSM_FFd2/CK
+  Location pin: SLICE_X0Y43.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: scoreseg/M_tens_q[12]/CLK
+  Logical resource: scoreseg/M_tens_q_11/CK
+  Location pin: SLICE_X0Y61.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   19.356|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 345772652 paths, 0 nets, and 5565 connections
+
+Design statistics:
+   Minimum period:  19.356ns{1}   (Maximum frequency:  51.664MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Wed Dec  4 21:43:39 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 413 MB
+
+
+

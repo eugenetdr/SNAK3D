@@ -3,3 +3,729 @@
     with args -ifn mojo_top_0.xst -ofn mojo_top_0.srp -intstyle ise
 
 Reading design: mojo_top_0.prj
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/shift16_18.v" into library work
+Parsing module <shift16_18>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/counter_19.v" into library work
+Parsing module <counter_19>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/compare16_16.v" into library work
+Parsing module <compare16_16>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/boolean16_17.v" into library work
+Parsing module <boolean16_17>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/adder16_15.v" into library work
+Parsing module <adder16_15>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/timer_10.v" into library work
+Parsing module <timer_10>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/snake_8.v" into library work
+Parsing module <snake_8>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/sevenseg_13.v" into library work
+Parsing module <sevenseg_13>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/sel4_2.v" into library work
+Parsing module <sel4_2>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/score_9.v" into library work
+Parsing module <score_9>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/reset_conditioner_5.v" into library work
+Parsing module <reset_conditioner_5>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/render_12.v" into library work
+Parsing module <render_12>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/gameengine_6.v" into library work
+Parsing module <gameengine_6>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/food_11.v" into library work
+Parsing module <food_11>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/controls_7.v" into library work
+Parsing module <controls_7>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/controllogic_4.v" into library work
+Parsing module <controllogic_4>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/alu16_1.v" into library work
+Parsing module <alu16_1>.
+Analyzing Verilog file "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+Parsing module <mojo_top_0>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <mojo_top_0>.
+
+Elaborating module <alu16_1>.
+
+Elaborating module <adder16_15>.
+
+Elaborating module <compare16_16>.
+
+Elaborating module <boolean16_17>.
+
+Elaborating module <shift16_18>.
+WARNING:HDLCompiler:1127 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 44: Assignment to M_alu_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 45: Assignment to M_alu_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 46: Assignment to M_alu_n ignored, since the identifier is never used
+
+Elaborating module <sel4_2>.
+
+Elaborating module <controllogic_4>.
+
+Elaborating module <reset_conditioner_5>.
+
+Elaborating module <gameengine_6>.
+
+Elaborating module <controls_7>.
+
+Elaborating module <snake_8>.
+
+Elaborating module <score_9>.
+
+Elaborating module <timer_10>.
+
+Elaborating module <food_11>.
+
+Elaborating module <render_12>.
+
+Elaborating module <counter_19>.
+
+Elaborating module <sevenseg_13>.
+WARNING:HDLCompiler:1127 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 228: Assignment to rst ignored, since the identifier is never used
+WARNING:Xst:2972 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 108. All outputs of instance <reset_cond> of block <reset_conditioner_5> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <mojo_top_0>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v".
+WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 39: Output port <z> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 39: Output port <v> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 39: Output port <n> of the instance <alu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 108: Output port <out> of the instance <reset_cond> is unconnected or connected to loadless signal.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 228
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 228
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 228
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 228
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 228
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 228
+    Summary:
+	inferred   6 Tristate(s).
+Unit <mojo_top_0> synthesized.
+
+Synthesizing Unit <alu16_1>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/alu16_1.v".
+    Found 16-bit 4-to-1 multiplexer for signal <alufn[5]_M_compare_out[15]_wide_mux_0_OUT> created at line 90.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <alu16_1> synthesized.
+
+Synthesizing Unit <adder16_15>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/adder16_15.v".
+WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit adder for signal <n0031> created at line 27.
+    Found 16-bit adder for signal <a[15]_GND_3_o_add_2_OUT> created at line 27.
+    Found 16x16-bit multiplier for signal <n0025> created at line 32.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Multiplexer(s).
+Unit <adder16_15> synthesized.
+
+Synthesizing Unit <compare16_16>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/compare16_16.v".
+WARNING:Xst:647 - Input <alufn<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <alufn<5:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit 4-to-1 multiplexer for signal <out> created at line 20.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <compare16_16> synthesized.
+
+Synthesizing Unit <boolean16_17>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/boolean16_17.v".
+WARNING:Xst:647 - Input <alufn<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+Unit <boolean16_17> synthesized.
+
+Synthesizing Unit <shift16_18>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/shift16_18.v".
+WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit shifter logical left for signal <a[15]_b[15]_shift_left_0_OUT> created at line 21
+    Found 16-bit shifter logical right for signal <a[15]_b[15]_shift_right_1_OUT> created at line 24
+    Found 16-bit shifter arithmetic right for signal <a[15]_b[15]_shift_right_2_OUT> created at line 27
+    Found 16-bit 4-to-1 multiplexer for signal <out> created at line 19.
+    Summary:
+	inferred   4 Multiplexer(s).
+	inferred   3 Combinational logic shifter(s).
+Unit <shift16_18> synthesized.
+
+Synthesizing Unit <sel4_2>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/sel4_2.v".
+    Found 16-bit 4-to-1 multiplexer for signal <out> created at line 21.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <sel4_2> synthesized.
+
+Synthesizing Unit <controllogic_4>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/controllogic_4.v".
+    Summary:
+	no macro.
+Unit <controllogic_4> synthesized.
+
+Synthesizing Unit <gameengine_6>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/gameengine_6.v".
+    Found 4-bit register for signal <M_gamefsm_q>.
+    Found finite state machine <FSM_0> for signal <M_gamefsm_q>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 24                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 0000                                           |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <gameengine_6> synthesized.
+
+Synthesizing Unit <controls_7>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/controls_7.v".
+    Found 4-bit register for signal <M_x_q>.
+    Found 4-bit register for signal <M_y_q>.
+    Found 4-bit register for signal <M_z_q>.
+    Found 3-bit register for signal <M_direction_q>.
+    Found finite state machine <FSM_1> for signal <M_direction_q>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 30                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 14                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred  12 D-type flip-flop(s).
+	inferred   1 Finite State Machine(s).
+Unit <controls_7> synthesized.
+
+Synthesizing Unit <snake_8>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/snake_8.v".
+    Found 4-bit register for signal <M_hd_y_q>.
+    Found 4-bit register for signal <M_hd_z_q>.
+    Found 12-bit register for signal <M_hd_pos_q>.
+    Found 12-bit register for signal <M_bd_pos_q>.
+    Found 12-bit register for signal <M_tl_pos_q>.
+    Found 4-bit register for signal <M_hd_x_q>.
+    Found 4-bit adder for signal <M_hd_x_q[3]_dx[3]_add_0_OUT> created at line 38.
+    Found 4-bit adder for signal <M_hd_y_q[3]_dy[3]_add_1_OUT> created at line 39.
+    Found 4-bit adder for signal <M_hd_z_q[3]_dz[3]_add_2_OUT> created at line 40.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  48 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <snake_8> synthesized.
+
+Synthesizing Unit <score_9>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/score_9.v".
+    Found 16-bit register for signal <M_score_q>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <score_9> synthesized.
+
+Synthesizing Unit <timer_10>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/timer_10.v".
+    Found 6-bit register for signal <M_game_time_counter_q>.
+    Found 27-bit register for signal <M_game_clk_counter_q>.
+    Found 27-bit register for signal <M_clk_counter_q>.
+    Found 6-bit subtractor for signal <game_time> created at line 44.
+    Found 27-bit adder for signal <M_clk_counter_q[26]_GND_17_o_add_0_OUT> created at line 34.
+    Found 27-bit adder for signal <M_game_clk_counter_q[26]_GND_17_o_add_1_OUT> created at line 35.
+    Found 6-bit adder for signal <M_game_time_counter_q[5]_GND_17_o_add_4_OUT> created at line 41.
+    Found 27-bit comparator greater for signal <GND_17_o_M_game_clk_counter_q[26]_LessThan_4_o> created at line 40
+    Found 6-bit comparator greater for signal <time_out> created at line 45
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  60 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <timer_10> synthesized.
+
+Synthesizing Unit <food_11>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/food_11.v".
+    Found 4-bit register for signal <M_pos_y_q>.
+    Found 4-bit register for signal <M_pos_z_q>.
+    Found 4-bit register for signal <M_rnd_x_q>.
+    Found 4-bit register for signal <M_rnd_y_q>.
+    Found 4-bit register for signal <M_rnd_z_q>.
+    Found 4-bit register for signal <M_pos_x_q>.
+    Found 4-bit adder for signal <M_rnd_x_q[3]_GND_18_o_add_0_OUT> created at line 31.
+    Found 4-bit adder for signal <M_rnd_y_q[3]_GND_18_o_add_2_OUT> created at line 34.
+    Found 4-bit adder for signal <M_rnd_z_q[3]_GND_18_o_add_4_OUT> created at line 37.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  24 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <food_11> synthesized.
+
+Synthesizing Unit <render_12>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/render_12.v".
+    Found 125-bit register for signal <M_snk_bd_state_q>.
+    Found 125-bit register for signal <M_snk_tl_state_q>.
+    Found 125-bit register for signal <M_food_state_q>.
+    Found 125-bit register for signal <M_led_state_q>.
+    Found 5-bit register for signal <M_rows_q>.
+    Found 25-bit register for signal <M_cols_q>.
+    Found 125-bit register for signal <M_snk_hd_state_q>.
+    Found finite state machine <FSM_2> for signal <M_rows_q>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 0                                              |
+    | Outputs            | 5                                              |
+    | Clock              | M_muxclk_value (rising_edge)                   |
+    | Power Up State     | 00000                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit adder for signal <n0123[7:0]> created at line 92.
+    Found 9-bit adder for signal <n0081> created at line 92.
+    Found 8-bit adder for signal <n0129[7:0]> created at line 94.
+    Found 9-bit adder for signal <n0086> created at line 94.
+    Found 8-bit adder for signal <n0135[7:0]> created at line 96.
+    Found 9-bit adder for signal <n0091> created at line 96.
+    Found 8-bit adder for signal <n0141[7:0]> created at line 98.
+    Found 9-bit adder for signal <n0096> created at line 98.
+    Found 3x4-bit multiplier for signal <PWR_17_o_snk_hd_pos[7]_MuLt_1_OUT> created at line 92.
+    Found 5x4-bit multiplier for signal <n0125> created at line 92.
+    Found 4x3-bit multiplier for signal <snk_bd_pos[7]_PWR_17_o_MuLt_6_OUT> created at line 94.
+    Found 4x5-bit multiplier for signal <n0131> created at line 94.
+    Found 4x3-bit multiplier for signal <snk_tl_pos[7]_PWR_17_o_MuLt_11_OUT> created at line 96.
+    Found 4x5-bit multiplier for signal <n0137> created at line 96.
+    Found 3x4-bit multiplier for signal <PWR_17_o_food_pos[7]_MuLt_16_OUT> created at line 98.
+    Found 5x4-bit multiplier for signal <n0143> created at line 98.
+    Summary:
+	inferred   8 Multiplier(s).
+	inferred   8 Adder/Subtractor(s).
+	inferred 650 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <render_12> synthesized.
+
+Synthesizing Unit <counter_19>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/counter_19.v".
+    Found 16-bit register for signal <M_ctr_q>.
+    Found 16-bit adder for signal <M_ctr_d> created at line 35.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  16 D-type flip-flop(s).
+Unit <counter_19> synthesized.
+
+Synthesizing Unit <sevenseg_13>.
+    Related source file is "/home/mooselliot/Desktop/Projects/v2/SNAK3D/work/planAhead/SNAK3D/SNAK3D.srcs/sources_1/imports/verilog/sevenseg_13.v".
+    Found 16-bit register for signal <M_tens_q>.
+    Found 4-bit register for signal <M_ones_mod_q>.
+    Found 4-bit register for signal <M_tens_mod_q>.
+    Found 16-bit register for signal <M_ones_q>.
+    Found 16-bit subtractor for signal <M_ones_q[15]_GND_25_o_sub_2_OUT> created at line 32.
+    Found 16-bit subtractor for signal <M_tens_q[15]_GND_25_o_sub_6_OUT> created at line 38.
+    Found 16x7-bit Read Only RAM for signal <ones_out>
+    Found 16x7-bit Read Only RAM for signal <tens_out>
+    Found 16-bit comparator greater for signal <GND_25_o_M_ones_q[15]_LessThan_1_o> created at line 31
+    Found 16-bit comparator greater for signal <GND_25_o_M_tens_q[15]_LessThan_5_o> created at line 37
+    Summary:
+	inferred   2 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  40 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <sevenseg_13> synthesized.
+
+Synthesizing Unit <div_16u_4u>.
+    Related source file is "".
+    Found 20-bit adder for signal <GND_26_o_b[3]_add_1_OUT> created at line 0.
+    Found 19-bit adder for signal <GND_26_o_b[3]_add_3_OUT> created at line 0.
+    Found 18-bit adder for signal <GND_26_o_b[3]_add_5_OUT> created at line 0.
+    Found 17-bit adder for signal <GND_26_o_b[3]_add_7_OUT> created at line 0.
+    Found 16-bit adder for signal <a[15]_b[3]_add_9_OUT> created at line 0.
+    Found 16-bit adder for signal <a[15]_GND_26_o_add_11_OUT> created at line 0.
+    Found 16-bit adder for signal <a[15]_GND_26_o_add_13_OUT> created at line 0.
+    Found 16-bit adder for signal <a[15]_GND_26_o_add_15_OUT> created at line 0.
+    Found 16-bit adder for signal <a[15]_GND_26_o_add_17_OUT> created at line 0.
+    Found 16-bit adder for signal <a[15]_GND_26_o_add_19_OUT> created at line 0.
+    Found 16-bit adder for signal <a[15]_GND_26_o_add_21_OUT> created at line 0.
+    Found 16-bit adder for signal <a[15]_GND_26_o_add_23_OUT> created at line 0.
+    Found 16-bit adder for signal <a[15]_GND_26_o_add_25_OUT> created at line 0.
+    Found 16-bit adder for signal <a[15]_GND_26_o_add_27_OUT[15:0]> created at line 0.
+    Found 16-bit adder for signal <a[15]_GND_26_o_add_29_OUT[15:0]> created at line 0.
+    Found 16-bit adder for signal <a[15]_GND_26_o_add_31_OUT[15:0]> created at line 0.
+    Found 20-bit comparator lessequal for signal <BUS_0001> created at line 0
+    Found 19-bit comparator lessequal for signal <BUS_0002> created at line 0
+    Found 18-bit comparator lessequal for signal <BUS_0003> created at line 0
+    Found 17-bit comparator lessequal for signal <BUS_0004> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0005> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0006> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0007> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0008> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0009> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0010> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0011> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0012> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0013> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0014> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0015> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0016> created at line 0
+    Found 16-bit comparator lessequal for signal <BUS_0017> created at line 0
+    Summary:
+	inferred  16 Adder/Subtractor(s).
+	inferred  17 Comparator(s).
+	inferred 211 Multiplexer(s).
+Unit <div_16u_4u> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 16x7-bit single-port Read Only RAM                    : 4
+# Multipliers                                          : 9
+ 16x16-bit multiplier                                  : 1
+ 4x3-bit multiplier                                    : 4
+ 5x4-bit multiplier                                    : 4
+# Adders/Subtractors                                   : 57
+ 16-bit adder                                          : 27
+ 16-bit subtractor                                     : 4
+ 17-bit adder                                          : 2
+ 18-bit adder                                          : 2
+ 19-bit adder                                          : 2
+ 20-bit adder                                          : 2
+ 27-bit adder                                          : 2
+ 4-bit adder                                           : 6
+ 6-bit adder                                           : 1
+ 6-bit subtractor                                      : 1
+ 8-bit adder                                           : 4
+ 9-bit adder                                           : 4
+# Registers                                            : 30
+ 12-bit register                                       : 5
+ 125-bit register                                      : 5
+ 16-bit register                                       : 6
+ 25-bit register                                       : 1
+ 27-bit register                                       : 2
+ 4-bit register                                        : 10
+ 6-bit register                                        : 1
+# Comparators                                          : 40
+ 16-bit comparator greater                             : 4
+ 16-bit comparator lessequal                           : 26
+ 17-bit comparator lessequal                           : 2
+ 18-bit comparator lessequal                           : 2
+ 19-bit comparator lessequal                           : 2
+ 20-bit comparator lessequal                           : 2
+ 27-bit comparator greater                             : 1
+ 6-bit comparator greater                              : 1
+# Multiplexers                                         : 455
+ 1-bit 2-to-1 multiplexer                              : 416
+ 16-bit 2-to-1 multiplexer                             : 15
+ 16-bit 4-to-1 multiplexer                             : 5
+ 25-bit 2-to-1 multiplexer                             : 5
+ 27-bit 2-to-1 multiplexer                             : 2
+ 4-bit 2-to-1 multiplexer                              : 12
+# Logic shifters                                       : 3
+ 16-bit shifter arithmetic right                       : 1
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+# Tristates                                            : 6
+ 1-bit tristate buffer                                 : 6
+# FSMs                                                 : 3
+# Xors                                                 : 3
+ 1-bit xor2                                            : 1
+ 16-bit xor2                                           : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <counter_19>.
+The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
+Unit <counter_19> synthesized (advanced).
+
+Synthesizing (advanced) Unit <food_11>.
+The following registers are absorbed into counter <M_rnd_y_q>: 1 register on signal <M_rnd_y_q>.
+The following registers are absorbed into counter <M_rnd_x_q>: 1 register on signal <M_rnd_x_q>.
+The following registers are absorbed into counter <M_rnd_z_q>: 1 register on signal <M_rnd_z_q>.
+Unit <food_11> synthesized (advanced).
+
+Synthesizing (advanced) Unit <render_12>.
+	Multiplier <Mmult_n0125> in block <render_12> and adder/subtractor <Madd_n0081_Madd> in block <render_12> are combined into a MAC<Maddsub_n0125>.
+	Multiplier <Mmult_n0137> in block <render_12> and adder/subtractor <Madd_n0091_Madd> in block <render_12> are combined into a MAC<Maddsub_n0137>.
+	Multiplier <Mmult_n0131> in block <render_12> and adder/subtractor <Madd_n0086_Madd> in block <render_12> are combined into a MAC<Maddsub_n0131>.
+	Multiplier <Mmult_n0143> in block <render_12> and adder/subtractor <Madd_n0096_Madd> in block <render_12> are combined into a MAC<Maddsub_n0143>.
+	Multiplier <Mmult_PWR_17_o_snk_hd_pos[7]_MuLt_1_OUT> in block <render_12> and adder/subtractor <Madd_n0123[7:0]_Madd> in block <render_12> are combined into a MAC<Maddsub_PWR_17_o_snk_hd_pos[7]_MuLt_1_OUT>.
+	The following registers are also absorbed by the MAC: <snake/M_hd_pos_q> in block <mojo_top_0>.
+	Multiplier <Mmult_snk_tl_pos[7]_PWR_17_o_MuLt_11_OUT> in block <render_12> and adder/subtractor <Madd_n0135[7:0]_Madd> in block <render_12> are combined into a MAC<Maddsub_snk_tl_pos[7]_PWR_17_o_MuLt_11_OUT>.
+	The following registers are also absorbed by the MAC: <snake/M_tl_pos_q> in block <mojo_top_0>.
+	Multiplier <Mmult_snk_bd_pos[7]_PWR_17_o_MuLt_6_OUT> in block <render_12> and adder/subtractor <Madd_n0129[7:0]_Madd> in block <render_12> are combined into a MAC<Maddsub_snk_bd_pos[7]_PWR_17_o_MuLt_6_OUT>.
+	The following registers are also absorbed by the MAC: <snake/M_bd_pos_q> in block <mojo_top_0>.
+	Multiplier <Mmult_PWR_17_o_food_pos[7]_MuLt_16_OUT> in block <render_12> and adder/subtractor <Madd_n0141[7:0]_Madd> in block <render_12> are combined into a MAC<Maddsub_PWR_17_o_food_pos[7]_MuLt_16_OUT>.
+Unit <render_12> synthesized (advanced).
+
+Synthesizing (advanced) Unit <sevenseg_13>.
+INFO:Xst:3212 - HDL ADVISOR - Asynchronous or synchronous initialization of the register <M_tens_mod_q> prevents it from being combined with the RAM <Mram_tens_out> for implementation as read-only block RAM.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 7-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_tens_mod_q>  |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <tens_out>      |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3212 - HDL ADVISOR - Asynchronous or synchronous initialization of the register <M_ones_mod_q> prevents it from being combined with the RAM <Mram_ones_out> for implementation as read-only block RAM.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 7-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <M_ones_mod_q>  |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <ones_out>      |          |
+    -----------------------------------------------------------------------
+Unit <sevenseg_13> synthesized (advanced).
+
+Synthesizing (advanced) Unit <timer_10>.
+The following registers are absorbed into counter <M_game_clk_counter_q>: 1 register on signal <M_game_clk_counter_q>.
+The following registers are absorbed into counter <M_clk_counter_q>: 1 register on signal <M_clk_counter_q>.
+The following registers are absorbed into counter <M_game_time_counter_q>: 1 register on signal <M_game_time_counter_q>.
+Unit <timer_10> synthesized (advanced).
+WARNING:Xst:2677 - Node <snake/M_tl_pos_q_8> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <snake/M_tl_pos_q_9> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <snake/M_tl_pos_q_10> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <snake/M_tl_pos_q_11> of sequential type is unconnected in block <mojo_top_0>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 16x7-bit single-port distributed Read Only RAM        : 4
+# MACs                                                 : 8
+ 4x3-to-7-bit MAC                                      : 4
+ 5x4-to-7-bit MAC                                      : 4
+# Multipliers                                          : 1
+ 16x16-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 41
+ 16-bit adder                                          : 32
+ 16-bit adder carry in                                 : 1
+ 16-bit subtractor                                     : 4
+ 4-bit adder                                           : 3
+ 6-bit subtractor                                      : 1
+# Counters                                             : 7
+ 16-bit up counter                                     : 1
+ 27-bit up counter                                     : 2
+ 4-bit up counter                                      : 3
+ 6-bit up counter                                      : 1
+# Registers                                            : 814
+ Flip-Flops                                            : 814
+# Comparators                                          : 40
+ 16-bit comparator greater                             : 4
+ 16-bit comparator lessequal                           : 26
+ 17-bit comparator lessequal                           : 2
+ 18-bit comparator lessequal                           : 2
+ 19-bit comparator lessequal                           : 2
+ 20-bit comparator lessequal                           : 2
+ 27-bit comparator greater                             : 1
+ 6-bit comparator greater                              : 1
+# Multiplexers                                         : 474
+ 1-bit 2-to-1 multiplexer                              : 441
+ 16-bit 2-to-1 multiplexer                             : 15
+ 16-bit 4-to-1 multiplexer                             : 5
+ 25-bit 2-to-1 multiplexer                             : 4
+ 4-bit 2-to-1 multiplexer                              : 9
+# Logic shifters                                       : 3
+ 16-bit shifter arithmetic right                       : 1
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+# FSMs                                                 : 3
+# Xors                                                 : 3
+ 1-bit xor2                                            : 1
+ 16-bit xor2                                           : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_2> on signal <M_rows_q[1:6]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00000 | 000001
+ 00001 | 000010
+ 00010 | 000100
+ 00100 | 001000
+ 01000 | 010000
+ 10000 | 100000
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <control/FSM_1> on signal <M_direction_q[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 010   | 010
+ 011   | 011
+ 101   | 101
+ 100   | 100
+ 001   | 001
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <game/FSM_0> on signal <M_gamefsm_q[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0010  | 0010
+ 0001  | 0001
+ 0100  | 0100
+ 0011  | 0011
+ 0111  | 0111
+ 0101  | 0101
+ 0110  | 0110
+ 1000  | 1000
+ 1010  | 1010
+-------------------
+WARNING:Xst:1426 - The value init of the FF/Latch render/M_rows_q_FSM_FFd6 hinder the constant cleaning in the block mojo_top_0.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1710 - FF/Latch <render/Maddsub_snk_bd_pos[7]_PWR_17_o_MuLt_6_OUT1_0> (without init value) has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <render/Maddsub_snk_tl_pos[7]_PWR_17_o_MuLt_11_OUT1_0> (without init value) has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <render/Maddsub_PWR_17_o_snk_hd_pos[7]_MuLt_1_OUT1_0> (without init value) has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <snake/M_hd_pos_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <render/Maddsub_PWR_17_o_snk_hd_pos[7]_MuLt_1_OUT1_1> 
+INFO:Xst:2261 - The FF/Latch <snake/M_bd_pos_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <render/Maddsub_snk_bd_pos[7]_PWR_17_o_MuLt_6_OUT1_4> 
+INFO:Xst:2261 - The FF/Latch <snake/M_hd_pos_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <render/Maddsub_PWR_17_o_snk_hd_pos[7]_MuLt_1_OUT1_3> 
+INFO:Xst:2261 - The FF/Latch <snake/M_hd_pos_q_8> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <render/Maddsub_PWR_17_o_snk_hd_pos[7]_MuLt_1_OUT1_4> 
+INFO:Xst:2261 - The FF/Latch <snake/M_hd_pos_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <render/Maddsub_PWR_17_o_snk_hd_pos[7]_MuLt_1_OUT1_2> 
+INFO:Xst:2261 - The FF/Latch <snake/M_bd_pos_q_11> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <render/Maddsub_snk_bd_pos[7]_PWR_17_o_MuLt_6_OUT1_1> 
+INFO:Xst:2261 - The FF/Latch <snake/M_bd_pos_q_10> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <render/Maddsub_snk_bd_pos[7]_PWR_17_o_MuLt_6_OUT1_2> 
+INFO:Xst:2261 - The FF/Latch <snake/M_bd_pos_q_9> in Unit <mojo_top_0> is equivalent to the following FF/Latch, which will be removed : <render/Maddsub_snk_bd_pos[7]_PWR_17_o_MuLt_6_OUT1_3> 
+INFO:Xst:2261 - The FF/Latch <M_y_q_1> in Unit <controls_7> is equivalent to the following 2 FFs/Latches, which will be removed : <M_y_q_2> <M_y_q_3> 
+INFO:Xst:2261 - The FF/Latch <M_x_q_1> in Unit <controls_7> is equivalent to the following 2 FFs/Latches, which will be removed : <M_x_q_2> <M_x_q_3> 
+INFO:Xst:2261 - The FF/Latch <M_z_q_1> in Unit <controls_7> is equivalent to the following 2 FFs/Latches, which will be removed : <M_z_q_2> <M_z_q_3> 
+
+Optimizing unit <score_9> ...
+
+Optimizing unit <mojo_top_0> ...
+
+Optimizing unit <controls_7> ...
+
+Optimizing unit <gameengine_6> ...
+
+Optimizing unit <food_11> ...
+
+Optimizing unit <sevenseg_13> ...
+
+Optimizing unit <div_16u_4u> ...
+WARNING:Xst:1293 - FF/Latch <scoreseg/M_tens_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <scoreseg/M_tens_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <scoreseg/M_tens_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_ones_q_6> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_ones_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_ones_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_ones_q_9> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_ones_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_ones_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_ones_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_ones_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_ones_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_ones_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <food/M_rnd_y_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <food/M_rnd_z_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <food/M_rnd_x_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <food/M_pos_x_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <food/M_pos_y_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <food/M_pos_z_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_9> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_q_6> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <timerseg/M_tens_mod_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 32.
+FlipFlop score/M_score_q_8 has been replicated 1 time(s)
+FlipFlop score/M_score_q_9 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 883
+ Flip-Flops                                            : 883
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 852   |
+render/muxclk/M_ctr_q_15           | BUFG                   | 31    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 20.386ns (Maximum Frequency: 49.053MHz)
+   Minimum input arrival time before clock: 5.854ns
+   Maximum output required time after clock: 5.558ns
+   Maximum combinational path delay: No path found
+
+=========================================================================

@@ -5,15 +5,7 @@
     <File Path="$PSRCDIR/constrs_1/imports/Desktop/Projects/v2/SNAK3D/constraint/controls.ucf">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../constraint/controls.ucf"/>
-        <Attr Name="ImportTime" Val="1575352511"/>
-        <Attr Name="UsedInSynthesis" Val="1"/>
-        <Attr Name="UsedInImplementation" Val="1"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/constrs_1/imports/Desktop/Projects/v2/SNAK3D/constraint/io_shield.ucf">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../constraint/io_shield.ucf"/>
-        <Attr Name="ImportTime" Val="1575352511"/>
+        <Attr Name="ImportTime" Val="1575466936"/>
         <Attr Name="UsedInSynthesis" Val="1"/>
         <Attr Name="UsedInImplementation" Val="1"/>
       </FileInfo>

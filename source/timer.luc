@@ -2,6 +2,7 @@ module timer (
     input clk,  //50MHz clock
     input rst,  // reset
     input wetmr,
+    input halt,
     output game_time[6],
     output time_out,
     output clk_count[16],
@@ -14,12 +15,15 @@ module timer (
   //const FRAME_PERIOD = 16b0101111110000000;
 //  const FRAME_PERIOD = 16b0010111111000000;
    const FRAME_PERIOD = 16b001111111000000;
+   const FIFTY_MILION = 50000000;
+
   .clk(clk)
   {
     .rst(rst)
     {
       dff clk_counter[27]; // 26 bits to represent 50 million
       dff game_time_counter[6]; // 6 bits to represent 60
+      dff game_clk_counter[27]; // 26 bits to represent 50 million
     }
   }
 
@@ -31,13 +35,18 @@ module timer (
     
     //increment the time every clock
     clk_counter.d = clk_counter.q + 1;
+    game_clk_counter.d = game_clk_counter.q + 1;
     
-        //output the current count to be used by alu
+    //output the current count to be used by alu
     clk_count = clk_counter.q[26:11];
 
     if(wetmr) {
-      game_time_counter.d = game_time_counter.q + 1;
       clk_counter.d = 0;
+    }
+    
+    if(game_clk_counter.q > FIFTY_MILION && (~halt)) {
+      game_time_counter.d = game_time_counter.q + 1;
+      game_clk_counter.d = 0;
     }
 
     //give the time from 60 to 0s

@@ -6,13 +6,13 @@ module food (
   ) {
   .clk(clk) {
     .rst(rst) {
-      dff pos_x[4];
-      dff pos_y[4];
-      dff pos_z[4];
+      dff pos_x[4](#INIT(4));
+      dff pos_y[4](#INIT(4));
+      dff pos_z[4](#INIT(4));
       
-      dff rnd_x[4];
-      dff rnd_y[4];
-      dff rnd_z[4];   
+      dff rnd_x[4](#INIT(4));
+      dff rnd_y[4](#INIT(4));
+      dff rnd_z[4](#INIT(4));   
     }
   }
   
@@ -42,7 +42,7 @@ module food (
     //pos_x.d = 4;
     //pos_y.d = 0;
     //pos_z.d = 0;
-
+    food_pos = 125;
     food_pos = c{pos_x.q, pos_y.q, pos_z.q};
   }
 }
