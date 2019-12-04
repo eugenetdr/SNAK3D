@@ -21,12 +21,12 @@ module food_13 (
   reg [3:0] M_rnd_z_d, M_rnd_z_q = 1'h0;
   
   always @* begin
-    M_pos_y_d = M_pos_y_q;
-    M_pos_z_d = M_pos_z_q;
-    M_pos_x_d = M_pos_x_q;
     M_rnd_x_d = M_rnd_x_q;
     M_rnd_z_d = M_rnd_z_q;
     M_rnd_y_d = M_rnd_y_q;
+    M_pos_z_d = M_pos_z_q;
+    M_pos_y_d = M_pos_y_q;
+    M_pos_x_d = M_pos_x_q;
     
     M_rnd_x_d = M_rnd_x_q + 1'h1;
     if (M_rnd_x_q == 3'h4) begin
@@ -45,9 +45,6 @@ module food_13 (
       M_pos_y_d = M_rnd_y_q;
       M_pos_z_d = M_rnd_z_q;
     end
-    M_pos_x_d = 3'h4;
-    M_pos_y_d = 1'h0;
-    M_pos_z_d = 1'h0;
     food_pos = {M_pos_x_q, M_pos_y_q, M_pos_z_q};
   end
   

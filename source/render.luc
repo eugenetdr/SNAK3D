@@ -7,10 +7,7 @@ module render (
     input food_pos[12],  
     input wernd,
     output led_rows_out[5],
-    output led_cols_out[25],
-    input dx[4],
-    input dy[4],
-    input dz[4]
+    output led_cols_out[25]
   ) {
   
     
@@ -78,24 +75,25 @@ module render (
       //snk_hd_state.d = TEMPLATE << count.q;
       
       //snk_hd_state.d = c{dx,dy,dz} << 50;
-      //snk_hd_state.d = 0;
-      //snk_hd_state.d[hd_x + (5*hd_y) + (25*hd_z)] = 1;
+      snk_hd_state.d = 0;
+      snk_hd_state.d[hd_x + (5*hd_y) + (25*hd_z)] = 1;
       
-      //snk_bd_state.d = 0;
-      //snk_bd_state.d[bd_x + (bd_y*5) + (bd_z*25)] = 1;
+      snk_bd_state.d = 0;
+      snk_bd_state.d[bd_x + (bd_y*5) + (bd_z*25)] = 1;
       
-      //snk_tl_state.d = 0;
-      //snk_tl_state.d[tl_x + (tl_y*5) + (tl_z*25)] = 1;
+      snk_tl_state.d = 0;
+      snk_tl_state.d[tl_x + (tl_y*5) + (tl_z*25)] = 1;
       
       food_state.d = 0;
       food_state.d[fd_x + (5*fd_y) + (25*fd_z)] = 1;
       
       //food_state.d = TEMPLATE << (food_pos[11:8] + (NUMBER_ROWS * food_pos[7:4]) + (NUMBER_COLUMNS * food_pos[3:0]));
-      //led_state.d = snk_hd_state.q | snk_bd_state.q | snk_tl_state.q | food_state.q;
+      led_state.d = snk_hd_state.q | snk_bd_state.q | snk_tl_state.q | food_state.q;
     }
     
-    led_state.d = (snk_hd_state.q);
-    //led_state.d = (snk_hd_state.q | snk_bd_state.q | snk_tl_state.q | food_state.q);
+    //led_state.d = (snk_hd_state.q);
+    led_state.d = (snk_hd_state.q | snk_bd_state.q | snk_tl_state.q | food_state.q); 
+    
     
     rows.d = 5b00001;
     

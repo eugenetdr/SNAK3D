@@ -2,25 +2,29 @@ module controls (
     input clk,  // clock
     input rst,  // reset
     input buttons[6],
+    input game_button[2],
     output dx[4],
     output dy[4],
-    output dz[4]
+    output dz[4],
+    output game_state
     //output led[24]
   ) {
 
   .clk(clk){
     .rst(rst){
         fsm direction = {X_POS, X_NEG, Y_POS, Y_NEG, Z_NEG, Z_POS};
-        //counter delay(#SIZE(1), #DIV(23));
+        fsm gamestate = {IDLE, PLAY};
+        //counter delay(#SIZE(1), #DIV(24));
     }
-
   }
+  
   
   .clk(clk){
       .rst(rst){
         dff x[4];
         dff y[4];
         dff z[4];
+        dff game_state_out;
         
       }
     }
@@ -30,43 +34,64 @@ module controls (
   //Z+: buttons[4], Z-:buttons[5]
   always {
 
+    case (gamestate.q) {
+      gamestate.IDLE:
+        if (game_button[0]) {
+          game_state_out.d = 1;
+          gamestate.d = gamestate.PLAY;
+          }
+        gamestate.d = gamestate.IDLE;
+        game_state_out.d = 0;
+        
+      gamestate.PLAY:
+        if (game_button[1]) {
+          game_state_out.d = 0;
+          gamestate.d = gamestate.IDLE;
+          }
+        gamestate.d = gamestate.PLAY;
+        game_state_out.d = 1;
+        
+        case (direction.q){
+          direction.X_POS:
+            x.d = 1;
+            y.d = 0;
+            z.d = 0;
+            direction.d = direction.X_POS;
+          direction.X_NEG:
+            x.d = 15;
+            y.d = 0;
+            z.d = 0;
+            direction.d = direction.X_NEG;
+          direction.Y_POS:
+            x.d = 0;
+            y.d = 1;
+            z.d = 0;
+            direction.d = direction.Y_POS;
+          direction.Y_NEG:
+            x.d = 0;
+            y.d = 15;
+            z.d = 0;
+            direction.d = direction.Y_NEG;
+          direction.Z_POS:
+            x.d = 0;
+            y.d = 0;
+            z.d = 1;
+            direction.d = direction.Z_POS;
+          direction.Z_NEG:
+            x.d = 0;
+            y.d = 0;
+            z.d = 15;
+            direction.d = direction.Z_NEG;
+        }
+      }
     
-    case (direction.q){
-      direction.X_POS:
-        x.d = 1;
-        y.d = 0;
-        z.d = 0;
-        direction.d = direction.X_POS;
-      direction.X_NEG:
-        x.d = 15;
-        y.d = 0;
-        z.d = 0;
-        direction.d = direction.X_NEG;
-      direction.Y_POS:
-        x.d = 0;
-        y.d = 1;
-        z.d = 0;
-        direction.d = direction.Y_POS;
-      direction.Y_NEG:
-        x.d = 0;
-        y.d = 15;
-        z.d = 0;
-        direction.d = direction.Y_NEG;
-      direction.Z_POS:
-        x.d = 0;
-        y.d = 0;
-        z.d = 1;
-        direction.d = direction.Z_POS;
-      direction.Z_NEG:
-        x.d = 0;
-        y.d = 0;
-        z.d = 15;
-        direction.d = direction.Z_NEG;
-    }
+    
+    
     
     dx = x.q;
     dy = y.q;
     dz = z.q;
+    game_state = game_state_out.q;
     if (buttons[0]) {direction.d = direction.X_POS;}
     if (buttons[1]) {direction.d = direction.X_NEG;}
     if (buttons[2]) {direction.d = direction.Y_POS;}

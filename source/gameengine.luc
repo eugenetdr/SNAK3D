@@ -3,6 +3,7 @@ module gameengine (
     input rst,            // reset button (active low)
     input time_out, //taken in from the timer module, meaning that time has run out
     input aluout[16],
+    input game_state,
     output opcode[16]
   ) {
   
@@ -26,52 +27,54 @@ module gameengine (
   //must be sent out in the previous state/clock cycle
   always {
       opcode = 0;
-      case(gamefsm.q)
-      {
-        gamefsm.WAIT_FRAME:
-          opcode = OPC_CMP_TIME_FRAME; //request to compare FRAME_PERIOD < clk_count
-          if(aluout == 1) {//if FRAME_PERIOD <  clk_count => next state          
-            gamefsm.d = gamefsm.CHECK_TIME;            
-          }          
-        
-        gamefsm.CHECK_TIME:          
-          if(time_out == 1) {//if time > 60 seconds (from timer module)
-            gamefsm.d = gamefsm.GAME_OVER;            
-          }
-          else {
-            gamefsm.d = gamefsm.CHECK_EAT;
-          }
-        
-        gamefsm.CHECK_EAT:
-          opcode = OPC_CMP_FOOD; //request to compare snk_pos and food_pos
-          if(aluout == 1) {//if snk_pos == food_pos          
-            gamefsm.d = gamefsm.INCREMENT_SCORE;            
-          }
-          else {
-            gamefsm.d = gamefsm.MOVE_SNK_HD; //if didn't eat just move snake this clk
-          }
-        gamefsm.INCREMENT_SCORE:          
-          opcode = OPC_INCREMENT_SCORE; //request to increment score and write to score
-          gamefsm.d = gamefsm.SPAWN_FOOD;
-
-        gamefsm.SPAWN_FOOD:
-          opcode = OPC_SPAWN_FOOD;
-          gamefsm.d = gamefsm.MOVE_SNK_HD;
-
-        gamefsm.MOVE_SNK_HD:
-          opcode = OPC_MOVE_SNK_HD;
-          gamefsm.d = gamefsm.UPDATE_SNAKE_POS;
-
-        gamefsm.UPDATE_SNAKE_POS:
-          opcode = OPC_UPDATE_SNK_POS;
-          gamefsm.d = gamefsm.RENDER;
-
-        gamefsm.RENDER:                 
-          opcode = OPC_RENDER; 
-          gamefsm.d = gamefsm.WAIT_FRAME;
-
-        gamefsm.GAME_OVER:
-          gamefsm.d = gamefsm.GAME_OVER;
-      }
+      if (game_state) {
+        case(gamefsm.q)
+        {
+          gamefsm.WAIT_FRAME:
+            opcode = OPC_CMP_TIME_FRAME; //request to compare FRAME_PERIOD < clk_count
+            if(aluout == 1) {//if FRAME_PERIOD <  clk_count => next state          
+              gamefsm.d = gamefsm.CHECK_TIME;            
+            }          
+          
+          gamefsm.CHECK_TIME:          
+            if(time_out == 1) {//if time > 60 seconds (from timer module)
+              gamefsm.d = gamefsm.GAME_OVER;            
+            }
+            else {
+              gamefsm.d = gamefsm.CHECK_EAT;
+            }
+          
+          gamefsm.CHECK_EAT:
+            opcode = OPC_CMP_FOOD; //request to compare snk_pos and food_pos
+            if(aluout == 1) {//if snk_pos == food_pos          
+              gamefsm.d = gamefsm.INCREMENT_SCORE;            
+            }
+            else {
+              gamefsm.d = gamefsm.MOVE_SNK_HD; //if didn't eat just move snake this clk
+            }
+          gamefsm.INCREMENT_SCORE:          
+            opcode = OPC_INCREMENT_SCORE; //request to increment score and write to score
+            gamefsm.d = gamefsm.SPAWN_FOOD;
+  
+          gamefsm.SPAWN_FOOD:
+            opcode = OPC_SPAWN_FOOD;
+            gamefsm.d = gamefsm.MOVE_SNK_HD;
+  
+          gamefsm.MOVE_SNK_HD:
+            opcode = OPC_MOVE_SNK_HD;
+            gamefsm.d = gamefsm.UPDATE_SNAKE_POS;
+  
+          gamefsm.UPDATE_SNAKE_POS:
+            opcode = OPC_UPDATE_SNK_POS;
+            gamefsm.d = gamefsm.RENDER;
+  
+          gamefsm.RENDER:                 
+            opcode = OPC_RENDER; 
+            gamefsm.d = gamefsm.WAIT_FRAME;
+  
+          gamefsm.GAME_OVER:
+            gamefsm.d = gamefsm.GAME_OVER;
+        }
+    }
   }
 }

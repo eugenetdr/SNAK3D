@@ -17,11 +17,10 @@ module mojo_top_0 (
     input avr_tx,
     output reg avr_rx,
     input avr_rx_busy,
-    output reg [23:0] io_led,
-    output reg [7:0] io_seg,
-    output reg [3:0] io_sel,
-    input [4:0] io_button,
-    input [23:0] io_dip
+    input [5:0] button,
+    input [1:0] game_button,
+    output reg [24:0] col_led,
+    output reg [4:0] layer_gnd
   );
   
   
@@ -122,24 +121,30 @@ module mojo_top_0 (
   wire [16-1:0] M_game_opcode;
   reg [1-1:0] M_game_time_out;
   reg [16-1:0] M_game_aluout;
+  reg [1-1:0] M_game_game_state;
   gameengine_8 game (
     .clk(clk),
     .rst(rst),
     .time_out(M_game_time_out),
     .aluout(M_game_aluout),
+    .game_state(M_game_game_state),
     .opcode(M_game_opcode)
   );
   wire [4-1:0] M_control_dx;
   wire [4-1:0] M_control_dy;
   wire [4-1:0] M_control_dz;
+  wire [1-1:0] M_control_game_state;
   reg [6-1:0] M_control_buttons;
+  reg [2-1:0] M_control_game_button;
   controls_9 control (
     .clk(clk),
     .rst(rst),
     .buttons(M_control_buttons),
+    .game_button(M_control_game_button),
     .dx(M_control_dx),
     .dy(M_control_dy),
-    .dz(M_control_dz)
+    .dz(M_control_dz),
+    .game_state(M_control_game_state)
   );
   wire [12-1:0] M_snake_snk_hd_pos;
   wire [12-1:0] M_snake_snk_bd_pos;
@@ -200,9 +205,6 @@ module mojo_top_0 (
   reg [12-1:0] M_render_snk_tl_pos;
   reg [12-1:0] M_render_food_pos;
   reg [1-1:0] M_render_wernd;
-  reg [4-1:0] M_render_dx;
-  reg [4-1:0] M_render_dy;
-  reg [4-1:0] M_render_dz;
   render_14 render (
     .clk(clk),
     .rst(rst),
@@ -211,9 +213,6 @@ module mojo_top_0 (
     .snk_tl_pos(M_render_snk_tl_pos),
     .food_pos(M_render_food_pos),
     .wernd(M_render_wernd),
-    .dx(M_render_dx),
-    .dy(M_render_dy),
-    .dz(M_render_dz),
     .led_rows_out(M_render_led_rows_out),
     .led_cols_out(M_render_led_cols_out)
   );
@@ -233,6 +232,9 @@ module mojo_top_0 (
     M_clogic_opcode = M_game_opcode;
     M_aselector_sel = M_clogic_asel;
     M_bselector_sel = M_clogic_bsel;
+    M_control_buttons[0+5-:6] = button[0+5-:6];
+    M_control_game_button[0+1-:2] = game_button[0+1-:2];
+    M_game_game_state = M_control_game_state;
     M_snake_dx = M_control_dx;
     M_snake_dy = M_control_dy;
     M_snake_dz = M_control_dz;
@@ -245,11 +247,10 @@ module mojo_top_0 (
     M_render_snk_hd_pos = M_snake_snk_hd_pos;
     M_render_snk_bd_pos = M_snake_snk_bd_pos;
     M_render_snk_tl_pos = M_snake_snk_tl_pos;
-    M_render_dx = 1'h0;
-    M_render_dy = 1'h0;
-    M_render_dz = 1'h0;
     M_render_food_pos = M_food_food_pos;
     M_render_wernd = M_clogic_wernd;
+    layer_gnd[0+4-:5] = M_render_led_rows_out[0+4-:5];
+    col_led[0+24-:25] = M_render_led_cols_out[0+24-:25];
     M_aselector_b = M_snake_snk_hd_pos;
     M_aselector_c = M_score_out;
     M_bselector_c = 1'h1;
@@ -260,9 +261,5 @@ module mojo_top_0 (
     M_bselector_b = M_food_food_pos;
     M_scoreseg_d = M_score_out;
     M_timerseg_d = {10'h000, M_timer_game_time};
-    io_led = 24'h000000;
-    io_seg = 8'hff;
-    io_sel = 4'hb;
-    M_control_buttons = {1'h0, io_button[0+4-:5]};
   end
 endmodule

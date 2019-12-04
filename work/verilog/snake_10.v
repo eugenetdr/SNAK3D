@@ -28,8 +28,8 @@ module snake_10 (
   
   always @* begin
     M_hd_x_d = M_hd_x_q;
-    M_hd_y_d = M_hd_y_q;
     M_hd_z_d = M_hd_z_q;
+    M_hd_y_d = M_hd_y_q;
     M_hd_pos_d = M_hd_pos_q;
     M_tl_pos_d = M_tl_pos_q;
     M_bd_pos_d = M_bd_pos_q;

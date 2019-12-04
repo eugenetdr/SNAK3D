@@ -8,9 +8,11 @@ module controls_9 (
     input clk,
     input rst,
     input [5:0] buttons,
+    input [1:0] game_button,
     output reg [3:0] dx,
     output reg [3:0] dy,
-    output reg [3:0] dz
+    output reg [3:0] dz,
+    output reg game_state
   );
   
   
@@ -23,59 +25,86 @@ module controls_9 (
   localparam Z_POS_direction = 3'd5;
   
   reg [2:0] M_direction_d, M_direction_q = X_POS_direction;
+  localparam IDLE_gamestate = 1'd0;
+  localparam PLAY_gamestate = 1'd1;
+  
+  reg M_gamestate_d, M_gamestate_q = IDLE_gamestate;
   
   reg [3:0] M_x_d, M_x_q = 1'h0;
   reg [3:0] M_y_d, M_y_q = 1'h0;
   reg [3:0] M_z_d, M_z_q = 1'h0;
+  reg M_game_state_out_d, M_game_state_out_q = 1'h0;
   
   always @* begin
+    M_gamestate_d = M_gamestate_q;
     M_direction_d = M_direction_q;
-    M_x_d = M_x_q;
-    M_y_d = M_y_q;
+    M_game_state_out_d = M_game_state_out_q;
     M_z_d = M_z_q;
+    M_y_d = M_y_q;
+    M_x_d = M_x_q;
     
     
-    case (M_direction_q)
-      X_POS_direction: begin
-        M_x_d = 1'h1;
-        M_y_d = 1'h0;
-        M_z_d = 1'h0;
-        M_direction_d = X_POS_direction;
+    case (M_gamestate_q)
+      IDLE_gamestate: begin
+        if (game_button[0+0-:1]) begin
+          M_game_state_out_d = 1'h1;
+          M_gamestate_d = PLAY_gamestate;
+        end
+        M_gamestate_d = IDLE_gamestate;
+        M_game_state_out_d = 1'h0;
       end
-      X_NEG_direction: begin
-        M_x_d = 4'hf;
-        M_y_d = 1'h0;
-        M_z_d = 1'h0;
-        M_direction_d = X_NEG_direction;
-      end
-      Y_POS_direction: begin
-        M_x_d = 1'h0;
-        M_y_d = 1'h1;
-        M_z_d = 1'h0;
-        M_direction_d = Y_POS_direction;
-      end
-      Y_NEG_direction: begin
-        M_x_d = 1'h0;
-        M_y_d = 4'hf;
-        M_z_d = 1'h0;
-        M_direction_d = Y_NEG_direction;
-      end
-      Z_POS_direction: begin
-        M_x_d = 1'h0;
-        M_y_d = 1'h0;
-        M_z_d = 1'h1;
-        M_direction_d = Z_POS_direction;
-      end
-      Z_NEG_direction: begin
-        M_x_d = 1'h0;
-        M_y_d = 1'h0;
-        M_z_d = 4'hf;
-        M_direction_d = Z_NEG_direction;
+      PLAY_gamestate: begin
+        if (game_button[1+0-:1]) begin
+          M_game_state_out_d = 1'h0;
+          M_gamestate_d = IDLE_gamestate;
+        end
+        M_gamestate_d = PLAY_gamestate;
+        M_game_state_out_d = 1'h1;
+        
+        case (M_direction_q)
+          X_POS_direction: begin
+            M_x_d = 1'h1;
+            M_y_d = 1'h0;
+            M_z_d = 1'h0;
+            M_direction_d = X_POS_direction;
+          end
+          X_NEG_direction: begin
+            M_x_d = 4'hf;
+            M_y_d = 1'h0;
+            M_z_d = 1'h0;
+            M_direction_d = X_NEG_direction;
+          end
+          Y_POS_direction: begin
+            M_x_d = 1'h0;
+            M_y_d = 1'h1;
+            M_z_d = 1'h0;
+            M_direction_d = Y_POS_direction;
+          end
+          Y_NEG_direction: begin
+            M_x_d = 1'h0;
+            M_y_d = 4'hf;
+            M_z_d = 1'h0;
+            M_direction_d = Y_NEG_direction;
+          end
+          Z_POS_direction: begin
+            M_x_d = 1'h0;
+            M_y_d = 1'h0;
+            M_z_d = 1'h1;
+            M_direction_d = Z_POS_direction;
+          end
+          Z_NEG_direction: begin
+            M_x_d = 1'h0;
+            M_y_d = 1'h0;
+            M_z_d = 4'hf;
+            M_direction_d = Z_NEG_direction;
+          end
+        endcase
       end
     endcase
     dx = M_x_q;
     dy = M_y_q;
     dz = M_z_q;
+    game_state = M_game_state_out_q;
     if (buttons[0+0-:1]) begin
       M_direction_d = X_POS_direction;
     end
@@ -98,22 +127,26 @@ module controls_9 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_direction_q <= 1'h0;
+      M_x_q <= 1'h0;
+      M_y_q <= 1'h0;
+      M_z_q <= 1'h0;
+      M_game_state_out_q <= 1'h0;
     end else begin
-      M_direction_q <= M_direction_d;
+      M_x_q <= M_x_d;
+      M_y_q <= M_y_d;
+      M_z_q <= M_z_d;
+      M_game_state_out_q <= M_game_state_out_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_x_q <= 1'h0;
-      M_y_q <= 1'h0;
-      M_z_q <= 1'h0;
+      M_direction_q <= 1'h0;
+      M_gamestate_q <= 1'h0;
     end else begin
-      M_x_q <= M_x_d;
-      M_y_q <= M_y_d;
-      M_z_q <= M_z_d;
+      M_direction_q <= M_direction_d;
+      M_gamestate_q <= M_gamestate_d;
     end
   end
   
