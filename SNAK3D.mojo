@@ -14,13 +14,12 @@
     <src>controllogic.luc</src>
     <src>adder16.luc</src>
     <src>alu16test_top.luc</src>
-    <src>compare16.luc</src>
     <src>tester.luc</src>
+    <src>compare16.luc</src>
     <src>snake.luc</src>
     <src>shift16.luc</src>
     <src>sevenseg.luc</src>
     <ucf>controls.ucf</ucf>
-    <ucf>io_shield.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
     <component>reset_conditioner.luc</component>
     <component>counter.luc</component>
