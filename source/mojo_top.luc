@@ -78,8 +78,9 @@ module mojo_top (
     clogic.opcode = game.opcode;
     aselector.sel = clogic.asel;
     bselector.sel = clogic.bsel;
+
     control.buttons[5:0] = button[5:0];    
-    
+    control.wecntl = clogic.wecntl;    
 
     //==========module inputs==========
     //game fsm

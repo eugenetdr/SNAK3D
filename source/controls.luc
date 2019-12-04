@@ -1,6 +1,7 @@
 module controls (
     input clk,  // clock
     input rst,  // reset
+    input wecntl,
     input buttons[6],
     output dx[4],
     output dy[4],
@@ -11,6 +12,7 @@ module controls (
   .clk(clk){
     .rst(rst){
         fsm direction = {X_POS, X_NEG, Y_POS, Y_NEG, Z_NEG, Z_POS};
+        fsm tmp_direction = {X_POS, X_NEG, Y_POS, Y_NEG, Z_NEG, Z_POS};
         //counter delay(#SIZE(1), #DIV(23));
     }
 
@@ -45,55 +47,59 @@ module controls (
         x.d = 1;
         y.d = 0;
         z.d = 0;
-        if (y_pos) {direction.d = direction.Y_POS;}
-        if (y_neg) {direction.d = direction.Y_NEG;}
-        if (z_pos) {direction.d = direction.Z_POS;}
-        if (z_neg) {direction.d = direction.Z_NEG;}
+        if (y_pos) {tmp_direction.d = tmp_direction.Y_POS;}
+        if (y_neg) {tmp_direction.d = tmp_direction.Y_NEG;}
+        if (z_pos) {tmp_direction.d = tmp_direction.Z_POS;}
+        if (z_neg) {tmp_direction.d = tmp_direction.Z_NEG;}
       direction.X_NEG:
         x.d = 15;
         y.d = 0;
         z.d = 0;
-        if (y_pos) {direction.d = direction.Y_POS;}
-        if (y_neg) {direction.d = direction.Y_NEG;}
-        if (z_pos) {direction.d = direction.Z_POS;}
-        if (z_neg) {direction.d = direction.Z_NEG;}
+        if (y_pos) {tmp_direction.d = tmp_direction.Y_POS;}
+        if (y_neg) {tmp_direction.d = tmp_direction.Y_NEG;}
+        if (z_pos) {tmp_direction.d = tmp_direction.Z_POS;}
+        if (z_neg) {tmp_direction.d = tmp_direction.Z_NEG;}
       direction.Y_POS:
         x.d = 0;
         y.d = 1;
         z.d = 0;
-        if (x_pos) {direction.d = direction.X_POS;}
-        if (x_neg) {direction.d = direction.X_NEG;}
-        if (z_pos) {direction.d = direction.Z_POS;}
-        if (z_neg) {direction.d = direction.Z_NEG;}
+        if (x_pos) {tmp_direction.d = tmp_direction.X_POS;}
+        if (x_neg) {tmp_direction.d = tmp_direction.X_NEG;}
+        if (z_pos) {tmp_direction.d = tmp_direction.Z_POS;}
+        if (z_neg) {tmp_direction.d = tmp_direction.Z_NEG;}
       direction.Y_NEG:
         x.d = 0;
         y.d = 15;
         z.d = 0;
-        if (x_pos) {direction.d = direction.X_POS;}
-        if (x_neg) {direction.d = direction.X_NEG;}
-        if (z_pos) {direction.d = direction.Z_POS;}
-        if (z_neg) {direction.d = direction.Z_NEG;}
+        if (x_pos) {tmp_direction.d = tmp_direction.X_POS;}
+        if (x_neg) {tmp_direction.d = tmp_direction.X_NEG;}
+        if (z_pos) {tmp_direction.d = tmp_direction.Z_POS;}
+        if (z_neg) {tmp_direction.d = tmp_direction.Z_NEG;}
       direction.Z_POS:
         x.d = 0;
         y.d = 0;
         z.d = 1;
-        if (x_pos) {direction.d = direction.X_POS;}
-        if (x_neg) {direction.d = direction.X_NEG;}
-        if (y_pos) {direction.d = direction.Y_POS;}
-        if (y_neg) {direction.d = direction.Y_NEG;}
+        if (x_pos) {tmp_direction.d = tmp_direction.X_POS;}
+        if (x_neg) {tmp_direction.d = tmp_direction.X_NEG;}
+        if (y_pos) {tmp_direction.d = tmp_direction.Y_POS;}
+        if (y_neg) {tmp_direction.d = tmp_direction.Y_NEG;}
       direction.Z_NEG:
         x.d = 0;
         y.d = 0;
         z.d = 15;
-        if (x_pos) {direction.d = direction.X_POS;}
-        if (x_neg) {direction.d = direction.X_NEG;}
-        if (y_pos) {direction.d = direction.Y_POS;}
-        if (y_neg) {direction.d = direction.Y_NEG;}
+        if (x_pos) {tmp_direction.d = tmp_direction.X_POS;}
+        if (x_neg) {tmp_direction.d = tmp_direction.X_NEG;}
+        if (y_pos) {tmp_direction.d = tmp_direction.Y_POS;}
+        if (y_neg) {tmp_direction.d = tmp_direction.Y_NEG;}
     }
     
     dx = x.q;
     dy = y.q;
     dz = z.q;
+
+    if(wecntl) {
+      direction.d = tmp_direction.q;
+    }
     
   }
 }
