@@ -19,7 +19,7 @@ module controllogic (
     asel = opcode[12:11];
     bsel = opcode[10:9];
     wesnkhd = opcode[8];
-    wesnkpos = opcode[7]];
+    wesnkpos = opcode[7];
     wefood = opcode[6];
     wescr = opcode[5];
     wernd = opcode[4];
