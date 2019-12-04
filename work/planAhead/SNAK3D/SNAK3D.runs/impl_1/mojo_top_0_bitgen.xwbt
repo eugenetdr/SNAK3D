@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=D:\Gitclones\SNAK3D2\work\planAhead\SNAK3D\SNAK3D.runs\impl_1\mojo_top_0_routed.ncd
+OUTFILE=D:\Gitclones\SNAK3D2\work\planAhead\SNAK3D\SNAK3D.runs\impl_1\mojo_top_0.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=D:\Gitclones\SNAK3D2\work\planAhead\SNAK3D\SNAK3D.runs\impl_1
+LICENSE=WebPack
+USER_INFO=211856537_0_0_679

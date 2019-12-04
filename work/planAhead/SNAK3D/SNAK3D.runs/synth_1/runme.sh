@@ -6,17 +6,21 @@
 # Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
 # 
 
+echo "This script was generated under a different operating system."
+echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executing this script"
+exit
+
 if [ -z "$PATH" ]; then
-  PATH=/home/mooselliot/Desktop/14.7/ISE_DS/EDK/bin/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/ISE/bin/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/common/bin/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/PlanAhead/bin
+  PATH=D:/XillinxDesignTools1/14.7/ISE_DS/EDK/bin/nt;D:/XillinxDesignTools1/14.7/ISE_DS/EDK/lib/nt;D:/XillinxDesignTools1/14.7/ISE_DS/ISE/bin/nt;D:/XillinxDesignTools1/14.7/ISE_DS/ISE/lib/nt;D:/XillinxDesignTools1/14.7/ISE_DS/common/bin/nt;D:/XillinxDesignTools1/14.7/ISE_DS/common/lib/nt:D:/XillinxDesignTools1/14.7/ISE_DS/PlanAhead/bin
 else
-  PATH=/home/mooselliot/Desktop/14.7/ISE_DS/EDK/bin/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/ISE/bin/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/common/bin/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/PlanAhead/bin:$PATH
+  PATH=D:/XillinxDesignTools1/14.7/ISE_DS/EDK/bin/nt;D:/XillinxDesignTools1/14.7/ISE_DS/EDK/lib/nt;D:/XillinxDesignTools1/14.7/ISE_DS/ISE/bin/nt;D:/XillinxDesignTools1/14.7/ISE_DS/ISE/lib/nt;D:/XillinxDesignTools1/14.7/ISE_DS/common/bin/nt;D:/XillinxDesignTools1/14.7/ISE_DS/common/lib/nt:D:/XillinxDesignTools1/14.7/ISE_DS/PlanAhead/bin:$PATH
 fi
 export PATH
 
 if [ -z "$LD_LIBRARY_PATH" ]; then
-  LD_LIBRARY_PATH=/home/mooselliot/Desktop/14.7/ISE_DS/EDK/lib/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/ISE/lib/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/common/lib/lin64
+  LD_LIBRARY_PATH=
 else
-  LD_LIBRARY_PATH=/home/mooselliot/Desktop/14.7/ISE_DS/EDK/lib/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/ISE/lib/lin64:/home/mooselliot/Desktop/14.7/ISE_DS/common/lib/lin64:$LD_LIBRARY_PATH
+  LD_LIBRARY_PATH=:$LD_LIBRARY_PATH
 fi
 export LD_LIBRARY_PATH
 
