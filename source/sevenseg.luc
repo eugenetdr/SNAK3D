@@ -1,4 +1,6 @@
 module sevenseg (
+    input clk,
+    input rst,
     input d[16], //a 16 bit number to display (will be truncated)
     output q[14] //14 channel out into the actual seg
   ) {
@@ -9,6 +11,18 @@ module sevenseg (
   sig ones_mod[4];
   sig tens_out[7];
   sig ones_out[7];
+
+  .clk(clk) {
+    .rst(rst) {
+      counter slowclk(#SIZE(1), #DIV(10));
+    }
+  }
+
+  .clk(slowclk.value) {
+    .rst(rst) {
+      fsm state = {ONES, TENS};
+    }
+  }
 
   always {
     
@@ -73,6 +87,10 @@ module sevenseg (
           tens_out = 7b1110011;         
         default: 
           tens_out = 7b1111110; 
+    }
+
+    if(state.q == state.ONES) { 
+      q = ones_out;
     }
 
 

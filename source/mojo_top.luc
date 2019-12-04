@@ -29,11 +29,7 @@ module mojo_top (
   alu16 alu;  
   sel4 aselector;
   sel4 bselector;
-  
-  //displays
-  sevenseg scoreseg;
-  sevenseg timerseg;
-    
+
   controllogic clogic;
   
   .clk(clk) {
@@ -50,7 +46,11 @@ module mojo_top (
       score score;
       timer timer;
       food food;
-      render render;
+      render render;  
+  
+      //displays
+      sevenseg scoreseg;
+      sevenseg timerseg;
     }
   }
 
@@ -84,7 +84,7 @@ module mojo_top (
     //game fsm
     game.game_start = game_button[1];
     game.game_end = game_button[0];
-    
+
     //snake
     snake.dx = control.dx;
     snake.dy = control.dy;
