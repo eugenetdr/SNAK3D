@@ -41,7 +41,7 @@ module mojo_top (
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
 
-    .rst(rst){                        
+    .rst(clogic.reset){                        
       gameengine game;
 
       //modules
@@ -51,7 +51,6 @@ module mojo_top (
       timer timer;
       food food;
       render render;
-
     }
   }
 
@@ -82,6 +81,10 @@ module mojo_top (
     
 
     //==========module inputs==========
+    //game fsm
+    game.game_start = game_button[1];
+    game.game_end = game_button[0];
+    
     //snake
     snake.dx = control.dx;
     snake.dy = control.dy;

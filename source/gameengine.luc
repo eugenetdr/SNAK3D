@@ -3,7 +3,9 @@ module gameengine (
     input rst,            // reset button (active low)
     input time_out, //taken in from the timer module, meaning that time has run out
     input aluout[16],
-    output opcode[16]
+    input game_start,
+    input game_end,
+    output opcode[17]
   ) {
   
   const OPC_CMP_TIME_FRAME = 16b1101010000000000;
@@ -13,18 +15,21 @@ module gameengine (
   const OPC_UPDATE_SNK_POS = 16b0000000000010000;
   const OPC_SPAWN_FOOD = 16b0000000000001000;
   const OPC_RENDER = 16b0000000000000011; //reset clock counter AND writes render state to output led state
+  const OPC_RESET = 16b00000000000000001; //reset everything
   
   .clk(clk)
   {
     .rst(rst)
     {
-      fsm gamefsm = {WAIT_FRAME, CHECK_TIME, GAME_OVER, CHECK_EAT, INCREMENT_SCORE, SPAWN_FOOD, MOVE_SNK_HD, UPDATE_SNAKE_POS, CHECK_WRAP, RENDER};
+      fsm gamefsm = {WAIT_FRAME, CHECK_TIME, GAME_OVER, GAME_START, CHECK_EAT, INCREMENT_SCORE, SPAWN_FOOD, MOVE_SNK_HD, UPDATE_SNAKE_POS, CHECK_WRAP, RENDER};
     }
   }
 
   //TODO: need to check if ALUOUT gives the answer in the same clock cycle. If not, the opcodes
   //must be sent out in the previous state/clock cycle
   always {
+
+
       opcode = 0;
       case(gamefsm.q)
       {
@@ -71,7 +76,22 @@ module gameengine (
           gamefsm.d = gamefsm.WAIT_FRAME;
 
         gamefsm.GAME_OVER:
-          gamefsm.d = gamefsm.GAME_OVER;
+          if(game_start) {
+            gamefsm.d = gamefsm.GAME_START;
+          }
+          else {
+            gamefsm.d = gamefsm.GAME_OVER;
+          }
+
+        gamefsm.GAME_START:
+          //SEND RESET SIGNAL
+          opcode = OPC_RESET;
+          gamefsm.d = gamefsm.CHECK_TIME;
+      }
+      
+      //force game end if stop pressed
+      if(game_end) {
+        gamefsm.d = gamefsm.GAME_OVER;
       }
   }
 }
